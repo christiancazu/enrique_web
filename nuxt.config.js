@@ -25,7 +25,10 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['bootstrap/dist/css/bootstrap.css'],
+  css: [
+    '~/node_modules/bootstrap/dist/css/bootstrap.css',
+    '~/assets/css/main.scss'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -61,11 +64,21 @@ export default {
     plugins: [
       // set shortcuts as global for bootstrap
       new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery'
+        $: 'jquery'
       })
     ],
-    extend(config, ctx) {}
+    /*
+    ** Run ESLint on save
+    */
+    extend(config, { isDev, isClient }) {
+      if (isDev && isClient) {
+        config.module.rules.push({
+          enforce: "pre",
+          test: /\.(js|vue)$/,
+          loader: "eslint-loader",
+          exclude: /(node_modules)/
+        });
+      }
+    }
   }
 }
