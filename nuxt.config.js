@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+
 export default {
   mode: 'spa',
   /*
@@ -23,11 +25,11 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['bootstrap/dist/css/bootstrap.css'],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~plugins/bootstrap.js'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -55,6 +57,15 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    vendor: ['jquery', 'bootstrap'],
+    plugins: [
+      // set shortcuts as global for bootstrap
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
+      })
+    ],
     extend(config, ctx) {}
   }
 }
