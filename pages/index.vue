@@ -2,6 +2,8 @@
   <div>
     <carousel-main />
 
+    <my-books />
+
     <div class="test">
     </div>
     
@@ -10,10 +12,11 @@
 
 <script>
 import CarouselMain from '~/components/CarouselMain'
+import MyBooks from '~/components/MyBooks'
 
 export default {
   components: {
-    CarouselMain
+    CarouselMain, MyBooks
   }
 }
 </script>

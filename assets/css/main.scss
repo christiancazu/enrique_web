@@ -1,9 +1,10 @@
 @import './variables.scss';
 @import './mixins.scss';
 @import './navbar.scss';
+@import './book.scss';
 
 body {
-    background-color: gray;
+    background-color: whitesmoke;
 }
 
 .page-enter-active, .page-leave-active {
