@@ -1,5 +1,3 @@
-import $ from 'jquery'
-
 export default {
   mounted() {
     this.loadJQnavbar()
@@ -7,16 +5,17 @@ export default {
   methods: {
     loadJQnavbar() {
       const navbarCollapse = () => {
-      if ($("#mainNav").offset().top > 100) {
-        $("#mainNav").addClass("navbar-shrink");
+      const mainNav = window.jQuery("#mainNav")
+      if (window.jQuery(mainNav).offset().top > 100) {
+        window.jQuery(mainNav).addClass("navbar-shrink");
       } else {
-        $("#mainNav").removeClass("navbar-shrink");
+        window.jQuery(mainNav).removeClass("navbar-shrink");
       }
     };
     // Collapse now if page is not at top
     navbarCollapse();
     // Collapse the navbar when page is scrolled
-    $(window).scroll(navbarCollapse); 
+    window.jQuery(window).scroll(navbarCollapse); 
     }
   },
 }

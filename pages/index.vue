@@ -1,11 +1,20 @@
 <template>
-  <div class="test">
+  <div>
+    <carousel-main />
 
+    <div class="test">
+    </div>
+    
   </div>
 </template>
 
 <script>
+import CarouselMain from '~/components/CarouselMain'
+
 export default {
+  components: {
+    CarouselMain
+  }
 }
 </script>
 
