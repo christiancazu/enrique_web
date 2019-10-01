@@ -13,6 +13,5 @@ export default {
 .test {
   min-height: 200vh;
   min-width: 100vw;
-  background-color: gray
 }
 </style>

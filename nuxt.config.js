@@ -1,5 +1,3 @@
-const webpack = require('webpack')
-
 export default {
   mode: 'spa',
   /*
@@ -16,7 +14,14 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    ],
+    script: [
+      { src: 'https://code.jquery.com/jquery-3.3.1.slim.min.js' },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' },
+      { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -26,13 +31,15 @@ export default {
    ** Global CSS
    */
   css: [
-    '~/node_modules/bootstrap/dist/css/bootstrap.css',
-    '~/assets/css/main.scss'
+    'bootstrap/dist/css/bootstrap.css',
+    '~/assets/css/main.scss',
   ],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~plugins/bootstrap.js'],
+  plugins: [
+    
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -58,20 +65,14 @@ export default {
    */
   build: {
     /*
-     ** You can extend webpack config here
-     */
-    vendor: ['jquery', 'bootstrap'],
-    plugins: [
-      // set shortcuts as global for bootstrap
-      new webpack.ProvidePlugin({
-        $: 'jquery'
-      })
-    ],
-    /*
     ** Run ESLint on save
     */
-    extend(config, { isDev, isClient }) {
-      if (isDev && isClient) {
+    vendor: [
+      // '~/assets/js/navbar.js'
+    ],
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: "pre",
           test: /\.(js|vue)$/,

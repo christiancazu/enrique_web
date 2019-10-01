@@ -37,6 +37,11 @@
       }
     }
   }
+  .text-menu {
+    color: $black;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
 }
 @media(min-width:992px) {
   #mainNav {
