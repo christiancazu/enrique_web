@@ -4,6 +4,8 @@
 
     <my-books />
 
+    <about />
+
     <div class="test">
     </div>
     
@@ -13,10 +15,11 @@
 <script>
 import CarouselMain from '~/components/CarouselMain'
 import MyBooks from '~/components/MyBooks'
+import About from '~/components/About'
 
 export default {
   components: {
-    CarouselMain, MyBooks
+    CarouselMain, MyBooks, About
   }
 }
 </script>
