@@ -17,6 +17,7 @@ body {
 }
 
 // remove focus btn
-button:focus{
-    outline: none;
+button:focus {
+    outline: none !important;
+    outline:0 !important;
 }

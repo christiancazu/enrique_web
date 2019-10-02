@@ -7,9 +7,6 @@
     <about />
 
     <carousel-testimonials />
-
-    <div class="test">
-    </div>
     
   </main>
 </template>
@@ -26,10 +23,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.test {
-  min-height: 200vh;
-  min-width: 100vw;
-}
-</style>
