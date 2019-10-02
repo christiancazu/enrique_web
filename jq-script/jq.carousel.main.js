@@ -4,8 +4,8 @@ export default {
   },
   methods: {
     loadJQCarouselMain() {
-      window.jQuery('.carousel').carousel({
-        interval: 1000
+      window.jQuery('#carouselMain.carousel').carousel({
+        interval: 4000
       })
     }
   },
