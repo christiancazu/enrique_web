@@ -1,15 +1,23 @@
 <template>
   <div>
 
-    <h1 class="text-center mt-5">Mis libros</h1>
+    <h1 class="text-center my-5">Mis libros</h1>
 
-    <card-book
-      v-for="(book, i) in books" :key="i"
-      :img-src="imgPath + book.imgSrc"
-      :img-alt="book.imgAlt"
-      :title="book.title"
-      :description="book.description"
-    />
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div
+          v-for="(book, i) in books" :key="i"
+          class="col-12 col-lg-5"
+        >
+          <card-book
+            :img-src="imgPath + book.imgSrc"
+            :img-alt="book.imgAlt"
+            :title="book.title"
+            :description="book.description"
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
