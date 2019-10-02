@@ -25,9 +25,8 @@
             <ul class="noo_testimonial noo-sync1">
               <li>
                 <div class="noo-testi-content">
-                  <i class="fa fa-quote-left"></i>
+                  <i class="fa fa-quote-left" style="font-size: 2rem"></i>
                   <div style="display: inline-block;">
-                    <img src="quote-left.svg">
                     <p>
                       {{ testimony.description }}
                     </p>
