@@ -6,18 +6,19 @@
           <span class="copyright">
             Desarrollado con
             <i
-              class="fa fa-heart text-red"
+              class="fa fa-heart text-danger"
               aria-hidden="true"
             ></i> por
             <span class="font-weight-bold">
               <NuxtLink
-                class="btn-flat-secondary text-secondary"
+                class="btn-flat-secondary text-red"
                 :to="'/'"
               >VEOX</NuxtLink>
             </span>
           </span>
         </div>
         <div class="col-md-6">
+          <button class="btn btn-xxx">xxx</button>
           <ul class="list-inline social-buttons">
             <li class="list-inline-item">
               <a href="#">
