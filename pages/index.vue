@@ -1,28 +1,28 @@
 <template>
-  <div>
+  <main>
     <carousel-main />
 
     <my-books />
 
     <about />
 
-    <carousel-testimonial />
+    <carousel-testimonials />
 
     <div class="test">
     </div>
     
-  </div>
+  </main>
 </template>
 
 <script>
 import CarouselMain from '~/components/CarouselMain'
 import MyBooks from '~/components/MyBooks'
 import About from '~/components/About'
-import CarouselTestimonial from '~/components/CarouselTestimonial'
+import CarouselTestimonials from '~/components/CarouselTestimonials'
 
 export default {
   components: {
-    CarouselMain, MyBooks, About, CarouselTestimonial
+    CarouselMain, MyBooks, About, CarouselTestimonials
   }
 }
 </script>
