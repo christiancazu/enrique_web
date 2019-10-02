@@ -8,19 +8,22 @@
         class="navbar-brand"
         :to="{ name: 'index' }"
       >
-        {{ brand }}
+        <img
+          src="/images/logo/logo_yellow.png"
+          alt="Luis enrique"
+          class="img-fluid"
+        />
+
       </nuxt-link>
       <button
         class="navbar-toggler navbar-toggler-right text-menu"
-        type="button"
         data-toggle="collapse"
         data-target="#navbarResponsive"
         aria-controls="navbarResponsive"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        Menu
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-bars icons-primary"></i>
       </button>
       <div
         class="collapse navbar-collapse"
@@ -28,8 +31,9 @@
       >
         <ul class="navbar-nav text-uppercase ml-auto">
           <!-- navs -->
-          <li 
-            v-for="(nav, i) in navs" :key="i"
+          <li
+            v-for="(nav, i) in navs"
+            :key="i"
             class="nav-item"
           >
             <nuxt-link
@@ -50,14 +54,14 @@ import jqNavbar from '~/jq-script/jq.navbar'
 
 export default {
   name: 'TheNavbar',
-  data() {
+  data () {
     return {
       brand: 'Luis Enrique Bustamante Perez',
       navs: [
-        { name: 'reconocimientos', link: 'about' },
+        { name: 'Inicio', link: 'index' },
+        { name: 'Sobre mi', link: 'about' },
         { name: 'libros', link: 'books' },
-        { name: 'fotos', link: 'photos' },
-        { name: 'noticias', link: 'news' },
+        { name: 'Noticias & Blogs', link: 'news' },
         { name: 'contacto', link: 'contact' },
       ],
     }

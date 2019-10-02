@@ -8,7 +8,7 @@
     text-transform: uppercase;
     color: white;
     border: 0;
-    background-color: $primary;
+    // background-color: $primary;
     //@include heading-font;
   }
   .navbar-brand {
@@ -76,4 +76,9 @@
       }
     }
   }
+}
+// icons bars Navbar
+.icons-primary {
+  color: $primary;
+  font-size: 1.7rem;
 }
