@@ -15,3 +15,8 @@ body {
 .page-enter, .page-leave-to {
     opacity: 0;
 }
+
+// remove focus btn
+button:focus{
+    outline: none;
+}
