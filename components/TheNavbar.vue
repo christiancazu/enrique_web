@@ -11,7 +11,7 @@
         <img
           src="/images/logo/logo_yellow.png"
           alt="Luis enrique"
-          class="img-fluid"
+          class="img-fluid logo"
         />
 
       </nuxt-link>
@@ -38,6 +38,7 @@
           >
             <nuxt-link
               class="nav-link"
+              :class="i === 0 ? 'active' : ''"
               :to="{ name: nav.link }"
             >
               {{ nav.name }}
