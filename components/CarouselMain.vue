@@ -19,7 +19,7 @@
         data-slide-to="2"
       ></li>
     </ol>
-    <div class="carousel-inner">
+    <div class="carousel-inner home">
       <div
         v-for="(image, i) in images"
         :key="i"
