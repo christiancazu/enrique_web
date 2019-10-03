@@ -5,7 +5,13 @@
 @import './book.scss';
 @import './about.scss';
 @import './testimonial.scss';
+@import './activities.scss';
 @import './contact';
+
+
+// Bootstrap and its default variables
+@import "node_modules/bootstrap/scss/bootstrap";
+
 
 body {
     background-color: #ffffff;
