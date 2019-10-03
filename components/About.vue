@@ -1,24 +1,33 @@
-<template> 
-  <section class="page-section" id="about">
+<template>
+  <section
+    class="pb-100"
+    id="about"
+  >
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase my-5">Sobre mi</h2>
-          <h3 class="section-subheading text-muted my-5">Mis actividades</h3>
+      <div class="row pb-70">
+        <div class="col-sm-12 col-md-5">
+          <h5 class="text--attach">Aqui muestro más</h5>
+          <h1 class="text--title ">Sobre quien soy yo</h1>
+          <div class="pt-3 pb-6">
+            <p>
+              Vivi momentos entre bueno y malos, pero siempre voy con el buen animo.
+            </p>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
           <ul class="timeline">
             <li
-              v-for="(activity, i) in activities" :key="i"
+              v-for="(activity, i) in activities"
+              :key="i"
               :class="{ 'timeline-inverted': i % 2 }"
             >
               <div class="timeline-image">
-                <img 
+                <img
                   :src="imgPath + activity.imgSmall"
                   :alt="'Luis Enrique Bustamante Pérez - ' + activity.title"
-                  class="rounded-circle img-fluid" 
+                  class="rounded-circle img-fluid"
                 >
               </div>
               <div class="timeline-panel">
@@ -50,10 +59,10 @@ import constants from '~/config/constants'
 
 export default {
   name: 'About',
-  data() {
+  data () {
     return {
       imgPath: constants.IMG_BASE_PATH + '/about/',
-      activities: [    
+      activities: [
         {
           title: 'Medalla de Honor de la UNAP',
           date: 'Diciembre 20, 2017',
@@ -61,7 +70,7 @@ export default {
           link: '',
           imgSmall: 'diciembre-20-2017-1-200x200.jpg',
           imgBig: 'diciembre-20-2017-1.jpg'
-        },   
+        },
         {
           title: 'Reconocimiento en Ayaviri',
           date: 'Diciembre 21, 2017',
