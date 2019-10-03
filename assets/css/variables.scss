@@ -3,8 +3,11 @@
 @import "node_modules/bootstrap/scss/mixins";
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
-$font-family-base: 'Montserrat', sans-serif;
-$enable-responsive-font-sizes: true;
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500&display=swap');
+$font-family-paragraph: 'Raleway', sans-serif !default;
+$font-family-base: 'Montserrat', sans-serif !default;
+$enable-responsive-font-sizes: true !default;
+$font-size-base: 0.9375rem  !default;
 
 
 $white: #fff !default;
@@ -20,6 +23,7 @@ $gray-900: #212529 !default;
 $black: #000 !default;
 
 $primary: #fed136;
+$veox-color: #479894;
 
 $body-bg: whitesmoke;
 
@@ -68,3 +72,4 @@ $breakpoints: (
     @warn 'Invalid breakpoint: #{$breakpoint}.';
   }
 }
+

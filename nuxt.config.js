@@ -16,10 +16,11 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', rel:"stylesheet"  },
     ],
     script: [
       { src: 'https://code.jquery.com/jquery-3.3.1.slim.min.js' },
-      { src: 'https://kit.fontawesome.com/3122b9c598.js' },
+      // { src: 'https://kit.fontawesome.com/3122b9c598.js' },
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' },
       { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' },
     ]
