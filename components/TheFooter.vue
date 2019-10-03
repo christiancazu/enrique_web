@@ -9,7 +9,7 @@
               alt="Luis enrique"
               class="img-fluid logo"
             />
-            <ul class="list-unstyled mt-4 info-personal" >
+            <ul class="list-unstyled mt-4 info-personal">
               <li class="d-flex align-items-center pb-2">
                 <i class="fa fa-map-marker text-gray"></i>
                 <p class="m-0">Arequipa, Arequipa</p>
@@ -33,10 +33,8 @@
               <a href="">
                 <i class="fa fa-facebook"></i>
               </a>
-              <a
-                href=""
-              >
-              <i class="fa fa-youtube"></i>
+              <a href="">
+                <i class="fa fa-youtube"></i>
               </a>
             </div>
           </div>
@@ -44,10 +42,30 @@
             <div class="widget widget_nav_menu">
               <h4 class="widget-title">Sobre Mi</h4>
               <ul class="menu list-unstyled">
-                <li><nuxt-link to="" class="p">¿Quieres saber más de mi?</nuxt-link></li>
-                <li><nuxt-link to="" class="p">¿Ver mis libros?</nuxt-link></li>
-                <li><nuxt-link to="" class="p">Noticias</nuxt-link></li>
-                <li><nuxt-link to="" class="p">Contactanos</nuxt-link></li>
+                <li>
+                  <nuxt-link
+                    to=""
+                    class="p"
+                  >¿Quieres saber más de mi?</nuxt-link>
+                </li>
+                <li>
+                  <nuxt-link
+                    to=""
+                    class="p"
+                  >¿Ver mis libros?</nuxt-link>
+                </li>
+                <li>
+                  <nuxt-link
+                    to=""
+                    class="p"
+                  >Noticias</nuxt-link>
+                </li>
+                <li>
+                  <nuxt-link
+                    to=""
+                    class="p"
+                  >Contactanos</nuxt-link>
+                </li>
               </ul>
             </div>
           </div>
@@ -147,18 +165,27 @@
         <div class="col-md-6 text-right text-xs-center">
           <ul class="list-inline mb-0">
             <li class="list-inline-item">
-              <a href="https://www.facebook.com/veoxtech" target="_bank">
-                  <i class="fa fa-facebook text-veox"></i>
+              <a
+                href="https://www.facebook.com/veoxtech"
+                target="_bank"
+              >
+                <i class="fa fa-facebook text-veox"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://twitter.com/veoxperu" target="_bank">
-                  <i class="fa fa-twitter text-veox"></i>
+              <a
+                href="https://twitter.com/veoxperu"
+                target="_bank"
+              >
+                <i class="fa fa-twitter text-veox"></i>
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://www.youtube.com/channel/UCkNod2lmZIMbR9iA2scP3Aw" target="_bank">
-                  <i class="fa fa-youtube-play text-veox"></i>
+              <a
+                href="https://www.youtube.com/channel/UCkNod2lmZIMbR9iA2scP3Aw"
+                target="_bank"
+              >
+                <i class="fa fa-youtube-play text-veox"></i>
               </a>
             </li>
           </ul>
