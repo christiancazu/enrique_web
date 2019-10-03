@@ -1,7 +1,7 @@
 <template>
   <div class="container pt-100 pb-100">
     <div class="row pb-70">
-      <div class="col-sm-12 col-md-5">
+      <div class="col-sm-12 col-md-6">
         <h5 class="text--attach">Te presento</h5>
         <h1 class="text--title ">mis libros</h1>
         <div class="pt-3 pb-6">

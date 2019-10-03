@@ -5,7 +5,7 @@
   >
     <div class="container">
       <div class="row pb-70">
-        <div class="col-sm-12 col-md-5">
+        <div class="col-sm-12 col-md-6">
           <h5 class="text--attach">Aqui muestro más</h5>
           <h1 class="text--title ">Sobre quien soy yo</h1>
           <div class="pt-3 pb-6">

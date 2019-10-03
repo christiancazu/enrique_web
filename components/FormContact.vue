@@ -3,7 +3,7 @@
     <div class="pb-4">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12 col-md-5">
+          <div class="col-sm-12 col-md-6">
             <h5 class="text--attach">Ahora puedes</h5>
             <h1 class="text--title ">contactarme</h1>
             <div class="pt-3 pb-6">
