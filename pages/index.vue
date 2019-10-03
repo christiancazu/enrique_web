@@ -1,6 +1,5 @@
 <template>
   <main>
-    
     <carousel-main />
 
     <my-books />
