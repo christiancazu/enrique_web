@@ -23,7 +23,8 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <i class="fas fa-bars icons-primary"></i>
+        <!-- <i class="fas fa-bars icons-primary"></i> -->
+        <i class="fa fa-bars icons-primary"></i>
       </button>
       <div
         class="collapse navbar-collapse"

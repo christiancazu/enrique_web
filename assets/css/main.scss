@@ -7,7 +7,9 @@
 @import './testimonial.scss';
 
 body {
-    background-color: whitesmoke;
+    background-color: #ffffff;
+    // @include font-size($font-size-base);
+
 }
 
 .page-enter-active, .page-leave-active {
@@ -21,4 +23,10 @@ body {
 button:focus {
     outline: none !important;
     outline:0 !important;
+}
+
+// tag p
+.p, p {
+    font-family: $font-family-paragraph;
+    color: #888888;
 }
