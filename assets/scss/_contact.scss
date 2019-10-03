@@ -51,25 +51,3 @@
   text-transform: uppercase;
   font-weight: 400;
 }
-.text {
-  &--attach {
-    text-transform: uppercase;
-    font-weight: 500;
-
-    &:after {
-      width: 30px;
-      height: 2px;
-      content: '';
-      background: $primary;
-      display: inline-block;
-      -webkit-transform: translate(20px, -6px);
-      -ms-transform: translate(20px, -6px);
-      -o-transform: translate(20px, -6px);
-      transform: translate(20px, -6px);
-    }
-  }
-  &--title {
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-}

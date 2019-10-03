@@ -29,31 +29,32 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     transition: all 0.3s ease;
 }
 
-// home
+// title & subtitle
+.text {
+  &--attach {
+    text-transform: uppercase;
+    font-weight: 500;
 
-
-.home .carousel-item {
-    height: 100vh;
-}
-.overlay-home {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(32,36,40,.4);
-    // background: rgba($primary, .7);
-    // background: rgba($secondary, .7);
-    top: 0;
-}
-.carousel-caption-home {
-    position: absolute;
-    top: 136px;
-    padding-bottom: 6rem;
-    width:100%;
-    height: calc(100% - 136px);
-    z-index: 10;
+    &:after {
+      width: 30px;
+      height: 2px;
+      content: '';
+      background: $primary;
+      display: inline-block;
+      -webkit-transform: translate(20px, -6px);
+      -ms-transform: translate(20px, -6px);
+      -o-transform: translate(20px, -6px);
+      transform: translate(20px, -6px);
+    }
+  }
+  &--title {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
 }
 
 // class for images
+
 .cover {
     object-fit: cover
 }
