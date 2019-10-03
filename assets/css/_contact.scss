@@ -1,0 +1,75 @@
+.pb {
+  &-100 {
+    padding-bottom: 6.25rem;
+  }
+  &-70 {
+    padding-bottom: 4.375rem
+  }
+}
+.mt {
+  &-100 {
+    margin-top: 6.25rem;
+  }
+  &-70 {
+    margin-top: 4.375rem
+  }
+}
+.m-top-page {
+  margin-top: 8.5rem;
+}
+.noo-information {
+  text-align: center;
+  padding: 0 15px;
+
+  i {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 1px solid #eeeeee;
+    text-align: center;
+    font-size: 30px;
+    line-height: 90px;
+    -webkit-border-radius: 50%;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s;
+    transition: all 0.4s ease 0s;
+  }
+
+  h5 {
+    text-transform: uppercase;
+    margin: 28px 0 15px;
+  }
+}
+
+.noo-information:hover i {
+  background: #eeeeee;
+  color: #333333;
+}
+
+//@at-root
+.form-contact--label {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.text {
+  &--attach {
+    text-transform: uppercase;
+    font-weight: 500;
+
+    &:after {
+      width: 30px;
+      height: 2px;
+      content: '';
+      background: $primary;
+      display: inline-block;
+      -webkit-transform: translate(20px, -6px);
+      -ms-transform: translate(20px, -6px);
+      -o-transform: translate(20px, -6px);
+      transform: translate(20px, -6px);
+    }
+  }
+  &--title {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
