@@ -1,35 +1,29 @@
 <template>
-  <div>
+  <main>
+    
     <carousel-main />
 
     <my-books />
 
     <about />
 
-    <carousel-testimonial />
+    <my-activities />
 
-    <div class="test">
-    </div>
+    <carousel-testimonials />
     
-  </div>
+  </main>
 </template>
 
 <script>
 import CarouselMain from '~/components/CarouselMain'
 import MyBooks from '~/components/MyBooks'
 import About from '~/components/About'
-import CarouselTestimonial from '~/components/CarouselTestimonial'
+import CarouselTestimonials from '~/components/CarouselTestimonials'
+import MyActivities from '~/components/MyActivities'
 
 export default {
   components: {
-    CarouselMain, MyBooks, About, CarouselTestimonial
+    CarouselMain, MyBooks, About, CarouselTestimonials, MyActivities
   }
 }
 </script>
-
-<style>
-.test {
-  min-height: 200vh;
-  min-width: 100vw;
-}
-</style>

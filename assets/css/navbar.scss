@@ -8,7 +8,7 @@
     text-transform: uppercase;
     color: white;
     border: 0;
-    background-color: $primary;
+    // background-color: $primary;
     //@include heading-font;
   }
   .navbar-brand {
@@ -74,6 +74,15 @@
         font-size: 1.25em;
         padding: 12px 0;
       }
+
+      .logo {
+        width: 50% !important;
+      }
     }
   }
+}
+// icons bars Navbar
+.icons-primary {
+  color: $primary;
+  font-size: 1.7rem;
 }

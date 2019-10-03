@@ -4,14 +4,21 @@
 @import './book.scss';
 @import './about.scss';
 @import './testimonial.scss';
+@import './activities.scss';
 
-body {
-    background-color: whitesmoke;
-}
+// Bootstrap and its default variables
+@import "node_modules/bootstrap/scss/bootstrap";
+
 
 .page-enter-active, .page-leave-active {
     transition: opacity .5s;
 }
 .page-enter, .page-leave-to {
     opacity: 0;
+}
+
+// remove focus btn
+button:focus {
+    outline: none !important;
+    outline:0 !important;
 }

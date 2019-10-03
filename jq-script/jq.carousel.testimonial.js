@@ -4,8 +4,8 @@ export default {
   },
   methods: {
     loadJQCarouselTestimonial() {
-      window.jQuery('#carouselTestimonial.carousel').carousel({
-        // interval: 1000
+      window.jQuery('#carouselTestimonial').carousel({
+        interval: 4000
       })
     }
   },
