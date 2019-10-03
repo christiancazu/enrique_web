@@ -1,17 +1,3 @@
-@import './variables.scss';
-@import './mixins.scss';
-@import './navbar.scss';
-@import './footer.scss';
-@import './book.scss';
-@import './about.scss';
-@import './testimonial.scss';
-@import './contact';
-
-body {
-    background-color: #ffffff;
-    // @include font-size($font-size-base);
-}
-
 .page-enter-active, .page-leave-active {
     transition: opacity .5s;
 }

@@ -34,7 +34,7 @@ export default {
    */
   css: [
     'bootstrap/dist/css/bootstrap.css',
-    '~/assets/css/main.scss',
+    '~/assets/scss/app.scss',
   ],
   /*
    ** Plugins to load before mounting the App
