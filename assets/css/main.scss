@@ -1,12 +1,14 @@
 @import './variables.scss';
 @import './mixins.scss';
 @import './navbar.scss';
+@import './footer.scss';
 @import './book.scss';
 @import './about.scss';
 @import './testimonial.scss';
 
 body {
-    background-color: whitesmoke;
+    background-color: #ffffff;
+    // @include font-size($font-size-base);
 }
 
 .page-enter-active, .page-leave-active {
@@ -20,4 +22,22 @@ body {
 button:focus {
     outline: none !important;
     outline:0 !important;
+}
+
+// tag p
+.p, p {
+    font-family: $font-family-paragraph;
+    color: #888888;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: $font-family-base;
+}
+
+//transitions all
+*:hover {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
