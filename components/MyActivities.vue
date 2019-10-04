@@ -18,10 +18,11 @@
         class="col-12 col-sm-6 col-md-4"
       >
         <card-activity
+          :id="activity.id"
           :title="activity.title"
           :date="activity.date"
           :description="activity.description"
-          :link="activity.link"
+          :slug="activity.slug"
           :img="imgPath + activity.img"
         />
       </div>
@@ -42,7 +43,7 @@
 <script>
 import constants from '~/config/constants'
 import CardActivity from '~/components/CardActivity'
-import activitiesContent from '~/contents/activities'
+import { mapState } from 'vuex'
 
 export default {
   name: 'MyActivities',
@@ -52,8 +53,12 @@ export default {
   data () {
     return {
       imgPath: constants.IMG_BASE_PATH + '/activities/',
-      activities: activitiesContent
     }
-  }
+  },
+  computed: {
+    ...mapState({
+      activities: 'activities'
+    })
+  },
 }
 </script>

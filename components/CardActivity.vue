@@ -27,7 +27,7 @@
       </p> -->
       <nuxt-link 
         class="btn card-activity__body--read-more"
-        :to="{ name: link }"
+        :to="{ path: `/news/${slug}` }"
       >
         Leer más
       </nuxt-link>
@@ -39,10 +39,11 @@
 export default {
   name: 'CardActivity',
   props: {
+    id: Number,
     title: String,
     date: String,
     description: String,
-    link: String,
+    slug: String,
     img: String
   },
   data() {
@@ -53,6 +54,7 @@ export default {
     }
   },
   mounted() {
+    // spliting date value format 31-feb-9999 to 31 feb 9999
     const dateParts = this.date.split('-')
     this.day = dateParts[0]
     this.mounth = dateParts[1]

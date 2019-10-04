@@ -1,23 +1,23 @@
 [
   {
+    "id": 1,
     "title": "Medalla de Honor de la UNAP",
     "date": "20-dic-2017",
-    "description": "La Universidad Nacional del altiplano otorga Medalla de Honor a Luis Enrique Bustamante Pérez.",
-    "link": "",
+    "description": "“Por años he sido un admirador del científico británico Stephen Hawking, hoy esa admiración la cambio por ti mi querido Luis Enrique, ejemplo de vida y superación”, refirió emocionado el Rector de la UNA Puno Dr. Porfirio Enríquez Salas, previo al reconocimiento con el Diploma y Medalla de Honor de esta casa de estudios al joven escritor, Luis Enrique Bustamante Pérez. Este acto se realizó durante la presentación del su libro “Hablando con un Ángel”, actividad organizada por la Municipalidad Provincial de Puno, a la que la primera autoridad universitaria se sumó desinteresadamente, “a nombre de la Universidad Nacional del Altiplano, destacamos tu espíritu luchador y coraje que son testimonio y ejemplo para nuestra juventud y sociedad” exclamó la autoridad.",
     "img": "20-dic-2017-1.jpg"
   },
   {
+    "id": 2,
     "title": "Reconocimiento en Ayaviri",
     "date": "21-dic-2017",
     "description": "Luis Enrique recibe la Medalla de Honor por parte de la Municipalidad Provincial de Ayaviri.",
-    "link": "",
     "img": "21-dic-2017-1.jpg"
   },
   {
+    "id": 3,
     "title": "Joven arequipeño dio emotivo discurso utilizando un puntero y una computadora",
     "date": "28-oct-2018",
     "description": "Luis Enrique Bustamante Perez (32) fue hoy el protagonista de un momento emotivo en el compartir de personas con discapacidad que se llevó a cabo ayer en el comedor de la Universidad Nacional de San Agustín, donde estuvo a cargo del discurso central.",
-    "link": "",
     "img": "28-oct-2018-1.jpg"
   }
 ]
