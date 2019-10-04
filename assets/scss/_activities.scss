@@ -11,9 +11,10 @@
 
 .card-activity {
     $card-activity: &;
+    $transitionTime: all 1s;
     background-color: transparent !important;
     border: none !important;
-    transition: all 1s;
+    transition: $transitionTime;
     position: relative;
 
     &__date {
@@ -28,10 +29,12 @@
         z-index: 100;
         top: .5rem;
         left: .5rem;
-        transition: all 1s;
+        transition: $transitionTime;
 
-        &--year {
-            @extend .mb-0;
+        & p {
+            @extend .mb-0;   
+            color: text-color('light');
+            transition: color 1s;
         }
     }
     &__img-container {
@@ -42,6 +45,10 @@
         }
     } 
     &__body {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+
         &--title {
             text-transform: uppercase;
         }
@@ -53,6 +60,7 @@
             font-weight: 500 !important;
             background-color: rgba($dark, .35) !important;
             color: text-color('light') !important;
+            transition: $transitionTime !important;
         }
     }       
     &:hover {
@@ -63,6 +71,9 @@
                 &__date {
                     background-color: rgba($dark, 1);
                     color: text-color('primary');
+                    & p {
+                        color: text-color('primary')
+                    }
                 }
                 &__img-container {
                     &--img {

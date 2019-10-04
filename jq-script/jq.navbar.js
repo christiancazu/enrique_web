@@ -32,7 +32,6 @@ export default {
   },
   watch: {
     '$route.path' (val) {
-      console.error(val);
       if (val === '/') {
         this.loadJQnavbar()
       } else {

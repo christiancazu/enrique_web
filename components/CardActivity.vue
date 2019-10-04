@@ -1,12 +1,12 @@
 <template>
-  <div class="card card-activity">
+  <div class="card card-activity h-100">
     <div class="card-activity__date">
-      <h5 class="card-activity__date--day">
+      <p class="card-activity__date--day">
         {{ day }}
-      </h5>
-      <h6 class="card-activity__date--mounth">
+      </p>
+      <p class="card-activity__date--mounth">
         {{ mounth }}
-      </h6>
+      </p>
       <p class="card-activity__date--year">
         {{ year }}
       </p>
@@ -22,9 +22,9 @@
       <h5 class="card-title card-activity__body--title">
         {{ title }}
       </h5>
-      <p class="card-text card-activity__body--description">
+      <!-- <p class="card-text card-activity__body--description">
         {{ description }}
-      </p>
+      </p> -->
       <nuxt-link 
         class="btn card-activity__body--read-more"
         :to="{ name: link }"
