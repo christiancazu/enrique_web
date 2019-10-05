@@ -1,0 +1,32 @@
+[
+  {
+    "section": "MyBooks",
+    "attach": "Te presento",
+    "title": "mis libros",
+    "description": "Te invito a que los leas soy maravillosos e inspiradores, y dejame un mensaje o comentarios de lo que te parecieron.<br> Estare muy agradecido."
+  },
+  {
+    "section": "About",
+    "attach": "Aqui muestro más",
+    "title": "Sobre quien soy yo",
+    "description": "Vivi momentos entre bueno y malos, pero siempre voy con el buen animo."
+  },
+  {
+    "section": "MyActivities",
+    "attach": "últimas publicaciones",
+    "title": "Sobre quien soy yo",
+    "description": "Estas son publicaciones relacionadas conmigo, esto te ayudará a conocer más de mi."
+  },
+  {
+    "section": "Testimonials",
+    "attach": "Quienes me conocen",
+    "title": "Opinan",
+    "description": "Estos son los testimonios de las personas que me han conocido."
+  },
+  {
+    "section": "FormContact",
+    "attach": "También puedes",
+    "title": "contactarme",
+    "description": "Estare atento a tus dudas, consultas o sugerencias. <br>Quiero saber más de lo que pienses acerca de mis libros."
+  }
+]

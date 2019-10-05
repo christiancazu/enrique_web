@@ -1,14 +1,20 @@
 import activitiesContent from '~/contents/activities'
+import headerSectionsContent from '~/contents/headerSections'
+import booksContent from '~/contents/books'
 
 export const state = () => ({
   activities: resolveActivitiesSlugs(),
-  currentActivity: null
+  currentActivity: null,
+  headerSections: headerSectionsContent,
+  books: booksContent
 })
 
 export const getters = {
-  currentActivity: state => slug => {
-    return state.activities.find(ca => ca.slug === slug)
-  }
+  currentActivity: state => slug => 
+    state.activities.find(ca => ca.slug === slug)
+  ,
+  headerSection: state => section =>
+    state.headerSections.find(hs => hs.section === section)
 }
 
 /**

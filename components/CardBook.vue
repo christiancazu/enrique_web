@@ -19,7 +19,6 @@ export default {
   name: 'CardBook',
   props: {
     imgSrc: String,
-    imgAlt: String,
     title: String,
     description: String
   }

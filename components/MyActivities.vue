@@ -1,16 +1,12 @@
 <template>
   <div class="my-activities-container">
-    <div class="row pb-70">
-      <div class="col-sm-12 col-md-6">
-        <h5 class="text--attach">Las mejores y</h5>
-        <h1 class="text--title ">ultimas publicaciones</h1>
-        <div class="pt-3 pb-6">
-          <p>
-            Estas son publicaciones relacionadas conmigo, esto te ayudará a conocer más de mi.
-          </p>
-        </div>
-      </div>
-    </div>
+    
+    <header-section
+      :attach="header.attach"
+      :title="header.title"
+      :description="header.description"
+    />
+
     <div class="row justify-content-center">
       <div
         v-for="(activity, i) in activities"
@@ -43,12 +39,13 @@
 <script>
 import constants from '~/config/constants'
 import CardActivity from '~/components/CardActivity'
+import HeaderSection from '~/components/HeaderSection'
 import { mapState } from 'vuex'
 
 export default {
   name: 'MyActivities',
   components: {
-    CardActivity
+    HeaderSection, CardActivity
   },
   data () {
     return {
@@ -58,7 +55,10 @@ export default {
   computed: {
     ...mapState({
       activities: 'activities'
-    })
+    }),
+    header() {
+      return this.$store.getters.headerSection('MyActivities')
+    }
   },
 }
 </script>

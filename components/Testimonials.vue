@@ -1,7 +1,11 @@
 <template>
-  <section class="testimonial">
-    <h3 class="text-center mt-5">TESTIMONIOS</h3>
-    <!-- <p class="text-center">Lorem ipsum dolor sit amet adipiscing elit</!-->
+  <section class="container testimonial">
+
+    <header-section
+      :attach="header.attach"
+      :title="header.title"
+      :description="header.description"
+    />
 
     <div id="carouselTestimonial" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -52,13 +56,22 @@
 import constants from '~/config/constants'
 import jqCarouselTestimonial from '~/jq-script/jq.carousel.testimonial'
 import testimonialsContent from '~/contents/testimonials.json'
+import HeaderSection from '~/components/HeaderSection'
 
 export default {
-  name: 'CarouselTestimonials',
+  name: 'Testimonials',
+  components: {
+    HeaderSection
+  },
   data() {
     return {
-      imgPath: constants.IMG_BASE_PATH + '/carousel-testimonial/',
+      imgPath: constants.IMG_BASE_PATH + '/testimonial/',
       testimonials: testimonialsContent
+    }
+  },
+  computed: {
+    header() {
+      return this.$store.getters.headerSection('Testimonials')
     }
   },
   mixins: [jqCarouselTestimonial]

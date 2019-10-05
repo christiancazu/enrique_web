@@ -4,17 +4,13 @@
     id="about"
   >
     <div class="container">
-      <div class="row pb-70">
-        <div class="col-sm-12 col-md-6">
-          <h5 class="text--attach">Aqui muestro más</h5>
-          <h1 class="text--title ">Sobre quien soy yo</h1>
-          <div class="pt-3 pb-6">
-            <p>
-              Vivi momentos entre bueno y malos, pero siempre voy con el buen animo.
-            </p>
-          </div>
-        </div>
-      </div>
+      
+      <header-section
+        :attach="header.attach"
+        :title="header.title"
+        :description="header.description"
+      />
+
       <div class="row">
         <div class="col-lg-12">
           <ul class="timeline">
@@ -56,9 +52,13 @@
 
 <script>
 import constants from '~/config/constants'
+import HeaderSection from '~/components/HeaderSection'
 
 export default {
   name: 'About',
+  components: {
+    HeaderSection
+  },
   data () {
     return {
       imgPath: constants.IMG_BASE_PATH + '/about/',
@@ -89,7 +89,11 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    header() {
+      return this.$store.getters.headerSection('About')
+    }
   }
-
 }
 </script>
