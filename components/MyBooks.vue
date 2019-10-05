@@ -7,11 +7,11 @@
       :description="header.description"
     />
 
-    <div class="row justify-content-md-center">
+    <div class="row">
       <div
         v-for="(book, i) in books"
         :key="i"
-        class="col-12 col-lg-5"
+        class="col-12 col-lg-6"
       >
         <card-book
           :img-src="imgPath + book.imgSrc"
