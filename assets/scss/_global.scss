@@ -1,88 +1,44 @@
-.page-enter-active, .page-leave-active {
-    transition: opacity .5s;
-}
-.page-enter, .page-leave-to {
-    opacity: 0;
-}
-
 // remove focus btn
 button:focus {
-    outline: none !important;
-    outline:0 !important;
+  outline: none !important;
+  outline: 0 !important;
 }
 
 // tag p
-.p, p {
-    font-family: $font-family-paragraph;
-    color: #888888;
+.p,
+p {
+  font-family: $font-family-paragraph;
+  color: #888888;
 }
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: $font-family-base;
-}
-
-//transitions all
-*:hover {
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-
-// title & subtitle
-.text {
-  &--attach {
-    text-transform: uppercase;
-    font-weight: 500;
-
-    &:after {
-      width: 30px;
-      height: 2px;
-      content: '';
-      background: $primary;
-      display: inline-block;
-      -webkit-transform: translate(20px, -6px);
-      -ms-transform: translate(20px, -6px);
-      -o-transform: translate(20px, -6px);
-      transform: translate(20px, -6px);
-    }
-  }
-  &--title {
-    text-transform: uppercase;
-    font-weight: 700;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: $font-family-base;
 }
 
 // class for images
-
 .cover {
-    object-fit: cover
+  object-fit: cover;
 }
 .contain {
-    object-fit: contain;
+  object-fit: contain;
 }
 
-.pb {
-  &-100 {
-    padding-bottom: 6.25rem;
-  }
-  &-70 {
-    padding-bottom: 4.375rem
-  }
+// page transitions
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
 }
-.pt {
-  &-100 {
-    padding-top: 6.25rem;
-  }
-  &-70 {
-    padding-top: 4.375rem
-  }
-}
-.mt {
-  &-100 {
-    margin-top: 6.25rem;
-  }
-  &-70 {
-    margin-top: 4.375rem
-  }
+.page-enter,
+.page-leave-active {
+  opacity: 0;
 }

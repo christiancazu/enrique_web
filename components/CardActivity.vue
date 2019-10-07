@@ -14,7 +14,7 @@
     <div class="card-activity__img-container">
       <img
         :src="img" 
-        :alt="title"
+        :alt="`${ownerName} - ${title}`"
         class="card-img-top img-fluid card-activity__img-container--img"  
       >
     </div>
@@ -36,6 +36,8 @@
 </template>
 
 <script>
+import { OWNER_NAME } from '~/config/constants'
+
 export default {
   name: 'CardActivity',
   props: {
@@ -48,6 +50,7 @@ export default {
   },
   data() {
     return {
+      ownerName: OWNER_NAME,
       day: '',
       mounth: '',
       year: ''

@@ -1,92 +1,90 @@
-.my-activities-container {
-    @extend .container;
-    margin: 0 3rem;
-}
-
-@include respond-below(md) {
-    .my-activities-container {
-        max-width:100% !important;
-    }
+.activities {
+  padding: $padding-y-section 0;
+  margin: $margin-y-section 0;
 }
 
 .card-activity {
-    $card-activity: &;
-    $transitionTime: all 1s;
-    background-color: transparent !important;
-    border: none !important;
+  $card-activity: &;
+  $transitionTime: all 1s;
+  background-color: transparent !important;
+  border: none !important;
+  transition: $transitionTime;
+  position: relative;
+
+  &__date {
+    background-color: rgba($dark, 0.35);
+    border-radius: 4px;
+    color: text-color('light');
+    text-align: center;
+    display: flex;
+    position: absolute;
+    padding: 0.25rem;
+    flex-direction: column;
+    z-index: 100;
+    top: 0.5rem;
+    left: 0.5rem;
     transition: $transitionTime;
-    position: relative;
 
-    &__date {
-        background-color: rgba($dark, .35);
-        border-radius: 4px;
-        color: text-color('light');
-        text-align: center;
-        display: flex;
-        position: absolute;
-        padding: .25rem;
-        flex-direction: column;
-        z-index: 100;
-        top: .5rem;
-        left: .5rem;
-        transition: $transitionTime;
-
-        & p {
-            @extend .mb-0;   
-            color: text-color('light');
-            transition: color 1s;
-        }
+    & p {
+      @extend .mb-0;
+      color: text-color('light');
+      transition: color 1s;
     }
-    &__img-container {
-        overflow: hidden;
-        &--img {
-            transition: transform 1s;
-            max-height: 240px;
-        }
-    } 
-    &__body {
-        display: flex;
-        flex-wrap: wrap;
-        align-content: space-between;
+  }
+  &__img-container {
+    overflow: hidden;
+    &--img {
+      transition: transform 1s;
+      max-height: 240px;
+    }
+  }
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
 
-        &--title {
-            text-transform: uppercase;
+    &--title {
+      text-transform: uppercase;
+      @extend .text-muted;
+      transition: color 1s;
+    }
+    &--description {
+      @extend .text-muted;
+      text-align: justify;
+    }
+    &--read-more {
+      font-weight: 500 !important;
+      background-color: rgba($dark, 0.35) !important;
+      color: text-color('light') !important;
+      transition: $transitionTime !important;
+    }
+  }
+  &:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); // card shadow
+    background-color: white !important;
+
+    #{ $card-activity } {
+      &__date {
+        background-color: rgba($dark, 1);
+        color: text-color('primary');
+        & p {
+          color: text-color('primary');
         }
-        &--description {
-            @extend .text-muted;
-            text-align: justify;
+      }
+      &__img-container {
+        &--img {
+          transform: scale(1.2);
+        }
+      }
+      &__body {
+        &--title {
+          color: text-color('dark') !important;
         }
         &--read-more {
-            font-weight: 500 !important;
-            background-color: rgba($dark, .35) !important;
-            color: text-color('light') !important;
-            transition: $transitionTime !important;
+          background-color: rgba($dark, 1) !important;
+          color: text-color('primary') !important;
         }
-    }       
-    &:hover {
-        box-shadow:0 .5rem 1rem rgba(0, 0, 0, .2); // card shadow
-        background-color: white !important;
-
-            #{ $card-activity } {
-                &__date {
-                    background-color: rgba($dark, 1);
-                    color: text-color('primary');
-                    & p {
-                        color: text-color('primary')
-                    }
-                }
-                &__img-container {
-                    &--img {
-                        transform: scale(1.2);
-                    }
-                }
-                &__body {
-                    &--read-more {
-                        background-color: rgba($dark, 1) !important;
-                        color: text-color('primary') !important;
-                    }
-                }
-            }
-           
+      }
     }
+  }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="my-activities-container">
+  <div class="container activities">
     
     <header-section
       :attach="header.attach"
@@ -11,7 +11,7 @@
       <div
         v-for="(activity, i) in activities"
         :key="i"
-        class="col-12 col-sm-6 col-md-4"
+        class="col-sm-6 col-md-4 mb-3"
       >
         <card-activity
           :id="activity.id"
@@ -24,23 +24,22 @@
       </div>
     </div>
     <div class="row my-5">
-      <div style="margin: 0 auto">
-        <nuxt-link
-          :to="{ name: 'news' }"
-          class="btn btn-lg btn-primary"
-        >
-          Ver más
-        </nuxt-link>
-      </div>
+      <nuxt-link
+        :to="{ name: 'news' }"
+        class="btn btn-primary btn-lg"
+        style="margin: 0 auto"
+      >
+        Ver más
+      </nuxt-link>
     </div>
   </div>
 </template>
 
 <script>
-import constants from '~/config/constants'
+import { IMG_BASE_PATH } from '~/config/constants'
 import CardActivity from '~/components/CardActivity'
 import HeaderSection from '~/components/HeaderSection'
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'MyActivities',
@@ -49,12 +48,12 @@ export default {
   },
   data () {
     return {
-      imgPath: constants.IMG_BASE_PATH + '/activities/',
+      imgPath: IMG_BASE_PATH + '/activities/',
     }
   },
   computed: {
-    ...mapState({
-      activities: 'activities'
+    ...mapGetters({
+      activities: 'threeLastActivities'
     }),
     header() {
       return this.$store.getters.headerSection('MyActivities')

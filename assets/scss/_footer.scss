@@ -1,7 +1,5 @@
-// Styling for the footer
-.footer  {
+.footer {
   .footer_creator{
-    padding: 25px 0;
     span.copyright {
       text-transform: uppercase;
       font-weight: 500;
@@ -21,7 +19,7 @@
     color: $primary;
   }
 }
-//@at-root
+
 .text-gray {
   color: #aaaaaa;
 }

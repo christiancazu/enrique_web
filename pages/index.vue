@@ -1,5 +1,6 @@
 <template>
   <main>
+
     <carousel-main />
 
     <my-books />
@@ -10,7 +11,7 @@
 
     <testimonials />
 
-    <form-contact />
+    <contact />
 
   </main>
 </template>
@@ -21,11 +22,11 @@ import MyBooks from '~/components/MyBooks'
 import About from '~/components/About'
 import Testimonials from '~/components/Testimonials'
 import MyActivities from '~/components/MyActivities'
-import FormContact from '~/components/FormContact.vue'
+import Contact from '~/components/Contact.vue'
 
 export default {
   components: {
-    CarouselMain, MyBooks, About, Testimonials, MyActivities, FormContact
+    CarouselMain, MyBooks, About, Testimonials, MyActivities, Contact
   }
 }
 </script>

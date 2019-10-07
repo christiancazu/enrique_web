@@ -13,8 +13,8 @@
   },
   {
     "section": "MyActivities",
-    "attach": "últimas publicaciones",
-    "title": "Sobre mis actividades",
+    "attach": "últimas publicaciones sobre",
+    "title": "Mis actividades",
     "description": "Estas son publicaciones relacionadas conmigo, esto te ayudará a conocer más de mi."
   },
   {
@@ -24,9 +24,9 @@
     "description": "Estos son los testimonios de las personas que me han conocido."
   },
   {
-    "section": "FormContact",
+    "section": "Contact",
     "attach": "También puedes",
     "title": "Contactarme",
-    "description": "Estaré atento a tus dudas, consultas o sugerencias. <br>Quiero saber más de lo que pienses acerca de mis libros."
+    "description": "Quiero saber más de lo que pienses acerca de mis libros. Estaré atento a tus dudas, consultas o sugerencias."
   }
 ]

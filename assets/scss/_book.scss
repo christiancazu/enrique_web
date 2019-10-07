@@ -1,4 +1,9 @@
-.card-book {
+.my-books {
+  padding: $padding-y-section 0;
+  margin: $margin-y-section 0;
+}
+
+.book-container {
   $bookWidth: 320px;
   $bookHeigth: 420px;
   $shadowBottomPosition: -200px;
@@ -7,54 +12,43 @@
   ::after {
     content: '';
   }
-
   img {
     min-width: 100%;
     max-height: 100%;
   }
-
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
   }
-
   a {
     color: #2c3e50;
     text-decoration: none;
   }
-
   .btn {
-    display: inline-block;
     text-transform: uppercase;
-    border: 2px solid #2c3e50;
-    margin-top: 100px;
-    font-size: 0.7em;
+    font-size: 1rem;
     font-weight: 700;
-    padding: 0.1em 0.4em;
     text-align: center;
-    transition: color 0.3s, border-color 0.3s;
+    font-weight: 500 !important;
+    background-color: rgba($dark, .35) !important;
+    color: text-color('light') !important;
+    transition: all 1s;
   }
-
   .btn:hover {
-    border-color: #16a085;
-    color: #16a085;
+    background-color: rgba($dark, 1) !important;
+    color: text-color('primary') !important;
   }
-
   /* basic grid, only for this demo */
-  .card-book__item {
+  .book__item {
     clear: both;
     width: 100%;
-    margin-bottom: 4rem;
     text-align: center;
   }
-
-  .card-book__item > li {
+  .book__item > li {
     display: inline-block;
-    margin: 4rem 0;
     vertical-align: top;
   }
-
 /* 
 HARDCOVER
 Table of Contents
@@ -69,11 +63,13 @@ Table of Contents
 	- Ribbon
 	- Figcaption
 7. mini-reset
+*/
 
 /////////////////////////////////////////////////////*/
 
-/* 1. container */
+  /* 1. container */
   .book {
+    transform: scale(.7);
     position: relative;
     width: $bookWidth;
     height: $bookHeigth;
@@ -81,7 +77,7 @@ Table of Contents
     transform-style: preserve-3d;
   }
 
-/* 2. background & color */
+  /* 2. background & color */
 
   /* HARDCOVER FRONT */
   .hardcover_front li:first-child {
@@ -137,9 +133,7 @@ Table of Contents
     border-radius: 0px 5px 5px 0px;
   }
 
-  /*
-	3. opening cover, back cover and pages
-*/
+  /* 3. opening cover, back cover and pages */
 
   .hardcover_front {
     transform: rotateY(-34deg) translateZ(8px);
@@ -170,9 +164,7 @@ Table of Contents
     transform: rotateY(-36deg);
   }
 
-  /*
-	4. position, transform & transition
-*/
+  /* 4. position, transform & transition */
 
   .hardcover_front,
   .hardcover_back,
@@ -373,6 +365,11 @@ Table of Contents
     transition-timing-function: ease;
   }
 
+  .page > li .text-page {
+    @extend .text-muted;
+    padding: 2rem 2rem 1rem;
+  }
+
   .page > li:nth-child(1) {
     transition-duration: 0.6s;
   }
@@ -393,9 +390,7 @@ Table of Contents
     transition-duration: 0.6s;
   }
 
-  /*
-	5. events
-*/
+  /* 5. events */
 
   .book:hover > .hardcover_front {
     transform: rotateY(-145deg) translateZ(0);
@@ -427,9 +422,7 @@ Table of Contents
     transition-duration: 1.2s;
   }
 
-  /*
-	6. Bonus
-*/
+  /* 6. Bonus */
 
   /* cover CSS */
 
@@ -454,22 +447,6 @@ Table of Contents
     left: 0;
     bottom: 0;
     right: 0;
-  }
-
-  .coverDesign h1 {
-    color: #fff;
-    font-size: 2.2em;
-    letter-spacing: 0.05em;
-    text-align: center;
-    margin: 54% 0 0 0;
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.1);
-  }
-
-  .coverDesign p {
-    color: #f8f8f8;
-    font-size: 1em;
-    text-align: center;
-    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.1);
   }
 }
 

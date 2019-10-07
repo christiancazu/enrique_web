@@ -1,5 +1,5 @@
 <template>
-  <div class="container pt-100 pb-100">
+  <section class="container my-books">
 
     <header-section
       :attach="header.attach"
@@ -7,36 +7,36 @@
       :description="header.description"
     />
 
-    <div class="row">
+    <div class="row justify-content-center">
       <div
         v-for="(book, i) in books"
         :key="i"
-        class="col-12 col-lg-6"
+        class="col-lg-5"
       >
-        <card-book
+        <book
           :img-src="imgPath + book.imgSrc"
           :title="book.title"
           :description="book.description"
         />
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
-import constants from '~/config/constants'
+import { IMG_BASE_PATH } from '~/config/constants'
 import HeaderSection from '~/components/HeaderSection'
-import CardBook from '~/components/CardBook'
+import Book from '~/components/Book'
 import { mapState } from 'vuex'
 
 export default {
   name: 'MyBooks',
   components: {
-    HeaderSection ,CardBook
+    HeaderSection ,Book
   },
   data () {
     return {
-      imgPath: constants.IMG_BASE_PATH + '/books/'
+      imgPath: IMG_BASE_PATH + '/books/'
     }
   },
   computed: {

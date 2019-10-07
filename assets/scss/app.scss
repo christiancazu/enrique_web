@@ -2,18 +2,19 @@
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
 
+@import './functions';
 @import './variables';
 @import './mixins';
 @import './global';
-@import './home';
+@import './header-section';
 @import './navbar';
+@import './home';
 @import './footer';
 @import './book';
 @import './about';
-@import './testimonial';
+@import './testimonials';
 @import './activities';
 @import './contact';
 @import './news-details';
 
-// Bootstrap and its default variables
 @import "node_modules/bootstrap/scss/bootstrap";

@@ -1,71 +1,48 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500&display=swap');
+
+// fonts
 $font-family-paragraph: 'Raleway', sans-serif !default;
 $font-family-base: 'Montserrat', sans-serif !default;
-$enable-responsive-font-sizes: true !default;
-$font-size-base: 0.9375rem  !default;
+$enable-responsive-font-sizes: true;
 
+// colors
+$primary:       #FFD700;
+$secondary:     $gray-600;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-800;
 
-$white: #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #868e96 !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black: #000 !default;
-
-$primary: #fed136;
 $veox-color: #479894;
 
+// custom theme colors
+$theme-colors: (
+  "primary": $primary,
+  "accent": $black
+);
+
+// custom text colors
+$text-colors: (
+  "dark": $dark,
+  "light": $light,
+  "primary": $primary
+);
+
+// body
 $body-bg: whitesmoke;
 
-$theme-colors: (
-  "primary": $primary
-);
+// navbar
+$navbar-bg: $dark;
+$navbar-bg-opacity: .85;
+$nav-text-color: $gray-100;
+$nav-text-color-active: $primary;
 
-$text-colors: (
-  "dark": #111,
-  "light": #eee,
-  "primary": $primary
-);
+//sections
+$padding-y-section: 3rem;
+$margin-y-section: 3rem;
 
-$breakpoints: (
-  xs: 576px,
-  sm: 768px,
-  md: 992px,
-  lg: 1200px
-);
-
-@function theme-color($key: "primary") {
-  @return map-get($theme-colors, $key);
-}
-
-@function text-color($key: "dark") {
-  @return map-get($text-colors, $key);
-}
-
-@mixin respond-below($breakpoint) {
-
-  // If the breakpoint exists in the map.
-  @if map-has-key($breakpoints, $breakpoint) {
-
-    // Get the breakpoint value.
-    $breakpoint-value: map-get($breakpoints, $breakpoint);
-
-    // Write the media query.
-    @media (max-width: ($breakpoint-value - 1)) {
-      @content;
-    }
-
-  // If the breakpoint doesn't exist in the map.
-  } @else {
-
-    // Log a warning.
-    @warn 'Invalid breakpoint: #{$breakpoint}.';
-  }
-}
-
+//pages
+$margin-t-page: 7rem;

@@ -1,7 +1,7 @@
 <template>
   <nav
-    class="navbar navbar-expand-lg navbar-dark fixed-top"
-    id="mainNav"
+    class="py-0 navbar navbar-expand-lg navbar-dark fixed-top"
+    id="theNavbar"
   >
     <div class="container">
       <nuxt-link
@@ -16,7 +16,7 @@
 
       </nuxt-link>
       <button
-        class="navbar-toggler navbar-toggler-right text-menu"
+        class="navbar-toggler navbar-toggler-right"
         data-toggle="collapse"
         data-target="#navbarResponsive"
         aria-controls="navbarResponsive"
@@ -24,7 +24,7 @@
         aria-label="Toggle navigation"
       >
         <!-- <i class="fas fa-bars icons-primary"></i> -->
-        <i class="fa fa-bars icons-primary"></i>
+        <i class="fa fa-bars icon-toggler"></i>
       </button>
       <div
         class="collapse navbar-collapse"
@@ -39,8 +39,8 @@
           >
             <nuxt-link
               class="nav-link"
-              :class="i === 0 ? 'active' : ''"
               :to="{ name: nav.link }"
+              exact
             >
               {{ nav.name }}
             </nuxt-link>
@@ -58,7 +58,6 @@ export default {
   name: 'TheNavbar',
   data () {
     return {
-      brand: 'Luis Enrique Bustamante Perez',
       navs: [
         { name: 'Inicio', link: 'index' },
         { name: 'Sobre mi', link: 'about' },

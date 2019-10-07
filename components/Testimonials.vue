@@ -1,5 +1,5 @@
 <template>
-  <section class="container testimonial">
+  <section class="container testimonials">
 
     <header-section
       :attach="header.attach"
@@ -7,7 +7,11 @@
       :description="header.description"
     />
 
-    <div id="carouselTestimonial" class="carousel slide" data-ride="carousel">
+    <div 
+      id="carouselTestimonial" 
+      class="carousel slide" 
+      data-ride="carousel"
+    >
       <ol class="carousel-indicators">
         <li
           v-for="(testimony, i) in testimonials" :key="i"
@@ -25,26 +29,23 @@
             'carousel-item'
           ]"
         >
-          <div class="testimonial-wrap style-navi">
-            <ul class="noo_testimonial noo-sync1">
-              <li>
-                <div class="noo-testi-content">
-                  <i class="fa fa-quote-left" style="font-size: 2rem"></i>
-                  <div style="display: inline-block;">
-                    <p>
-                      {{ testimony.description }}
-                    </p>
-                  </div>
-                  <div class="testi-footer">
-                    <!-- <img width="85" height="85" src="https://cdn.shopify.com/s/files/1/1297/1881/t/7/assets/testimonial_author_1.jpg?0" alt="" />  -->
-                    <p class="testi-author text-center">
-                    {{ testimony.authorName }} 
-                    <strong class="text-center">{{ testimony.authorDescription }}&nbsp;</strong>
-                    </p>
-                  </div>
-                </div>
-              </li>
-            </ul>
+          <div class="testimony">
+            <div class="testimony__body">
+              <p class="testimony__body__text--content">
+                <i class="fa fa-quote-left" aria-hidden="true"></i>
+                  {{ testimony.description }} 
+                <i class="fa fa-quote-right" aria-hidden="true"></i>
+              </p>
+            </div>
+            <div class="testimony__footer">
+              <!-- <img width="85" height="85" src="https://cdn.shopify.com/s/files/1/1297/1881/t/7/assets/testimonial_author_1.jpg?0" alt="" />  -->
+              <h6 class="testimony__footer__text--author-name">
+                {{ testimony.authorName }}
+              </h6>
+              <p class="testimony__footer__text--author-description">
+                {{ testimony.authorDescription }}
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -53,8 +54,8 @@
 </template>
 
 <script>
-import constants from '~/config/constants'
-import jqCarouselTestimonial from '~/jq-script/jq.carousel.testimonial'
+import { IMG_BASE_PATH } from '~/config/constants'
+import jqCarouselTestimonial from '~/jq-script/jq.carousel.testimonials'
 import testimonialsContent from '~/contents/testimonials.json'
 import HeaderSection from '~/components/HeaderSection'
 
@@ -65,7 +66,7 @@ export default {
   },
   data() {
     return {
-      imgPath: constants.IMG_BASE_PATH + '/testimonial/',
+      imgPath: IMG_BASE_PATH + '/testimonials/',
       testimonials: testimonialsContent
     }
   },

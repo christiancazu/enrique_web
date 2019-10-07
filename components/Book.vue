@@ -1,6 +1,6 @@
 <template>
-  <div class="card-book">
-    <ul class="card-book__item">
+  <div class="book-container">
+    <ul class="book__item">
       <li>
         <figure class='book'>
 
@@ -20,7 +20,15 @@
           <ul class='page'>
             <li></li>
             <li>
-              <a class="btn" href="#">Leer más</a>
+              <h5 class="text-page">
+               {{ description }}
+              </h5>
+              <nuxt-link 
+                class="btn"
+                to=""
+              >
+                Leer más
+              </nuxt-link>
             </li>
             <li></li>
             <li></li>
@@ -45,7 +53,7 @@
 
 <script>
 export default {
-  name: 'CardBook',
+  name: 'Book',
   props: {
     imgSrc: String,
     title: String,

@@ -13,23 +13,25 @@ export default {
       }
     },
     loadJQNavbarWhereNotHome() {
-      const mainNav = $("#mainNav")
+      const mainNav = $("#theNavbar")
+
       $(window).off("scroll", window['navbarCollapse'])
       $(mainNav).addClass("navbar-shrink");
     },
     loadJQNavbarOnHome() {
-      const mainNav = $("#mainNav")
+      const mainNav = $("#theNavbar")
+      
       const navbarCollapse = () => {
-      if ($(mainNav).offset().top > 100) {
-        $(mainNav).addClass("navbar-shrink");
-      } else {
-        $(mainNav).removeClass("navbar-shrink");
-      }
-    };
-    // Collapse now if page is not at top
-    navbarCollapse();
-    // Collapse the navbar when page is scrolled
-    $(window).scroll(navbarCollapse); 
+        if ($(mainNav).offset().top > 100) {
+          $(mainNav).addClass("navbar-shrink");
+        } else {
+          $(mainNav).removeClass("navbar-shrink");
+        }
+      };
+      // Collapse now if page is not at top
+      navbarCollapse();
+      // Collapse the navbar when page is scrolled
+      $(window).scroll(navbarCollapse); 
     }
   },
   watch: {

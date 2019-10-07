@@ -1,22 +1,22 @@
-.news-details {
-    margin: 7rem auto;
+.news-page, .news-details-page {
+  margin-top: $margin-t-page;
 }
 
 @include respond-below(md) {
-    .news-details {
-        max-width:100% !important;
-    }
+  .news-details {
+    max-width: 100% !important;
+  }
 }
 
 .card-news-details {
-    &__body {
-        &--subtitle {
-            @extend .my-2;
-            color: text-color('primary') !important;
-        }
-        &--text {
-            text-align: justify;
-            @extend .my-2;
-        }
+  &__body {
+    &--subtitle {
+      @extend .my-2;
+      color: text-color('primary') !important;
     }
+    &--text {
+      text-align: justify;
+      @extend .my-2;
+    }
+  }
 }

@@ -1,8 +1,15 @@
 <template>
   <div
     v-if="currentActivity" 
-    class="container news-details"
+    class="container news-details-page"
   >
+
+    <header-section
+      :attach="currentActivity.title"
+      :title="currentActivity.date"
+      :description="``"
+    />
+
     <div class="row justify-content-center">
       <div class="col-12">
         <div class="card card-news-details">
@@ -27,12 +34,6 @@
         
         </no-ssr>        
           <div class="card-body card-news-details__body">
-            <h5 class="card-title card-news-details__body--title">
-              {{ currentActivity.title }}
-            </h5>
-            <h6 class="card-subtitle card-news-details__body--subtitle">
-              {{ currentActivity.date }}
-            </h6>
             <p class="card-text card-news-details__body--text">
               {{ currentActivity.description }}
             </p>
@@ -44,8 +45,13 @@
 </template>
 
 <script>
+import HeaderSection from '~/components/HeaderSection'
+
 export default {
   name: 'NewsSlug',
+  components: {
+    HeaderSection
+  },
   computed: {
     currentActivity() {
       return this.$store.getters.currentActivity(this.$route.params.slug)

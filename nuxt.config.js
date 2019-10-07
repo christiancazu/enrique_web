@@ -29,6 +29,12 @@ export default {
    ** Customize the progress-bar color
    */
   loading: { color: '#fff' },
+  /**
+   * router exact active
+   */
+  router: {
+    linkExactActiveClass: 'exact-active-link'
+  },
   /*
    ** Global CSS
    */

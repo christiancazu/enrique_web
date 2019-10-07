@@ -15,6 +15,12 @@ export const getters = {
   ,
   headerSection: state => section =>
     state.headerSections.find(hs => hs.section === section)
+  , 
+  threeLastActivities: (state, getters) => 
+    getters.activitiesReverseOrder.slice(0, 3)
+  ,
+  activitiesReverseOrder: state =>
+    state.activities.slice().reverse()
 }
 
 /**

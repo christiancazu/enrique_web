@@ -1,0 +1,30 @@
+.header-section {
+  &__content {
+    &__text {
+      &--attach {
+        @extend .text-muted;
+        text-transform: uppercase;
+        font-weight: 500;
+
+        &:after {
+          width: 30px;
+          height: 2px;
+          content: '';
+          background: $primary;
+          display: inline-block;
+          -webkit-transform: translate(20px, -6px);
+          -ms-transform: translate(20px, -6px);
+          -o-transform: translate(20px, -6px);
+          transform: translate(20px, -6px);
+        }
+      }
+      &--title {
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      &--description {
+        font-weight: 400;
+      }
+    }
+  }
+}
