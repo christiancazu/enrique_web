@@ -26,7 +26,7 @@
     <div class="row my-5">
       <nuxt-link
         :to="{ name: 'news' }"
-        class="btn btn-primary btn-lg"
+        class="btn btn-primary btn-lg text-uppercase"
         style="margin: 0 auto"
       >
         Ver más

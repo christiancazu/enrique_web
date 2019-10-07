@@ -60,7 +60,7 @@
         </div>
       </div>
       <div class="text-center">
-        <button class="btn btn-primary text-uppercase">Enviar</button>
+        <button class="btn btn-primary btn-lg text-uppercase">Enviar</button>
       </div>
     </form>
   </section>

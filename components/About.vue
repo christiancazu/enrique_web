@@ -34,9 +34,7 @@
           </li>
           <li class="timeline-inverted">
             <div class="timeline-image">
-              <h4>
-                <br>Ver más
-              </h4>
+              <button class="btn rounded-circle h-100 w-100">Ver más</button>
             </div>
           </li>
         </ul>

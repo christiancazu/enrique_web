@@ -8,6 +8,7 @@
       :attach="currentActivity.title"
       :title="currentActivity.date"
       :description="``"
+      full-row
     />
 
     <div class="row justify-content-center">

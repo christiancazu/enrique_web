@@ -28,6 +28,7 @@ $theme-colors: (
 $text-colors: (
   "dark": $dark,
   "light": $light,
+  "gray": $gray-500,
   "primary": $primary
 );
 
@@ -36,7 +37,7 @@ $body-bg: whitesmoke;
 
 // navbar
 $navbar-bg: $dark;
-$navbar-bg-opacity: .85;
+$navbar-bg-opacity: .8;
 $nav-text-color: $gray-100;
 $nav-text-color-active: $primary;
 
@@ -45,4 +46,4 @@ $padding-y-section: 3rem;
 $margin-y-section: 3rem;
 
 //pages
-$margin-t-page: 7rem;
+$margin-y-page: 7rem;

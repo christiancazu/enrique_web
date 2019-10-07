@@ -1,6 +1,9 @@
 <template>
   <div class="row mb-5 header-section">
-    <div class="col-md-6 header-section__content">
+    <div :class="[ 
+      { 'col-md-6' : !fullRow }, 
+      'header-section__content'
+      ]">
       <h5 class="header-section__content__text--attach">
         {{ attach }}
       </h5>
@@ -21,6 +24,9 @@ export default {
     attach: String,
     title: String,
     description: String,
+    fullRow: {
+      type: Boolean, default: false
+    }
   }
 }
 </script>

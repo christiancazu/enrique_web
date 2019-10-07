@@ -4,6 +4,16 @@ button:focus {
   outline: 0 !important;
 }
 
+// remove focus inputs
+input:focus, 
+input.form-control:focus,
+textarea:focus,
+textarea.form-control:focus {
+  border-color: $primary !important;
+  outline:none !important;
+  outline-width: 0 !important;
+  box-shadow: none !important;
+}
 // tag p
 .p,
 p {

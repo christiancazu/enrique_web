@@ -1,5 +1,5 @@
 .news-page, .news-details-page {
-  margin-top: $margin-t-page;
+  margin: $margin-y-page 0;
 }
 
 @include respond-below(md) {
