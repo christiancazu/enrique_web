@@ -1,20 +1,29 @@
+// bootstrap base
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
 
+// project base
 @import './functions';
 @import './variables';
 @import './mixins';
 @import './global';
+
+// components
 @import './header-section';
 @import './navbar';
-@import './home';
 @import './footer';
 @import './book';
 @import './about';
 @import './testimonials';
 @import './activities';
-@import './contact';
-@import './news-details';
+
+//pages
+@import './pages';
+@import './home.page';
+@import './about.page';
+@import './books.page';
+@import './news-details.page';
+@import './contact.page';
 
 @import "node_modules/bootstrap/scss/bootstrap";

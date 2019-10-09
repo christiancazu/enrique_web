@@ -1,7 +1,3 @@
-.news-page, .news-details-page {
-  margin: $margin-y-page 0;
-}
-
 @include respond-below(md) {
   .news-details {
     max-width: 100% !important;

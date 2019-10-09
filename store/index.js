@@ -1,12 +1,14 @@
 import activitiesContent from '~/contents/activities'
 import headerSectionsContent from '~/contents/headerSections'
 import booksContent from '~/contents/books'
+import aboutContent from '~/contents/about'
 
 export const state = () => ({
   activities: resolveActivitiesSlugs(),
   currentActivity: null,
   headerSections: headerSectionsContent,
-  books: booksContent
+  books: booksContent,
+  abouts: aboutContent
 })
 
 export const getters = {

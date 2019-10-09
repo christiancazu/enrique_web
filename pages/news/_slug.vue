@@ -12,7 +12,7 @@
     />
 
     <div class="row justify-content-center">
-      <div class="col-12">
+      <div class="col-12 px-0">
         <div class="card card-news-details">
         <no-ssr>    
           <owl-carousel
