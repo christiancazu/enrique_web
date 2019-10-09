@@ -34,7 +34,10 @@
           </li>
           <li class="timeline-inverted">
             <div class="timeline-image">
-              <button class="btn rounded-circle h-100 w-100">Ver más</button>
+              <button 
+                class="btn rounded-circle h-100 w-100"
+                :to="{ name: 'books' }"
+              >Ver más</button>
             </div>
           </li>
         </ul>
