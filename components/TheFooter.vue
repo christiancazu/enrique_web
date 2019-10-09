@@ -46,6 +46,7 @@
                   <nuxt-link
                     to=""
                     class="p"
+                    no-exact
                   >¿Quieres saber más de mi?</nuxt-link>
                 </li>
                 <li>

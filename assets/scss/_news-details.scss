@@ -1,0 +1,22 @@
+.news-page, .news-details-page {
+  margin: $margin-y-page 0;
+}
+
+@include respond-below(md) {
+  .news-details {
+    max-width: 100% !important;
+  }
+}
+
+.card-news-details {
+  &__body {
+    &--subtitle {
+      @extend .my-2;
+      color: text-color('primary') !important;
+    }
+    &--text {
+      text-align: justify;
+      @extend .my-2;
+    }
+  }
+}

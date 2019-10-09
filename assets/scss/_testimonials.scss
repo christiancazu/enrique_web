@@ -1,0 +1,50 @@
+.testimonials {
+  padding: $padding-y-section 0;
+  margin: $margin-y-section 0;
+}
+
+.carousel-indicators {
+  & li {
+    background-color: text-color('dark') !important;
+    &.active {
+      background-color: $primary !important;
+    }
+  }
+}
+.testimony {
+  $testimonial-height: 18rem;
+  height: $testimonial-height;
+  min-height: $testimonial-height;
+  margin: 0 auto;
+  width: 70%;
+  &__body {
+    &__text {
+      &--content {
+        margin: 0 auto;
+        text-align: center;
+        & i {
+          font-size: 1.5rem;
+          color: $primary;
+        }
+      }
+    }
+  }
+  &__footer {
+    margin: 2rem 0 4rem;
+    &__text {
+      &--author-name,
+      &--author-description {
+        text-align: right;
+        margin-right: 3rem;
+      }
+    }
+  }
+}
+@include respond-below(md) {
+  $testimonial-height-on-mobile: 26rem;
+  .testimony {
+    width: 100%;
+    height: $testimonial-height-on-mobile;
+    min-height: $testimonial-height-on-mobile;
+  }
+}

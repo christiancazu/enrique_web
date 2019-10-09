@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
+    "dev:local": "NUXT_HOST=0.0.0.0 NUXT_PORT=3333 nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -15,9 +16,8 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^3.0.0-0",
     "bootstrap": "^4.3.1",
-    "node-sass": "^4.12.0",
     "nuxt": "^2.0.0",
-    "sass-loader": "^8.0.0"
+    "v-owl-carousel": "^1.0.8"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
@@ -27,6 +27,8 @@
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-prettier": "^3.0.1",
-    "prettier": "^1.16.4"
+    "node-sass": "^4.12.0",
+    "prettier": "^1.16.4",
+    "sass-loader": "^8.0.0"
   }
 }

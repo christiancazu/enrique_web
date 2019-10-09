@@ -1,0 +1,32 @@
+[
+  {
+    "section": "MyBooks",
+    "attach": "Te presento",
+    "title": "mis libros",
+    "description": "Te invito a que los leas [#TODO message]."
+  },
+  {
+    "section": "About",
+    "attach": "Aquí muestro más",
+    "title": "Sobre Mi",
+    "description": "Viví momentos entre bueno y malos, pero siempre voy con el buen ánimo."
+  },
+  {
+    "section": "MyActivities",
+    "attach": "últimas publicaciones sobre",
+    "title": "Mis actividades",
+    "description": "Estas son publicaciones relacionadas conmigo, esto te ayudará a conocer más de mi."
+  },
+  {
+    "section": "Testimonials",
+    "attach": "Quienes me conocen",
+    "title": "Opinan",
+    "description": "Estos son los testimonios de las personas que me han conocido."
+  },
+  {
+    "section": "Contact",
+    "attach": "También puedes",
+    "title": "Contactarme",
+    "description": "Quiero saber más de lo que pienses acerca de mis libros. Estaré atento a tus dudas, consultas o sugerencias."
+  }
+]

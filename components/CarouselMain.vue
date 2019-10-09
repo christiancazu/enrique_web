@@ -69,14 +69,14 @@
 </template>
 
 <script>
-import constants from '~/config/constants'
+import { IMG_BASE_PATH } from '~/config/constants'
 import jqCarouselMain from '~/jq-script/jq.carousel.main'
 
 export default {
   name: 'CarouselMain',
   data () {
     return {
-      imgPath: constants.IMG_BASE_PATH + '/carousel-main/',
+      imgPath: IMG_BASE_PATH + '/carousel-main/',
       images: [
         { src: '/images/home/familia_campo.png', alt: '' },
         { src: '/images/home/libro_buscando_la_felicidad.png', alt: '' },

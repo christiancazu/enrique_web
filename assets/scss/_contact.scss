@@ -1,21 +1,9 @@
-.pb {
-  &-100 {
-    padding-bottom: 6.25rem;
-  }
-  &-70 {
-    padding-bottom: 4.375rem
-  }
+.contact-page {
+  margin: $margin-y-page 0;
 }
-.mt {
-  &-100 {
-    margin-top: 6.25rem;
-  }
-  &-70 {
-    margin-top: 4.375rem
-  }
-}
-.m-top-page {
-  margin-top: 8.5rem;
+.contact {
+  padding: $padding-y-section 0;
+  margin: $margin-y-section 0;
 }
 .noo-information {
   text-align: center;
@@ -25,28 +13,21 @@
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    border: 1px solid #eeeeee;
+    border: 1px solid $primary;
     text-align: center;
     font-size: 30px;
     line-height: 90px;
-    -webkit-border-radius: 50%;
-    -webkit-transition: all 0.4s ease 0s;
-    -o-transition: all 0.4s ease 0s;
-    transition: all 0.4s ease 0s;
+    transition: all 1s ease 0s;
   }
-
   h5 {
     text-transform: uppercase;
     margin: 28px 0 15px;
   }
 }
-
 .noo-information:hover i {
-  background: #eeeeee;
-  color: #333333;
+  background-color: $primary;
+  color: text-color('dark');
 }
-
-//@at-root
 .form-contact--label {
   text-transform: uppercase;
   font-weight: 400;

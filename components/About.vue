@@ -1,67 +1,63 @@
 <template>
-  <section
-    class="pb-100"
-    id="about"
-  >
-    <div class="container">
-      <div class="row pb-70">
-        <div class="col-sm-12 col-md-6">
-          <h5 class="text--attach">Aqui muestro más</h5>
-          <h1 class="text--title ">Sobre quien soy yo</h1>
-          <div class="pt-3 pb-6">
-            <p>
-              Vivi momentos entre bueno y malos, pero siempre voy con el buen animo.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <ul class="timeline">
-            <li
-              v-for="(activity, i) in activities"
-              :key="i"
-              :class="{ 'timeline-inverted': i % 2 }"
-            >
-              <div class="timeline-image">
-                <img
-                  :src="imgPath + activity.imgSmall"
-                  :alt="'Luis Enrique Bustamante Pérez - ' + activity.title"
-                  class="rounded-circle img-fluid"
-                >
+  <section class="container about">
+    
+    <header-section
+      :attach="header.attach"
+      :title="header.title"
+      :description="header.description"
+    />
+
+    <div class="row">
+      <div class="col">
+        <ul class="timeline">
+          <li
+            v-for="(activity, i) in activities"
+            :key="i"
+            :class="{ 'timeline-inverted': i % 2 }"
+          >
+            <div class="timeline-image">
+              <img
+                :src="imgPath + activity.imgSmall"
+                :alt="'Luis Enrique Bustamante Pérez - ' + activity.title"
+                class="rounded-circle img-fluid"
+              >
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4>{{ activity.title }}</h4>
+                <h4 class="subheading">{{ activity.date }}</h4>
               </div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>{{ activity.title }}</h4>
-                  <h4 class="subheading">{{ activity.date }}</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">{{ activity.description }}</p>
-                </div>
+              <div class="timeline-body">
+                <p class="text-muted">{{ activity.description }}</p>
               </div>
-            </li>
-            <li class="timeline-inverted">
-              <div class="timeline-image">
-                <h4>
-                  <br>Ver más
-                </h4>
-              </div>
-            </li>
-          </ul>
-        </div>
+            </div>
+          </li>
+          <li class="timeline-inverted">
+            <div class="timeline-image">
+              <button 
+                class="btn rounded-circle h-100 w-100"
+                :to="{ name: 'books' }"
+              >Ver más</button>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import constants from '~/config/constants'
+import { IMG_BASE_PATH } from '~/config/constants'
+import HeaderSection from '~/components/HeaderSection'
 
 export default {
   name: 'About',
+  components: {
+    HeaderSection
+  },
   data () {
     return {
-      imgPath: constants.IMG_BASE_PATH + '/about/',
+      imgPath: IMG_BASE_PATH + '/about/',
       activities: [
         {
           title: 'Medalla de Honor de la UNAP',
@@ -89,7 +85,11 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    header() {
+      return this.$store.getters.headerSection('About')
+    }
   }
-
 }
 </script>

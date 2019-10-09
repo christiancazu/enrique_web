@@ -1,16 +1,24 @@
 <template>
-  <div class="m-top-page">
-    <div class="pb-100">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30619.276894202045!2d-71.55656395553596!3d-16.404010452877756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424a487785b9b3%3A0xa3c4a612b9942036!2sArequipa!5e0!3m2!1ses-419!2spe!4v1570125226037!5m2!1ses-419!2spe"
-        width="100%"
-        height="450"
-        frameborder="0"
-        style="border:0;"
-        allowfullscreen=""
-      ></iframe>
+  <div class="contact-page">
+    
+    <div class="container">
+      <header-section
+        :attach="`Me encuentro`"
+        :title="`Ubicado en`"
+        :description="``"
+      />
     </div>
-    <div class="container pb-70">
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30619.276894202045!2d-71.55656395553596!3d-16.404010452877756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424a487785b9b3%3A0xa3c4a612b9942036!2sArequipa!5e0!3m2!1ses-419!2spe!4v1570125226037!5m2!1ses-419!2spe"
+      width="100%"
+      height="450"
+      frameborder="0"
+      style="border:0;"
+      allowfullscreen=""
+      class="mb-5"
+    />
+    <div class="container my-5">
       <div class="row">
         <div class="col-sm-4">
           <div class="noo-information">
@@ -52,14 +60,19 @@
         </div> -->
       </div>
     </div>
-    <FormContact />
+
+    <contact />
+
   </div>
 </template>
+
 <script>
-import FormContact from '~/components/FormContact.vue'
+import Contact from '~/components/Contact.vue'
+import HeaderSection from '~/components/HeaderSection'
+
 export default {
   components: {
-    FormContact
+    HeaderSection, Contact
   }
 
 }

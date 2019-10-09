@@ -29,6 +29,12 @@ export default {
    ** Customize the progress-bar color
    */
   loading: { color: '#fff' },
+  /**
+   * router exact active
+   */
+  router: {
+    linkExactActiveClass: 'exact-active-link'
+  },
   /*
    ** Global CSS
    */
@@ -39,8 +45,8 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    
+  plugins: [  
+    {src: 'plugins/owl.js', ssr: false}
   ],
   /*
    ** Nuxt.js dev-modules

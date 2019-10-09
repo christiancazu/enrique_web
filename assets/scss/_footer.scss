@@ -1,27 +1,32 @@
-// Styling for the footer
-.footer  {
+.footer {
   .footer_creator{
-    padding: 25px 0;
     span.copyright {
       text-transform: uppercase;
       font-weight: 500;
-      color: #888888;
+      color: text-color('dark');
     }
   }
 }
 .wrap-footer {
   padding-top: 6rem;
   padding-bottom: 3rem;
-  background: #f2f2f2;
+  background: $dark;
+}
+.info-personal li p {
+  color: text-color('gray');
+  transition: all .5s;
 }
 
 .info-personal li:hover {
+  p {
+    color: text-color('light');
+  }
   i {
     transition: all 0.3s ease;
     color: $primary;
   }
 }
-//@at-root
+
 .text-gray {
   color: #aaaaaa;
 }
@@ -50,12 +55,12 @@
   }
 }
 
-
 .widget-title {
   text-transform: uppercase;
   font-size: 18px;
   margin-bottom: 32px;
   margin-top: 15px;
+  color: text-color('light')
 }
 
 .social-all {
@@ -122,6 +127,7 @@
   position: relative;
   overflow: hidden;
   text-decoration: none !important;
+  color: text-color('gray'); // custom
 }
 
 .widget_nav_menu ul li a:before {
@@ -136,7 +142,7 @@
 }
 
 .widget_nav_menu ul li a:hover {
-  color: $primary;
+  color: text-color('light');
 }
 
 .widget_nav_menu ul li a:hover:before {
@@ -212,4 +218,13 @@
 
 .noo-instagram ul a img {
   width: 100%;
+}
+
+li .p {
+  color: text-color('gray') !important;
+  transition: color .5s;
+}
+
+li .p:hover {
+  color: text-color('light') !important;
 }

@@ -1,89 +1,83 @@
-// Styling for the navbar
-#mainNav {
-  background-color: $gray-900;
+.exact-active-link {
+  color: $primary !important;
+}
+#theNavbar {
+  background-color: $navbar-bg;
+  transition: all 1s;
+
   .navbar-toggler {
-    font-size: 12px;
-    right: 0;
-    padding: 13px;
     text-transform: uppercase;
     color: white;
-    border: 0;
-    // background-color: $primary;
-    //@include heading-font;
+    @include heading-font;
+    
+    .icon-toggler {
+      color: $nav-text-color-active;
+      font-size: 1.8rem;
+    }
   }
   .navbar-brand {
-    color: $primary;
-    @include script-font;
     &.active,
     &:active,
     &:focus,
     &:hover {
       color: darken($primary, 10%);
     }
+    .logo {
+      margin: 1rem 0;
+      transform: scale(1);
+      transition: all 1s;
+    }
   }
   .navbar-nav {
     .nav-item {
       .nav-link {
-        font-size: 90%;
         font-weight: 400;
-        padding: 0.75em 0;
         letter-spacing: 1px;
-        color: white;
+        color: $nav-text-color;
         @include heading-font;
         &.active,
         &:hover {
-          color: $primary;
+          color: $nav-text-color-active;
         }
       }
     }
   }
-  .text-menu {
-    color: $black;
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
 }
-@media(min-width:992px) {
-  #mainNav {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
-    -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
-    transition: padding-top 0.3s, padding-bottom 0.3s;
-    border: none;
+@include respond-above(xs) {
+  #theNavbar {
     background-color: transparent;
+
     .navbar-brand {
-      font-size: 1.75em;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      transition: all 0.3s;
+      padding: 0;
     }
     .navbar-nav {
       .nav-item {
         .nav-link {
-          padding: 1.1em 1em !important;
+          padding: 1rem;
         }
       }
     }
     &.navbar-shrink {
-      padding-top: 0;
-      padding-bottom: 0;
-      background-color: $gray-900;
-      transition: all 1s;
-      .navbar-brand {
-        font-size: 1.25em;
-        padding: 12px 0;
-      }
-
+      @include background-opacity($navbar-bg, $navbar-bg-opacity);
+      
       .logo {
-        width: 50% !important;
-        margin: 0.6rem 0;
+        margin: 0;
+        transform: scale(.6);
       }
     }
   }
 }
-// icons bars Navbar
-.icons-primary {
-  color: $primary;
-  font-size: 1.7rem;
+
+@include respond-below(md) {
+  #theNavbar {
+    .navbar-toggler {
+      margin-right: 1rem; 
+    }
+    .navbar-brand {
+      padding: 0;
+      .logo {
+        transform: scale(.6);
+      }
+    }
+  }
 }

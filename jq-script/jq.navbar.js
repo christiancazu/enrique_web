@@ -1,3 +1,5 @@
+const $ = window.jQuery
+
 export default {
   mounted() {
     this.verifyCurrentRoute()
@@ -5,37 +7,40 @@ export default {
   methods: {
     verifyCurrentRoute() {
       if (this.$route.path === '/') {
-        this.loadJQnavbar()
+        this.loadJQNavbarOnHome()
       } else {
-        this.loadNavbarWhereNotIndex()
+        this.loadJQNavbarWhereNotHome()
       }
     },
-    loadNavbarWhereNotIndex() {
-      const mainNav = window.jQuery("#mainNav")
-      window.jQuery(window).off("scroll", window['navbarCollapse'])
-      window.jQuery(mainNav).addClass("navbar-shrink");
+    loadJQNavbarWhereNotHome() {
+      const mainNav = $("#theNavbar")
+
+      $(window).off("scroll", window['navbarCollapse'])
+      $(mainNav).addClass("navbar-shrink");
     },
-    loadJQnavbar() {
+    loadJQNavbarOnHome() {
+      const mainNav = $("#theNavbar")
+      
       const navbarCollapse = () => {
-      const mainNav = window.jQuery("#mainNav")
-      if (window.jQuery(mainNav).offset().top > 100) {
-        window.jQuery(mainNav).addClass("navbar-shrink");
-      } else {
-        window.jQuery(mainNav).removeClass("navbar-shrink");
-      }
-    };
-    // Collapse now if page is not at top
-    navbarCollapse();
-    // Collapse the navbar when page is scrolled
-    window.jQuery(window).scroll(navbarCollapse); 
+        if ($(mainNav).offset().top > 100) {
+          $(mainNav).addClass("navbar-shrink");
+        } else {
+          $(mainNav).removeClass("navbar-shrink");
+        }
+      };
+      // Collapse now if page is not at top
+      navbarCollapse();
+      // Collapse the navbar when page is scrolled
+      $(window).scroll(navbarCollapse); 
     }
   },
   watch: {
     '$route.path' (val) {
+      $('.navbar-collapse').collapse('hide')
       if (val === '/') {
-        this.loadJQnavbar()
+        this.loadJQNavbarOnHome()
       } else {
-        this.loadNavbarWhereNotIndex()
+        this.loadJQNavbarWhereNotHome()
       }
     }
   },
