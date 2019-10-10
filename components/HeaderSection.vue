@@ -2,7 +2,7 @@
   <div class="row mb-5 header-section">
     <div :class="[ 
       { 'col-md-6' : !fullRow }, 
-      'header-section__content'
+      'col header-section__content'
       ]">
       <h5 class="header-section__content__text--attach">
         {{ attach }}

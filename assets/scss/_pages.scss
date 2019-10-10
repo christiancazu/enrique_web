@@ -1,0 +1,7 @@
+.books-page,
+.about-page,
+.news-page,
+.news-details-page,
+.contact-page {
+    @include margin-y-page;
+}

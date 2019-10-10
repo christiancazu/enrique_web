@@ -1,0 +1,104 @@
+.books-details {
+    $animation-time-quote: 1s;
+    margin-bottom: 6rem;
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &__text {
+
+            text-align: center;
+            position: relative;
+            color: text-color('gray');
+            transition: color $animation-time-quote;
+
+            &__quote {
+
+                &--left,
+                &--right {
+                    position: absolute;
+                    color: lighten($primary, 30%);
+                    font-size: 4em;
+                    z-index: -1;
+                }
+                &--left {
+                    top: 0;
+                    animation : $animation-time-quote quote-left-out forwards;
+                }
+                &--right {
+                    bottom: 0;
+                    animation : $animation-time-quote quote-right-out forwards;
+                }
+            }
+        }
+        &:hover & {
+            &__text {
+                color: text-color('dark');
+                &__quote {
+                    &--left {
+                        animation : $animation-time-quote quote-left-in forwards;
+                    }
+                    &--right {
+                        animation : $animation-time-quote quote-right-in forwards;
+                    }
+                }
+            }
+        }
+    }
+}
+
+$font-size-initial: 4em;
+$font-size-final: 1.25em;
+$margin-quote-left: -2.25rem;
+
+@keyframes quote-left-in {
+    from {
+        font-size: $font-size-initial;
+    }
+    to {
+        font-size: $font-size-final;
+        color: lighten($primary, 0%);
+        margin-left: $margin-quote-left;
+    }
+}
+@keyframes quote-left-out {
+    from {
+        font-size: $font-size-final;
+        color: lighten($primary, 0%);
+        margin-left: $margin-quote-left;
+    }
+    to {
+        font-size: $font-size-initial;
+    }
+}
+
+@keyframes quote-right-in {
+    from {
+      font-size: $font-size-initial;      
+    }
+    to {
+        font-size: $font-size-final;
+        color: lighten($primary, 0%);
+    }
+}
+@keyframes quote-right-out {
+    from {
+        font-size: $font-size-final;
+        color: lighten($primary, 0%);
+    }
+    to {
+        font-size: $font-size-initial;
+    }
+}
+
+
+// not reverse row on small screen
+@include respond-below(sm) {
+    .books-details {
+        &:nth-child() {
+            flex-direction: row!important;
+        }
+    }
+}

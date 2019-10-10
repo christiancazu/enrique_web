@@ -13,11 +13,13 @@
         :key="i"
         class="col-lg-5"
       >
+      
         <book
           :img-src="imgPath + book.imgSrc"
           :title="book.title"
           :description="book.description"
         />
+
       </div>
     </div>
   </section>

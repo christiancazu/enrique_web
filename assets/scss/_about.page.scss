@@ -1,0 +1,99 @@
+.history {
+    $margin-y-child: 2rem;
+
+    &__header,
+    &__body,
+    &__footer {
+        margin: $margin-y-child 0;
+    }
+    &__header {        
+    }
+    &__body { 
+        &__img {
+            @extend .px-0;
+            object-fit: cover;
+            max-height: 360px;
+            
+        }
+        &__content {
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 1rem 2rem !important;
+
+            @mixin quote-margin {
+                &:after {
+                    content: "";
+                    position: absolute;
+                    height: .25rem;
+                    min-width: 64%;
+                    margin: 1rem 1.5rem;
+                    background-color: lighten($primary, 30%);
+                    transition: all 1s;
+                }
+            }
+
+            &__quote {
+                color: lighten($primary, 30%);
+                font-size: 3em;
+                padding: 0 2rem;
+                transition: all 1s;
+
+                &--left,
+                &--right {
+                    display: block;
+                    position: relative;
+                }
+                &--left {
+                    transform: translateX(-50%);
+                    @include quote-margin();
+                }
+                &--right {
+                    transform: rotate(180deg) translateX(-50%);
+                    @include quote-margin();
+                }
+            }
+
+            &__text {
+                margin-bottom: 0;
+                text-align: justify;
+                padding: 1rem 2rem;
+                transition: color 1s;
+            } 
+        }
+        // hover body 
+        &:hover & {
+            &__content {
+                &__quote {
+                    color: $primary;
+
+                    &--left,
+                    &--right {
+                        &:after {
+                            background-color: $primary;
+                            min-width: 92%;
+                        }
+                    }
+                }
+                &__text {
+                    color: text-color('dark');
+                }
+            }
+        }
+    }
+    &__footer {
+    }
+}
+
+@include respond-below(sm) {
+    .history {
+        &__body {
+            // reverse columns order over small screen
+            &:nth-child() {
+               flex-direction: row!important;
+            }
+        }
+    }
+}
