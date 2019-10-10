@@ -5,6 +5,8 @@
 }
 
 .card-news-details {
+  background-color: transparent !important;
+  border: none !important;
   &__body {
     &--subtitle {
       @extend .my-2;

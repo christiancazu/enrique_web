@@ -1,5 +1,5 @@
 <template>
-  <article class="col-12 history">
+  <article class="history">
     <div class="history__header">
       <h4>{{ title }}</h4>
     </div>
