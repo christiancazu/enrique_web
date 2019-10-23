@@ -2,7 +2,11 @@ export default {
   mode: 'spa',
   /*
    ** Headers of the page
-   */
+   */  
+  server: {
+    host: '0.0.0.0'
+  },
+
   head: {
     title: 'Luis Enrique Bustamante Pérez' || process.env.npm_package_name,
     meta: [
@@ -16,7 +20,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', rel:"stylesheet"  },
+      { href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', rel: "stylesheet" },
     ],
     script: [
       { src: 'https://code.jquery.com/jquery-3.3.1.slim.min.js' },
@@ -45,8 +49,8 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [  
-    {src: 'plugins/owl.js', ssr: false}
+  plugins: [
+    { src: 'plugins/owl.js', ssr: false }
   ],
   /*
    ** Nuxt.js dev-modules
