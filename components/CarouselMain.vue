@@ -9,29 +9,29 @@
         data-target="#carouselMain"
         data-slide-to="0"
         class="active"
-      ></li>
+      />
       <li
         data-target="#carouselMain"
         data-slide-to="1"
-      ></li>
+      />
       <li
         data-target="#carouselMain"
         data-slide-to="2"
-      ></li>
+      />
     </ol>
     <div class="carousel-inner home">
       <div
         v-for="(image, i) in images"
         :key="i"
         class="carousel-item"
-        :class="{ 'active'  : i === 0 }"
+        :class="{ 'active' : i === 0 }"
       >
         <img
           :src="image.src"
           class="h-100 w-100 cover"
           :alt="image.alt"
         >
-        <div class="overlay-home"></div>
+        <div class="overlay-home" />
         <div class="carousel-caption-home">
           <div>
             <p>
@@ -50,7 +50,7 @@
       <span
         class="carousel-control-prev-icon"
         aria-hidden="true"
-      ></span>
+      />
       <span class="sr-only">Previous</span>
     </a>
     <a
@@ -62,7 +62,7 @@
       <span
         class="carousel-control-next-icon"
         aria-hidden="true"
-      ></span>
+      />
       <span class="sr-only">Next</span>
     </a>
   </div>
@@ -74,6 +74,7 @@ import jqCarouselMain from '~/jq-script/jq.carousel.main'
 
 export default {
   name: 'CarouselMain',
+  mixins: [jqCarouselMain],
   data () {
     return {
       imgPath: IMG_BASE_PATH + '/carousel-main/',
@@ -83,7 +84,6 @@ export default {
         { src: '/images/home/libro_hablando_con_angel.png', alt: '' },
       ]
     }
-  },
-  mixins: [jqCarouselMain]
+  }
 }
 </script>

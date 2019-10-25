@@ -1,6 +1,5 @@
 <template>
   <div class="container news-page">
-    
     <header-section
       :attach="`#TODO content`"
       :title="`Noticias & Blogs`"
@@ -13,7 +12,6 @@
         :key="i"
         class="col-sm-6 col-md-4 mb-3"
       >
-      
         <card-activity
           :id="activity.id"
           :title="activity.title"
@@ -22,7 +20,6 @@
           :slug="activity.slug"
           :img="imgPath + activity.img"
         />
-
       </div>
     </div>
   </div>

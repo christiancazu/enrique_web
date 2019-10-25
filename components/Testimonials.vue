@@ -1,6 +1,5 @@
 <template>
   <section class="container testimonials">
-
     <header-section
       :attach="header.attach"
       :title="header.title"
@@ -14,16 +13,17 @@
     >
       <ol class="carousel-indicators">
         <li
-          v-for="(testimony, i) in testimonials" :key="i"
+          v-for="(testimony, i) in testimonials"
+          :key="i"
           :class="{ 'active' : i === 0 }"
           data-target="#carouselTestimonial" 
           :data-slide-to="i"
-        >
-        </li>
+        />
       </ol>
       <div class="carousel-inner">
         <div
-          v-for="(testimony, i) in testimonials" :key="i"
+          v-for="(testimony, i) in testimonials"
+          :key="i"
           :class="[
             { 'active' : i === 0 }, 
             'carousel-item'
@@ -32,9 +32,15 @@
           <div class="testimony">
             <div class="testimony__body">
               <p class="testimony__body__text--content">
-                <i class="fa fa-quote-left" aria-hidden="true"></i>
-                  {{ testimony.description }} 
-                <i class="fa fa-quote-right" aria-hidden="true"></i>
+                <i
+                  class="fa fa-quote-left"
+                  aria-hidden="true"
+                />
+                {{ testimony.description }} 
+                <i
+                  class="fa fa-quote-right"
+                  aria-hidden="true"
+                />
               </p>
             </div>
             <div class="testimony__footer">
@@ -64,6 +70,7 @@ export default {
   components: {
     HeaderSection
   },
+  mixins: [jqCarouselTestimonial],
   data() {
     return {
       imgPath: IMG_BASE_PATH + '/testimonials/',
@@ -74,7 +81,6 @@ export default {
     header() {
       return this.$store.getters.headerSection('Testimonials')
     }
-  },
-  mixins: [jqCarouselTestimonial]
+  }
 }
 </script>

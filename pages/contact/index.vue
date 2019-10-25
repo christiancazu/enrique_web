@@ -1,6 +1,5 @@
 <template>
   <div class="contact-page">
-    
     <div class="container">
       <header-section
         :attach="`Me encuentro`"
@@ -25,7 +24,7 @@
             <i
               class="fa fa-phone"
               aria-hidden="true"
-            ></i>
+            />
             <h5>Comunicate</h5>
             <p>
               CEL: +19 98898898<br>
@@ -34,14 +33,14 @@
         </div>
         <div class="col-sm-4">
           <div class="noo-information">
-            <i class="fa fa-location-arrow"></i>
+            <i class="fa fa-location-arrow" />
             <h5>Encuentrame</h5>
             <p>Arequipa, Arequipa</p>
           </div>
         </div>
         <div class="col-sm-4">
           <div class="noo-information">
-            <i class="fa fa-envelope-o"></i>
+            <i class="fa fa-envelope-o" />
             <h5>Correo electrónico</h5>
             <p>
               luisenrique@gmail.com
@@ -62,7 +61,6 @@
     </div>
 
     <contact />
-
   </div>
 </template>
 

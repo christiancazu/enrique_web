@@ -1,6 +1,5 @@
 <template>
   <div class="container about-page">
-
     <header-section
       :attach="header.attach"
       :title="header.title"
@@ -9,22 +8,18 @@
     />
 
     <div class="row justify-content-center histories">
-      
       <div class="col-12">
-
         <history
-          v-for="(about, i) in abouts" :key="i"
+          v-for="(about, i) in abouts"
+          :key="i"
           :img="imgPath + about.img"
           :title="about.title"
           :body="about.body"
           :footer="about.footer"
           :reverse="i % 2"
         />
-
       </div>
-
     </div>
-
   </div>
 </template>
 
@@ -34,13 +29,13 @@ import History from '~/components/History'
 import { IMG_BASE_PATH } from '~/config/constants'
 import { mapState } from 'vuex'
 export default {
+  components: {
+    HeaderSection, History
+  },
   data() {
     return {
       imgPath: IMG_BASE_PATH + '/about/'
     }
-  },
-  components: {
-    HeaderSection, History
   },
   computed: {
     header() {

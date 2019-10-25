@@ -1,6 +1,5 @@
 <template>
   <section class="container about">
-    
     <header-section
       :attach="header.attach"
       :title="header.title"
@@ -25,10 +24,14 @@
             <div class="timeline-panel">
               <div class="timeline-heading">
                 <h4>{{ activity.title }}</h4>
-                <h4 class="subheading">{{ activity.date }}</h4>
+                <h4 class="subheading">
+                  {{ activity.date }}
+                </h4>
               </div>
               <div class="timeline-body">
-                <p class="text-muted">{{ activity.description }}</p>
+                <p class="text-muted">
+                  {{ activity.description }}
+                </p>
               </div>
             </div>
           </li>
@@ -37,7 +40,9 @@
               <button 
                 class="btn rounded-circle h-100 w-100"
                 :to="{ name: 'books' }"
-              >Ver más</button>
+              >
+                Ver más
+              </button>
             </div>
           </li>
         </ul>

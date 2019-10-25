@@ -97,8 +97,8 @@ $margin-quote-left: -2.25rem;
 // not reverse row on small screen
 @include respond-below(sm) {
     .books-details {
-        &:nth-child() {
-            flex-direction: row!important;
-        }
+        // &:nth-child() {
+        //     flex-direction: row!important;
+        // }
     }
 }

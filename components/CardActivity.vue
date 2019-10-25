@@ -41,12 +41,30 @@ import { OWNER_NAME } from '~/config/constants'
 export default {
   name: 'CardActivity',
   props: {
-    id: Number,
-    title: String,
-    date: String,
-    description: String,
-    slug: String,
-    img: String
+    id: {
+      type: Number,
+      default: 0
+    },
+    title: {
+      type: String,
+      default: ''
+    },
+    date: {
+      type: String,
+      default: ''
+    },
+    description: {
+      type: String,
+      default: ''
+    },
+    slug: {
+      type: String,
+      default: ''
+    },
+    img: {
+      type: String,
+      default: ''
+    }
   },
   data() {
     return {

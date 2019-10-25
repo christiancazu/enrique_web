@@ -1,7 +1,7 @@
 <template>
   <nav
-    class="py-0 navbar navbar-expand-lg navbar-dark fixed-top"
     id="theNavbar"
+    class="py-0 navbar navbar-expand-lg navbar-dark fixed-top"
   >
     <div class="container">
       <nuxt-link
@@ -12,8 +12,7 @@
           src="/images/logo/logo_yellow.png"
           alt="Luis enrique"
           class="img-fluid logo"
-        />
-
+        >
       </nuxt-link>
       <button
         class="navbar-toggler navbar-toggler-right"
@@ -24,11 +23,11 @@
         aria-label="Toggle navigation"
       >
         <!-- <i class="fas fa-bars icons-primary"></i> -->
-        <i class="fa fa-bars icon-toggler"></i>
+        <i class="fa fa-bars icon-toggler" />
       </button>
       <div
-        class="collapse navbar-collapse"
         id="navbarResponsive"
+        class="collapse navbar-collapse"
       >
         <ul class="navbar-nav text-uppercase ml-auto">
           <!-- navs -->
@@ -56,6 +55,7 @@ import jqNavbar from '~/jq-script/jq.navbar'
 
 export default {
   name: 'TheNavbar',
+  mixins: [jqNavbar],
   data () {
     return {
       navs: [
@@ -66,7 +66,6 @@ export default {
         { name: 'contacto', link: 'contact' },
       ],
     }
-  },
-  mixins: [jqNavbar]
+  }
 }
 </script>

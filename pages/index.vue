@@ -1,6 +1,5 @@
 <template>
   <main>
-
     <carousel-main />
 
     <my-books />
@@ -12,7 +11,6 @@
     <testimonials />
 
     <contact />
-
   </main>
 </template>
 

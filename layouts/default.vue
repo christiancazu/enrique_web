@@ -1,12 +1,10 @@
 <template>
   <div>
-
     <the-navbar />
 
     <nuxt />
 
     <TheFooter />
-    
   </div>
 </template>
 

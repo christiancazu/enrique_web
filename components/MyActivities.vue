@@ -1,6 +1,5 @@
 <template>
   <div class="container activities">
-    
     <header-section
       :attach="header.attach"
       :title="header.title"

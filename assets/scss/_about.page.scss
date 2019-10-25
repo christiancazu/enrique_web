@@ -83,7 +83,7 @@
             }
         }
     }
-    &__footer {
+    &_footer {
     }
 }
 
@@ -91,9 +91,9 @@
     .history {
         &__body {
             // reverse columns order over small screen
-            &:nth-child() {
-               flex-direction: row!important;
-            }
+            // &:nth-child() {
+            //    flex-direction: row!important;
+            // }
         }
     }
 }

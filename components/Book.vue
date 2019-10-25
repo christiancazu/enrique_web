@@ -2,48 +2,47 @@
   <div class="book-container">
     <ul class="book__item">
       <li>
-        <figure class='book'>
-
+        <figure class="book">
           <!-- Front -->
 
-          <ul class='hardcover_front'>
+          <ul class="hardcover_front">
             <li>
               <div class="coverDesign">
                 <img :src="imgSrc">
               </div>
             </li>
-            <li></li>
+            <li />
           </ul>
 
           <!-- Pages -->
 
-          <ul class='page'>
-            <li></li>
+          <ul class="page">
+            <li />
             <li>
               <h5 class="text-page">
-               {{ description }}
+                {{ description }}
               </h5>
-              <nuxt-link 
+              <nuxt-link
                 class="btn"
                 to=""
               >
                 Leer más
               </nuxt-link>
             </li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li />
+            <li />
+            <li />
           </ul>
 
           <!-- Back -->
 
-          <ul class='hardcover_back'>
-            <li></li>
-            <li></li>
+          <ul class="hardcover_back">
+            <li />
+            <li />
           </ul>
-          <ul class='book_spine'>
-            <li></li>
-            <li></li>
+          <ul class="book_spine">
+            <li />
+            <li />
           </ul>
         </figure>
       </li>
@@ -55,9 +54,18 @@
 export default {
   name: 'Book',
   props: {
-    imgSrc: String,
-    title: String,
-    description: String
+    imgSrc: {
+      type: String,
+      default: ''
+    },
+    title: {
+      type: String,
+      default: ''
+    },
+    description: {
+      type: String,
+      default: ''
+    }
   }
 }
 </script>
