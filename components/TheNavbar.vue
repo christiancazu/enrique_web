@@ -22,7 +22,6 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <!-- <i class="fas fa-bars icons-primary"></i> -->
         <i class="fa fa-bars icon-toggler" />
       </button>
       <div
@@ -62,7 +61,7 @@ export default {
         { name: 'Inicio', link: 'index' },
         { name: 'Sobre mi', link: 'about' },
         { name: 'libros', link: 'books' },
-        { name: 'Noticias & Blogs', link: 'news' },
+        // { name: 'Noticias & Blogs', link: 'news' },
         { name: 'contacto', link: 'contact' },
       ],
     }

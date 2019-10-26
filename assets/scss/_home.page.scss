@@ -1,5 +1,19 @@
 .home .carousel-item {
   height: 100vh;
+  text-shadow: 1px 1px 7px rgb(39, 39, 39);
+
+  .title {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .subtitle {
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: white;
+  }
+  .btn {
+    text-shadow: none;
+  }
 }
 .overlay-home {
 position: absolute;
@@ -14,5 +28,13 @@ top: 0;
   padding-bottom: 6rem;
   width:100%;
   height: calc(100% - 136px);
-  z-index: 10;
+  z-index: 1;
+
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+}
+
+cite::before {
+  content: " — ";
 }
