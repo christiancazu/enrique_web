@@ -29,9 +29,9 @@
                 Leer más
               </nuxt-link>
             </li>
+            <!-- <li />
             <li />
-            <li />
-            <li />
+            <li /> -->
           </ul>
 
           <!-- Back -->
