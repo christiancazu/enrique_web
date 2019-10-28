@@ -2,7 +2,11 @@ export default {
   mode: 'spa',
   /*
    ** Headers of the page
-   */
+   */  
+  server: {
+    host: '0.0.0.0'
+  },
+
   head: {
     title: 'Luis Enrique Bustamante Pérez' || process.env.npm_package_name,
     meta: [
