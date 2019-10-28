@@ -15,7 +15,7 @@
         <book
           :img-src="imgPath + book.imgSrc"
           :title="book.title"
-          :description="book.description"
+          :description="book.summary"
         />
       </div>
     </div>

@@ -1,27 +1,21 @@
 .history {
-    $margin-y-child: 2rem;
-
     &__header,
     &__body,
     &__footer {
-        margin: $margin-y-child 0;
+        margin: 2rem 0;
+        text-align: justify;
     }
     &__header {        
     }
     &__body { 
+        align-items: center;
         &__img {
             @extend .px-0;
             object-fit: cover;
             max-height: 360px;
-            
         }
         &__content {
-            
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            padding: 1rem 2rem !important;
+            // padding: 1rem 2rem !important;
 
             @mixin quote-margin {
                 &:after {
@@ -51,7 +45,7 @@
                     @include quote-margin();
                 }
                 &--right {
-                    transform: rotate(180deg) translateX(-50%);
+                    transform: rotate(180deg) translateX(-30%);
                     @include quote-margin();
                 }
             }
@@ -73,7 +67,7 @@
                     &--right {
                         &:after {
                             background-color: $primary;
-                            min-width: 92%;
+                            min-width: 60%;
                         }
                     }
                 }
@@ -87,13 +81,13 @@
     }
 }
 
-@include respond-below(sm) {
-    .history {
-        &__body {
-            // reverse columns order over small screen
-            // &:nth-child() {
-            //    flex-direction: row!important;
-            // }
-        }
-    }
-}
+// @include respond-below(sm) {
+//     .history {
+//         &__body {
+//             //  reverse columns order over small screen
+//             //  &:nth-child(n) {
+//             //     flex-direction: row!important;
+//             //  }
+//         }
+//     }
+// }

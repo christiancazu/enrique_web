@@ -19,19 +19,22 @@
           <ul class="page">
             <li />
             <li>
-              <h5 class="text-page">
-                {{ description }}
+              <h5
+                class="text-page"
+                v-html="description"
+              >
               </h5>
               <nuxt-link
+                v-if="!hideBtn"
                 class="btn"
-                to=""
+                to="/books"
               >
                 Leer más
               </nuxt-link>
             </li>
+            <!-- <li />
             <li />
-            <li />
-            <li />
+            <li /> -->
           </ul>
 
           <!-- Back -->
@@ -65,6 +68,9 @@ export default {
     description: {
       type: String,
       default: ''
+    },
+    hideBtn: {
+      type: Boolean, default: false
     }
   }
 }

@@ -9,14 +9,29 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        hid: 'luis_enrique',
+        name: 'Luis_enrique_bustamante',
+        content: 'Luis Enrique Bustamante Peres, escritor'
+      },
+      {
+        hid: 'msapplication-TileColor',
+        name: 'msapplication-TileColor',
+        content: '#646464'
+      },
+      {
+        hid: 'theme-color',
+        name: 'theme-color',
+        content: '#ffffff'
+      },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', rel:"stylesheet"  },
+      { rel: 'icon', type: 'image/png', sizes: "32x32", href: 'images/icon/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: "16x16", href: 'images/icon/favicon-16x16.png' },
+      { rel: 'manifest', href: 'images/icon/site.webmanifest' },
+      { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#ffd400" },
+      { rel: "apple-touch-icon", sizes: "152x152", href: "/apple-touch-icon.png" },
+      { rel: 'icon', type: 'image/x-icon', href: 'images/icon/favicon.ico' },
+      { href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', rel: "stylesheet" },
     ],
     script: [
       { src: 'https://code.jquery.com/jquery-3.3.1.slim.min.js' },
@@ -45,8 +60,8 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [  
-    {src: 'plugins/owl.js', ssr: false}
+  plugins: [
+    { src: 'plugins/owl.js', ssr: false }
   ],
   /*
    ** Nuxt.js dev-modules
@@ -75,7 +90,7 @@ export default {
     /*
     ** Run ESLint on save
     */
-    extend(config, ctx) {
+    extend (config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({

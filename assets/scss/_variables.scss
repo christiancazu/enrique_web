@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500&display=swap');
 
 // fonts
-$font-family-paragraph: 'Raleway', sans-serif !default;
-$font-family-base: 'Montserrat', sans-serif !default;
+$font-family-paragraph: 'Raleway', sans-serif;
+$font-family-base: 'Montserrat', sans-serif;
 $enable-responsive-font-sizes: true;
 
 // colors
-$primary:       #FFD700;
+$primary:       #ffd71c; //#FFD700;
 $secondary:     $gray-600;
 $success:       $green;
 $info:          $cyan;
@@ -48,3 +48,4 @@ $margin-y-section: 3rem;
 
 //pages
 $margin-y-page: 7rem;
+

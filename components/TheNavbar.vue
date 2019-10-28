@@ -22,7 +22,6 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <!-- <i class="fas fa-bars icons-primary"></i> -->
         <i class="fa fa-bars icon-toggler" />
       </button>
       <div
@@ -45,6 +44,14 @@
             </nuxt-link>
           </li>
         </ul>
+        <div class="social-all">
+              <a href="https://web.facebook.com/luisenrique.bustamanteperez" target="_bank">
+                <i class="fa fa-facebook" />
+              </a>
+              <a href="">
+                <i class="fa fa-youtube" />
+              </a>
+            </div>
       </div>
     </div>
   </nav>
@@ -62,7 +69,7 @@ export default {
         { name: 'Inicio', link: 'index' },
         { name: 'Sobre mi', link: 'about' },
         { name: 'libros', link: 'books' },
-        { name: 'Noticias & Blogs', link: 'news' },
+        // { name: 'Noticias & Blogs', link: 'news' },
         { name: 'contacto', link: 'contact' },
       ],
     }
