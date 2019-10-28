@@ -7,8 +7,6 @@
       full-row
     />
 
-    <!-- <div> -->
-    <!-- <div> -->
     <history
       v-for="(about, i) in abouts"
       :key="i"
@@ -18,8 +16,6 @@
       :footer="about.footer"
       :reverse="!!(i % 2)"
     />
-    <!-- </div> -->
-    <!-- </div> -->
   </div>
 </template>
 
@@ -32,13 +28,13 @@ export default {
   components: {
     HeaderSection, History
   },
-  data() {
+  data () {
     return {
       imgPath: IMG_BASE_PATH + '/about/'
     }
   },
   computed: {
-    header() {
+    header () {
       return this.$store.getters.headerSection('About')
     },
     ...mapState({

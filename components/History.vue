@@ -34,8 +34,7 @@
       </div>
     </div>
     <div class="history__footer">
-      <p>
-        {{ footer }}
+      <p v-html="footer">
       </p>
     </div>
   </div>

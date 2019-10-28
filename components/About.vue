@@ -39,7 +39,7 @@
             <div class="timeline-image">
               <button 
                 class="btn rounded-circle h-100 w-100"
-                :to="{ name: 'books' }"
+                @click="$router.push('/about')"
               >
                 Ver más
               </button>
