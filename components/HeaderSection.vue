@@ -1,5 +1,5 @@
 <template>
-  <div class="row mb-5 header-section">
+  <div class="row mb-4 header-section">
     <div
       :class="[ 
         { 'col-md-6' : !fullRow }, 

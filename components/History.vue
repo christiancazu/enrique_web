@@ -1,11 +1,10 @@
 <template>
-  <article class="history">
+  <div class="history">
     <div class="history__header">
       <h4>{{ title }}</h4>
     </div>
     <div class="container">
-      <div
-        :class="[
+      <div :class="[
           { 'flex-row-reverse' : reverse },
           'row history__body'
         ]"
@@ -35,9 +34,11 @@
       </div>
     </div>
     <div class="history__footer">
-      {{ footer }}
+      <p>
+        {{ footer }}
+      </p>
     </div>
-  </article>
+  </div>
 </template>
 
 <script>

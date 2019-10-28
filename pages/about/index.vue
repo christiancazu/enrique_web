@@ -7,19 +7,19 @@
       full-row
     />
 
-    <div class="row justify-content-center histories">
-      <div class="col-12">
-        <history
-          v-for="(about, i) in abouts"
-          :key="i"
-          :img="imgPath + about.img"
-          :title="about.title"
-          :body="about.body"
-          :footer="about.footer"
-          :reverse="i % 2"
-        />
-      </div>
-    </div>
+    <!-- <div> -->
+    <!-- <div> -->
+    <history
+      v-for="(about, i) in abouts"
+      :key="i"
+      :img="imgPath + about.img"
+      :title="about.title"
+      :body="about.body"
+      :footer="about.footer"
+      :reverse="!!(i % 2)"
+    />
+    <!-- </div> -->
+    <!-- </div> -->
   </div>
 </template>
 

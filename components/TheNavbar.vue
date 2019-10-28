@@ -44,6 +44,14 @@
             </nuxt-link>
           </li>
         </ul>
+        <div class="social-all">
+              <a href="https://web.facebook.com/luisenrique.bustamanteperez" target="_bank">
+                <i class="fa fa-facebook" />
+              </a>
+              <a href="">
+                <i class="fa fa-youtube" />
+              </a>
+            </div>
       </div>
     </div>
   </nav>
