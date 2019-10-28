@@ -52,7 +52,7 @@
               <ul class="menu list-unstyled">
                 <li>
                   <nuxt-link
-                    to=""
+                    to="/about"
                     class="p"
                     no-exact
                   >
@@ -61,7 +61,7 @@
                 </li>
                 <li>
                   <nuxt-link
-                    to=""
+                    to="/books"
                     class="p"
                   >
                     ¿Ver mis libros?
@@ -69,18 +69,10 @@
                 </li>
                 <li>
                   <nuxt-link
-                    to=""
+                    to="/contact"
                     class="p"
                   >
-                    Noticias
-                  </nuxt-link>
-                </li>
-                <li>
-                  <nuxt-link
-                    to=""
-                    class="p"
-                  >
-                    Contactanos
+                    Contáctame
                   </nuxt-link>
                 </li>
               </ul>
