@@ -44,14 +44,7 @@
             </nuxt-link>
           </li>
         </ul>
-        <div class="social-all">
-              <a href="https://web.facebook.com/luisenrique.bustamanteperez" target="_bank">
-                <i class="fa fa-facebook" />
-              </a>
-              <a href="">
-                <i class="fa fa-youtube" />
-              </a>
-            </div>
+        <TheSocialsNetwork />
       </div>
     </div>
   </nav>
@@ -59,9 +52,14 @@
 
 <script>
 import jqNavbar from '~/jq-script/jq.navbar'
+import TheSocialsNetwork from '~/components/TheSocialsNetwork'
 
 export default {
   name: 'TheNavbar',
+  components: {
+    TheSocialsNetwork
+  },
+
   mixins: [jqNavbar],
   data () {
     return {

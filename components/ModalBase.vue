@@ -15,8 +15,8 @@
       </small>
     </button>
     <div
-      class="modal fade"
       :id="idModal"
+      class="modal fade"
       tabindex="-1"
       role="dialog"
       :aria-labelledby="`${idModal}Title`"
@@ -29,9 +29,11 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5
-              class="modal-title"
               :id="`${idModal}Title`"
-            >{{ titleModal }}</h5>
+              class="modal-title"
+            >
+              {{ titleModal }}
+            </h5>
             <button
               type="button"
               class="close"
@@ -49,18 +51,20 @@
               type="button"
               class="btn btn-secondary"
               data-dismiss="modal"
-            >cancelar</button>
+            >
+              cancelar
+            </button>
             <button
               type="button"
               class="btn btn-primary"
-            >{{ toBuy? 'Comprar' : 'Enviar y descargar resumen' }}
+            >
+              {{ toBuy? 'Comprar' : 'Enviar y descargar resumen' }}
             </button>
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </template>
 <script>
 export default {

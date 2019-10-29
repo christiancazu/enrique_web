@@ -22,8 +22,7 @@
               <h5
                 class="text-page"
                 v-html="description"
-              >
-              </h5>
+              />
               <nuxt-link
                 v-if="!hideBtn"
                 class="btn"
@@ -32,9 +31,6 @@
                 Leer más
               </nuxt-link>
             </li>
-            <!-- <li />
-            <li />
-            <li /> -->
           </ul>
 
           <!-- Back -->

@@ -4,7 +4,8 @@
       <h4>{{ title }}</h4>
     </div>
     <div class="container">
-      <div :class="[
+      <div
+        :class="[
           { 'flex-row-reverse' : reverse },
           'row history__body'
         ]"
@@ -34,8 +35,8 @@
       </div>
     </div>
     <div class="history__footer">
-      <p v-html="footer">
-      </p>
+      <!-- eslint-disable-next-line vue/no-v-html -->
+      <p v-html="footer" />
     </div>
   </div>
 </template>

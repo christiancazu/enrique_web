@@ -12,8 +12,10 @@
       <h1 class="header-section__content__text--title">
         {{ title }}
       </h1>
-      <p class="header-section__content__text--description" v-html="description">
-      </p>
+      <p
+        class="header-section__content__text--description"
+        v-html="description"
+      />
     </div>
   </div>
 </template>

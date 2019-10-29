@@ -17,7 +17,7 @@
             :img-src="imgPath + book.imgSrc"
             :title="book.title"
             :description="book.summary"
-            hideBtn
+            hide-btn
           />
         </div>
         <div class="col-lg-6 books-details__description">
@@ -37,18 +37,18 @@
             label-btn="Comprar libro"
             class-btn="btn-primary"
             title-modal="Elije el método de compra"
-            toBuy
+            to-buy
           >
             <template v-slot:body-content>
               <nav>
                 <div
-                  class="nav nav-tabs"
                   id="nav-tab"
+                  class="nav nav-tabs"
                   role="tablist"
                 >
                   <a
-                    class="nav-item nav-link active"
                     id="nav-home-tab"
+                    class="nav-item nav-link active"
                     data-toggle="tab"
                     href="#nav-home"
                     role="tab"
@@ -56,8 +56,8 @@
                     aria-selected="true"
                   >VOUCHER</a>
                   <a
-                    class="nav-item nav-link"
                     id="nav-profile-tab"
+                    class="nav-item nav-link"
                     data-toggle="tab"
                     href="#nav-profile"
                     role="tab"
@@ -65,8 +65,8 @@
                     aria-selected="false"
                   >PAYPAL</a>
                   <a
-                    class="nav-item nav-link"
                     id="nav-contact-tab"
+                    class="nav-item nav-link"
                     data-toggle="tab"
                     href="#nav-contact"
                     role="tab"
@@ -76,12 +76,12 @@
                 </div>
               </nav>
               <div
-                class="tab-content"
                 id="nav-tabContent"
+                class="tab-content"
               >
                 <div
-                  class="tab-pane fade show active"
                   id="nav-home"
+                  class="tab-pane fade show active"
                   role="tabpanel"
                   aria-labelledby="nav-home-tab"
                 >
@@ -96,14 +96,14 @@
                         placeholder="Nombres"
                         aria-label="Nombres"
                         aria-describedby="basic-addon1"
-                      />
+                      >
                       <input
                         type="text"
                         class="form-control"
                         placeholder="Apellidos"
                         aria-label="Apellidos"
                         aria-describedby="basic-addon1"
-                      />
+                      >
                     </div>
                     <div class="input-group mb-3">
                       <input
@@ -112,14 +112,14 @@
                         placeholder="Correo electrónico"
                         aria-label="Correo electrónico"
                         aria-describedby="basic-addon1"
-                      />
+                      >
                     </div>
                     <div class="input-group mb-3">
                       <div class="custom-file">
                         <input
+                          id="inputGroupFile04"
                           type="file"
                           class="custom-file-input"
-                          id="inputGroupFile04"
                           aria-describedby="inputGroupFileAddon04"
                         >
                         <label
@@ -131,8 +131,8 @@
                   </form>
                 </div>
                 <div
-                  class="tab-pane fade"
                   id="nav-profile"
+                  class="tab-pane fade"
                   role="tabpanel"
                   aria-labelledby="nav-profile-tab"
                 >
@@ -147,14 +147,14 @@
                         placeholder="Nombres"
                         aria-label="Nombres"
                         aria-describedby="basic-addon1"
-                      />
+                      >
                       <input
                         type="text"
                         class="form-control"
                         placeholder="Apellidos"
                         aria-label="Apellidos"
                         aria-describedby="basic-addon1"
-                      />
+                      >
                     </div>
                     <div class="input-group mb-3">
                       <input
@@ -163,7 +163,7 @@
                         placeholder="Numero de la tarjeta"
                         aria-label="Numero de la tarjeta"
                         aria-describedby="basic-addon1"
-                      />
+                      >
                     </div>
                     <div class="input-group mb-3">
                       <input
@@ -172,27 +172,27 @@
                         placeholder="MES"
                         aria-label="MES"
                         aria-describedby="basic-addon1"
-                      />
+                      >
                       <input
                         type="text"
                         class="form-control"
                         placeholder="AÑO"
                         aria-label="AÑO"
                         aria-describedby="basic-addon1"
-                      />
+                      >
                       <input
                         type="text"
                         class="form-control"
                         placeholder="CVV"
                         aria-label="CVV"
                         aria-describedby="basic-addon1"
-                      />
+                      >
                     </div>
                   </form>
                 </div>
                 <div
-                  class="tab-pane fade"
                   id="nav-contact"
+                  class="tab-pane fade"
                   role="tabpanel"
                   aria-labelledby="nav-contact-tab"
                 >
@@ -207,14 +207,14 @@
                         placeholder="Nombres"
                         aria-label="Nombres"
                         aria-describedby="basic-addon1"
-                      />
+                      >
                       <input
                         type="text"
                         class="form-control"
                         placeholder="Apellidos"
                         aria-label="Apellidos"
                         aria-describedby="basic-addon1"
-                      />
+                      >
                     </div>
                     <div class="input-group mb-3">
                       <input
@@ -223,7 +223,7 @@
                         placeholder="Numero de la tarjeta"
                         aria-label="Numero de la tarjeta"
                         aria-describedby="basic-addon1"
-                      />
+                      >
                     </div>
                     <div class="input-group mb-3">
                       <input
@@ -232,21 +232,21 @@
                         placeholder="MES"
                         aria-label="MES"
                         aria-describedby="basic-addon1"
-                      />
+                      >
                       <input
                         type="text"
                         class="form-control"
                         placeholder="AÑO"
                         aria-label="AÑO"
                         aria-describedby="basic-addon1"
-                      />
+                      >
                       <input
                         type="text"
                         class="form-control"
                         placeholder="CVV"
                         aria-label="CVV"
                         aria-describedby="basic-addon1"
-                      />
+                      >
                     </div>
                   </form>
                 </div>
@@ -257,7 +257,7 @@
             id-modal="getSummary"
             label-btn="Adquirir resumen"
             title-modal="Déjanos tus datos"
-            itsFree
+            its-free
           >
             <template v-slot:body-content>
               <form action="">
@@ -268,14 +268,14 @@
                     placeholder="Nombres"
                     aria-label="Nombres"
                     aria-describedby="basic-addon1"
-                  />
+                  >
                   <input
                     type="text"
                     class="form-control"
                     placeholder="Apellidos"
                     aria-label="Apellidos"
                     aria-describedby="basic-addon1"
-                  />
+                  >
                 </div>
                 <div class="input-group mb-3">
                   <input
@@ -284,7 +284,7 @@
                     placeholder="Correo electrónico"
                     aria-label="Correo electrónico"
                     aria-describedby="basic-addon1"
-                  />
+                  >
                 </div>
                 <div class="input-group mb-3">
                   <input
@@ -293,20 +293,19 @@
                     placeholder="Celular"
                     aria-label="Celular"
                     aria-describedby="basic-addon1"
-                  />
+                  >
                   <input
                     type="text"
                     class="form-control"
                     placeholder="Celular 2"
                     aria-label="Celular 2"
                     aria-describedby="basic-addon1"
-                  />
+                  >
                 </div>
               </form>
             </template>
           </modal-base>
         </div>
-
       </div>
       <hr v-if="i < books.length -1 ">
 

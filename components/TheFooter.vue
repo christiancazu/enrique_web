@@ -35,14 +35,7 @@
                 </p>
               </li>
             </ul>
-            <div class="social-all">
-              <a href="https://web.facebook.com/luisenrique.bustamanteperez" target="_bank">
-                <i class="fa fa-facebook" />
-              </a>
-              <a href="https://www.youtube.com/channel/UCRyKjtvtCEdQ2Dmn3BYbqmg" target="_bank">
-                <i class="fa fa-youtube" />
-              </a>
-            </div>
+            <TheSocialsNetwork />
           </div>
           <div class="col-md-4">
             <div class="widget widget_nav_menu">
@@ -226,8 +219,13 @@
 
 <script>
 
+import TheSocialsNetwork from '~/components/TheSocialsNetwork'
 export default {
+
   name: 'TheNavbar',
+  components: {
+    TheSocialsNetwork
+  },
   data () {
     return {
 
