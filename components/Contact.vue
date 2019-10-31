@@ -17,7 +17,7 @@
           <div class="form-group">
             <label
               for="exampleInputEmail1"
-              class="h6 form-contact--label"
+              class="form-contact--label"
             >Nombres y Apellidos</label>
             <input
               id="exampleInputEmail1"
@@ -30,7 +30,7 @@
           <div class="form-group">
             <label
               for="exampleInputEmail1"
-              class="h6 form-contact--label"
+              class="form-contact--label"
             >Correo Electronico</label>
             <input
               id="exampleInputEmail1"
@@ -43,7 +43,7 @@
           <div class="form-group">
             <label
               for="exampleInputEmail1"
-              class="h6 form-contact--label"
+              class="form-contact--label"
             >Telefono</label>
             <input
               id="exampleInputEmail1"
@@ -59,7 +59,7 @@
           <div class="form-group">
             <label
               for="exampleInputEmail1"
-              class="h6 form-contact--label"
+              class="form-contact--label"
             >Mensaje</label>
             <textarea
               name="contact[body]"
@@ -71,7 +71,7 @@
         </div>
       </div>
       <div class="text-center">
-        <button class="btn btn-primary btn-lg text-uppercase">
+        <button class="btn btn-primary text-uppercase">
           Enviar
         </button>
       </div>

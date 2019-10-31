@@ -1,20 +1,32 @@
+$enable-responsive-font-sizes: true;
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500&display=swap');
 
 // fonts
-$font-family-paragraph: 'Raleway', sans-serif;
-$font-family-base: 'Montserrat', sans-serif;
-$enable-responsive-font-sizes: true;
+$font-family-paragraph:     'Raleway', sans-serif;
+$font-family-base:           'Montserrat', sans-serif;
+$font-size-base:             0.9375rem;
+
+// inputs
+$input-border-radius:        0rem;
+// $input-padding-y: .78rem;
+$input-height:               2.5rem;
+$input-font-size:            $font-size-base;
+
+// buttons
+$btn-border-radius:          0rem;
+$btn-focus-width: 0rem;
 
 // colors
-$primary:       #ffd71c; //#FFD700;
-$secondary:     $gray-600;
-$success:       $green;
-$info:          $cyan;
-$warning:       $yellow;
-$danger:        $red;
-$light:         $gray-100;
-$dark:          $gray-800;
+$primary:                    #ffd71c; //#FFD700;
+$secondary:                  $gray-600;
+$success:                    $green;
+$info:                       $cyan;
+$warning:                    $yellow;
+$danger:                     $red;
+$light:                      $gray-100;
+$dark:                       $gray-800;
 
 $white: #fff;
 $veox-color: #479894;
