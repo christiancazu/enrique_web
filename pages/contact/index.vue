@@ -27,7 +27,7 @@
             />
             <h5>Comunicate</h5>
             <p>
-              CEL: +19 98898898<br>
+              CEL: +51 987 865 609<br>
             </p>
           </div>
         </div>
@@ -35,7 +35,7 @@
           <div class="noo-information">
             <i class="fa fa-location-arrow" />
             <h5>Encuentrame</h5>
-            <p>Arequipa, Arequipa</p>
+            <p>Arequipa, Arequipa, PERÚ</p>
           </div>
         </div>
         <div class="col-sm-4">

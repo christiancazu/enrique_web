@@ -67,7 +67,7 @@ export default {
         { name: 'Inicio', link: 'index' },
         { name: 'Sobre mi', link: 'about' },
         { name: 'libros', link: 'books' },
-        // { name: 'Noticias & Blogs', link: 'news' },
+        { name: 'Noticias', link: 'news' },
         { name: 'contacto', link: 'contact' },
       ],
     }

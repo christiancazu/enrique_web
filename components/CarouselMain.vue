@@ -116,7 +116,7 @@ export default {
         },
 
         {
-          src: '/images/home/familia_campo.png', alt: '',
+          src: '/images/home/luis_y_mario.png', alt: '',
           title: "Los limites uno mismo se los pone",
           subtitle: 'La discapacidad es parte de este mundo, no un mundo a parte.'
         }
