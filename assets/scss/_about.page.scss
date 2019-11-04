@@ -91,3 +91,16 @@
 //         }
 //     }
 // }
+#tabsAbout {
+    // padding-bottom: .1rem;
+    border-bottom: 1px solid #ccc;
+
+    .nav-link {
+        text-transform: uppercase;
+    }
+    .nav-link.active,
+  .show > .nav-link {
+      border-bottom: 2px solid $primary ;
+      border-radius: 0px;
+  }
+}
