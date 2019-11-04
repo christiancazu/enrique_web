@@ -166,9 +166,9 @@
         </div>
       </div>
     </div>
-    <div class="container footer_creator">
+    <div class="container footer_creator py-1">
       <div class="row align-items-center">
-        <div class="col-md-6 text-left text-xs-center">
+        <div class="col-md-6 text-xs-center">
           <span class="copyright small">
             Desarrollado con
             <i
@@ -184,9 +184,9 @@
             </span>
           </span>
         </div>
-        <div class="col-md-6 text-right text-xs-center">
-          <ul class="list-inline mb-0">
-            <li class="list-inline-item">
+        <div class="col-md-6 text-right">
+          <ul class="list-inline mb-0 text-xs-center">
+            <li class="list-inline-item ">
               <a
                 href="https://www.facebook.com/veoxtech"
                 target="_bank"

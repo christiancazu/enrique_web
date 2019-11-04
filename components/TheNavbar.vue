@@ -28,7 +28,7 @@
         id="navbarResponsive"
         class="collapse navbar-collapse"
       >
-        <ul class="navbar-nav text-uppercase ml-auto">
+        <ul class="navbar-nav m-auto">
           <!-- navs -->
           <li
             v-for="(nav, i) in navs"

@@ -71,7 +71,7 @@
         </div>
       </div>
       <div class="text-center">
-        <button class="btn btn-primary text-uppercase">
+        <button class="btn btn-primary text-white">
           Enviar
         </button>
       </div>

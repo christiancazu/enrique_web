@@ -3,6 +3,10 @@ button:focus {
   outline: none !important;
   outline: 0 !important;
 }
+button, .btn {
+  text-transform: uppercase !important;
+  padding: 0.6rem 1.5rem !important;
+}
 
 // remove focus inputs
 input:focus, 
@@ -43,6 +47,14 @@ h6,
   object-fit: contain;
 }
 
+.form-control {
+  border: 1px solid transparent !important;
+
+  &:focus {
+    background-color: $input-bg !important;
+  }
+}
+
 // page transitions
 .page-enter-active,
 .page-leave-active {
@@ -51,4 +63,11 @@ h6,
 .page-enter,
 .page-leave-active {
   opacity: 0;
+}
+.author {
+  text-align: right;
+  cite {
+    font-family: 'Yellowtail', cursive;
+    color: white;
+  }
 }

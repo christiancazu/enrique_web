@@ -32,12 +32,16 @@
     .nav-item {
       .nav-link {
         font-weight: 400;
+        text-transform: uppercase;
         letter-spacing: 1px;
         color: $nav-text-color;
+        font-weight: bold;
+        transition: all 0.5s ease;
         @include heading-font;
         &.active,
         &:hover {
           color: $nav-text-color-active;
+          text-decoration: line-through;
         }
       }
     }

@@ -33,22 +33,21 @@
         >
         <div class="overlay-home" />
         <div class="carousel-caption-home">
-          <div class="row w-100 justify-content-center">
-            <div class="col-xs-12 col-md-8">
-              <div class="container">
+          <div class="container">
+            <div class="row w-100 justify-content-center">
+              <div class="col-xs-12 col-md-6 col-lg-4">
                 <div class="">
-                  <h1 class="text-primary title">
+                  <h5 class="text-primary title">
                     {{ item.title }}
-                  </h1>
+                  </h5>
                   <p
-                    class="subtitle"
+                    class="subtitle h6"
                     v-html="item.subtitle"
                   />
-                  <p
-                    v-if="item.subtitle_2"
-                    class="subtitle"
-                    v-html="item.subtitle_2"
-                  />
+
+                  <footer class="author h2">
+                    <cite title="Title">Luis E. Bustamante</cite>
+                  </footer>
 
                   <nuxt-link
                     v-if=" item.button"
@@ -104,24 +103,22 @@ export default {
       items: [
         {
           src: '/images/home/presente_mi_libro.png', alt: '',
-          title: "Siempre eh creido que los limites uno mismo se los pone",
-          subtitle: 'Apesar de las circunstancias no me eh detenido, y lo mismo quiero que hagas'
+          title: "",
+          subtitle: 'Cada nuevo día es una nueva oportunidad para ser una mejor persona. Una persona honorable, no puede pasar por este mundo, sin ayudat a otra persona.'
         },
         {
           src: '/images/home/books.png', alt: '',
-          title: "Te invito a leerlos",
-          subtitle: 'El dia en que dijo "Eh terminado el libro, me senti bien y muy orgulloso de él, al mismo tiempo me di cuenta que lo que habia hecho tecla a tecla era muy gratificante"<cite>Mi hermano</cite>',
-          subtitle_2: 'Lo consegui y no me detuve hasta publicar mis primeros libros',
+          subtitle: 'Discapacitados no somos nosotros, sino las personas de corazón mezquino',
           button: {
-            label: 'Ver mis libros',
+            label: 'Mis libros',
             path: '/myBooks'
           }
         },
-        
+
         {
           src: '/images/home/familia_campo.png', alt: '',
           title: "Los limites uno mismo se los pone",
-          subtitle: 'Apesar de las circunstancias no me eh detenido, y lo mismo quiero que hagas'
+          subtitle: 'La discapacidad es parte de este mundo, no un mundo a parte.'
         }
       ]
     }
