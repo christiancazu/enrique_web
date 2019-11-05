@@ -75,7 +75,6 @@
 <script>
 import HeaderSection from '~/components/HeaderSection'
 import History from '~/components/History'
-// import About from '~/components/About'
 import LineTime from '~/components/base/LineTime'
 import { IMG_BASE_PATH } from '~/config/constants'
 import { mapState } from 'vuex'
