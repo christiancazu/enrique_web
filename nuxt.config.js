@@ -2,7 +2,7 @@ export default {
   mode: 'spa',
   /*
    ** Headers of the page
-   */  
+   */
   server: {
     host: '0.0.0.0'
   },
@@ -42,6 +42,7 @@ export default {
       // { src: 'https://kit.fontawesome.com/3122b9c598.js' },
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' },
       { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' },
+      { src: 'https://checkout.culqi.com/js/v3' },
     ]
   },
   /*
@@ -65,7 +66,8 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    { src: 'plugins/owl.js', ssr: false }
+    { src: 'plugins/owl.js', ssr: false },
+    { src: 'plugins/Culqi.js', ssr: false }
   ],
   /*
    ** Nuxt.js dev-modules
@@ -86,7 +88,13 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    // See https://github.com/nuxt-community/axios-module#options
+    baseURL:
+      process.env.NODE_ENV === "production"
+        ? "http://192.168.1.130:8300/api/"
+        : "http://192.168.1.130:8300/api/"
+  },
   /*
    ** Build configuration
    */

@@ -85,7 +85,7 @@ export default {
   data () {
     return {
       imgPath: IMG_BASE_PATH + '/about/',
-       letters: [
+      letters: [
         {
           title: 'Medalla de Honor de la UNAP',
           date: 'Diciembre 20, 2017',
