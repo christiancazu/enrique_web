@@ -13,7 +13,7 @@
               <li class="d-flex align-items-center pb-2">
                 <i class="fa fa-map-marker text-gray" />
                 <p class="m-0">
-                  Arequipa, Arequipa
+                  {{ address }}
                 </p>
               </li>
               <li class="d-flex align-items-center pb-2">
@@ -22,7 +22,7 @@
                   aria-hidden="true"
                 />
                 <p class="m-0">
-                  +51 9544878445
+                  {{ cellPhoneNumber }}
                 </p>
               </li>
               <li class="d-flex align-items-center pb-2">
@@ -31,10 +31,11 @@
                   aria-hidden="true"
                 />
                 <p class="m-0">
-                  luisenrique@gmail.com
+                  {{ emailAddress }}
                 </p>
               </li>
             </ul>
+
             <TheSocialsNetwork />
           </div>
           <div class="col-md-4">
@@ -220,6 +221,11 @@
 <script>
 
 import TheSocialsNetwork from '~/components/TheSocialsNetwork'
+import { CELLPHONE_NUMBER } from '~/config/constants'
+import { ADDRESS } from '~/config/constants'
+import { EMAIL_ADDRESS } from '~/config/constants'
+
+
 export default {
 
   name: 'TheNavbar',
@@ -228,7 +234,9 @@ export default {
   },
   data () {
     return {
-
+      cellPhoneNumber: CELLPHONE_NUMBER,
+      address: ADDRESS,
+      emailAddress: EMAIL_ADDRESS
     }
   },
 }

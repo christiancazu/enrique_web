@@ -27,7 +27,7 @@
             />
             <h5>Comunicate</h5>
             <p>
-              CEL: +51 987 865 609<br>
+              CEL: {{ cellPhoneNumber }} <br>
             </p>
           </div>
         </div>
@@ -35,7 +35,7 @@
           <div class="noo-information">
             <i class="fa fa-location-arrow" />
             <h5>Encuentrame</h5>
-            <p>Arequipa, Arequipa, PERÚ</p>
+            <p> {{ address }}</p>
           </div>
         </div>
         <div class="col-sm-4">
@@ -43,7 +43,7 @@
             <i class="fa fa-envelope-o" />
             <h5>Correo electrónico</h5>
             <p>
-              luisenrique@gmail.com
+              {{ emailAddress }}
             </p>
           </div>
         </div>
@@ -67,11 +67,22 @@
 <script>
 import Contact from '~/components/Contact.vue'
 import HeaderSection from '~/components/HeaderSection'
+import { CELLPHONE_NUMBER } from '~/config/constants'
+import { ADDRESS } from '~/config/constants'
+import { EMAIL_ADDRESS } from '~/config/constants'
 
 export default {
   components: {
     HeaderSection, Contact
-  }
+  },
+
+  data () {
+    return {
+      cellPhoneNumber: CELLPHONE_NUMBER,
+      address: ADDRESS,
+      emailAddress: EMAIL_ADDRESS
+    }
+  },
 
 }
 </script>

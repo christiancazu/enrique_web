@@ -1,84 +1,84 @@
 .history {
-    &__header,
-    &__body,
-    &__footer {
-        margin: 2rem 0;
+  &__header,
+  &__body,
+  &__footer {
+    margin: 2rem 0;
+    text-align: justify;
+  }
+  &__header {
+  }
+  &__body {
+    align-items: center;
+    &__img {
+      @extend .px-0;
+      object-fit: cover;
+      max-height: 360px;
+    }
+    &__content {
+      // padding: 1rem 2rem !important;
+
+      @mixin quote-margin {
+        &:after {
+          content: "";
+          position: absolute;
+          height: 0.25rem;
+          min-width: 64%;
+          margin: 1rem 1.5rem;
+          background-color: lighten($primary, 30%);
+          transition: all 1s;
+        }
+      }
+
+      &__quote {
+        color: lighten($primary, 30%);
+        font-size: 3em;
+        padding: 0 2rem;
+        transition: all 1s;
+
+        &--left,
+        &--right {
+          display: block;
+          position: relative;
+        }
+        &--left {
+          transform: translateX(-50%);
+          @include quote-margin();
+        }
+        &--right {
+          transform: rotate(180deg) translateX(-30%);
+          @include quote-margin();
+        }
+      }
+
+      &__text {
+        margin-bottom: 0;
         text-align: justify;
+        padding: 1rem 2rem;
+        transition: color 1s;
+      }
     }
-    &__header {        
-    }
-    &__body { 
-        align-items: center;
-        &__img {
-            @extend .px-0;
-            object-fit: cover;
-            max-height: 360px;
-        }
-        &__content {
-            // padding: 1rem 2rem !important;
+    // hover body
+    &:hover & {
+      &__content {
+        &__quote {
+          color: $primary;
 
-            @mixin quote-margin {
-                &:after {
-                    content: "";
-                    position: absolute;
-                    height: .25rem;
-                    min-width: 64%;
-                    margin: 1rem 1.5rem;
-                    background-color: lighten($primary, 30%);
-                    transition: all 1s;
-                }
+          &--left,
+          &--right {
+            &:after {
+              background-color: $primary;
+              min-width: 60%;
             }
-
-            &__quote {
-                color: lighten($primary, 30%);
-                font-size: 3em;
-                padding: 0 2rem;
-                transition: all 1s;
-
-                &--left,
-                &--right {
-                    display: block;
-                    position: relative;
-                }
-                &--left {
-                    transform: translateX(-50%);
-                    @include quote-margin();
-                }
-                &--right {
-                    transform: rotate(180deg) translateX(-30%);
-                    @include quote-margin();
-                }
-            }
-
-            &__text {
-                margin-bottom: 0;
-                text-align: justify;
-                padding: 1rem 2rem;
-                transition: color 1s;
-            } 
+          }
         }
-        // hover body 
-        &:hover & {
-            &__content {
-                &__quote {
-                    color: $primary;
-
-                    &--left,
-                    &--right {
-                        &:after {
-                            background-color: $primary;
-                            min-width: 60%;
-                        }
-                    }
-                }
-                &__text {
-                    color: text-color('dark');
-                }
-            }
+        &__text {
+          color: text-color("dark");
         }
+      }
     }
-    &_footer {
-    }
+  }
+  &_footer {
+  }
 }
 
 // @include respond-below(sm) {
@@ -92,15 +92,16 @@
 //     }
 // }
 #tabsAbout {
-    // padding-bottom: .1rem;
-    border-bottom: 1px solid #ccc;
+  // padding-bottom: .1rem;
+  border-bottom: 1px solid #ccc;
 
-    .nav-link {
-        text-transform: uppercase;
-    }
-    .nav-link.active,
+  .nav-link {
+    text-transform: uppercase;
+  }
+  .nav-link.active,
   .show > .nav-link {
-      border-bottom: 2px solid $primary ;
-      border-radius: 0px;
+    border-bottom: 2px solid $primary;
+    border-radius: 0px;
+    font-weight: bold;
   }
 }
