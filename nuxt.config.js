@@ -59,7 +59,7 @@ export default {
    ** Global CSS
    */
   css: [
-    'bootstrap/dist/css/bootstrap.css',
+    // 'bootstrap/dist/css/bootstrap.css',
     '~/assets/scss/app.scss',
   ],
   /*

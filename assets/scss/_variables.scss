@@ -1,11 +1,11 @@
 $enable-responsive-font-sizes: true;
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Yellowtail&display=swap');
 
 // fonts
-$font-family-paragraph:      'Open Sans', sans-serif;
+$font-family-paragraph:      'Raleway', sans-serif;
 $font-family-base:           'Montserrat', sans-serif;
 $font-size-base:             0.975rem;
 
@@ -25,7 +25,8 @@ $btn-font-size:              $font-size-base;
 // $body-color: $white;
 
 // colors
-$primary:                    #f5b900; //#FFD700;
+// $primary:                    #f5b900;
+$primary:                    #0cb799;
 $secondary:                  $gray-600;
 $success:                    $green;
 $info:                       $cyan;
@@ -59,6 +60,7 @@ $navbar-bg: $dark;
 $navbar-bg-opacity: .8;
 $nav-text-color: $gray-100;
 $nav-text-color-active: $primary;
+$navbar-dark-toggler-border-color: transparent;
 
 //sections
 $padding-y-section: 3rem;

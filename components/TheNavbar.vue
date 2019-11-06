@@ -8,11 +8,17 @@
         class="navbar-brand"
         :to="{ name: 'index' }"
       >
-        <img
+        <div class="author">
+          <h2 class="cite logo">
+            Luis Enrique <br>
+            Bustamante Pérez
+          </h2>
+        </div>
+        <!-- <img
           src="/images/logo/logo_yellow.png"
           alt="Luis enrique"
           class="img-fluid logo"
-        >
+        > -->
       </nuxt-link>
       <button
         class="navbar-toggler navbar-toggler-right"

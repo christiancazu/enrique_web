@@ -4,11 +4,22 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <img
-              src="/images/logo/logo_yellow.png"
-              alt="Luis enrique"
-              class="img-fluid logo"
+            <nuxt-link
+              class="navbar-brand"
+              :to="{ name: 'index' }"
             >
+              <div class="author">
+                <h2 class="cite logo">
+                  Luis Enrique <br>
+                  Bustamante Pérez
+                </h2>
+              </div>
+              <!-- <img
+          src="/images/logo/logo_yellow.png"
+          alt="Luis enrique"
+          class="img-fluid logo"
+        > -->
+            </nuxt-link>
             <ul class="list-unstyled mt-4 info-personal">
               <li class="d-flex align-items-center pb-2">
                 <i class="fa fa-map-marker text-gray" />
@@ -169,15 +180,15 @@ export default {
       emailAddress: EMAIL_ADDRESS,
 
       photos: [
-        {imgSrc: '/images/fotos/reyes_espana.png'},
-        {imgSrc: '/images/fotos/buscando-la-felicidad.jpg'},
-        {imgSrc: '/images/fotos/diciembre-20-2017-1-200x200.jpg'},
-        {imgSrc: '/images/fotos/diciembre-21-2017-1-200x200.jpg'},
-        {imgSrc: '/images/fotos/familia_campo.png'},
-        {imgSrc: '/images/fotos/hablando-con-un-angel.jpg'},
-        {imgSrc: '/images/fotos/hermanos_pequenos.png'},
-        {imgSrc: '/images/fotos/luis_y_mario.png'},
-        {imgSrc: '/images/fotos/octubre-28-2018-1-200x200.jpg'}
+        { imgSrc: '/images/fotos/reyes_espana.png' },
+        { imgSrc: '/images/fotos/buscando-la-felicidad.jpg' },
+        { imgSrc: '/images/fotos/diciembre-20-2017-1-200x200.jpg' },
+        { imgSrc: '/images/fotos/diciembre-21-2017-1-200x200.jpg' },
+        { imgSrc: '/images/fotos/familia_campo.png' },
+        { imgSrc: '/images/fotos/hablando-con-un-angel.jpg' },
+        { imgSrc: '/images/fotos/hermanos_pequenos.png' },
+        { imgSrc: '/images/fotos/luis_y_mario.png' },
+        { imgSrc: '/images/fotos/octubre-28-2018-1-200x200.jpg' }
       ]
     }
   },

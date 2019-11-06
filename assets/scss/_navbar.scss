@@ -47,6 +47,10 @@
       }
     }
   }
+
+  // .navbar-dark .navbar-toggler {
+  //   border-color: transparent !important;
+  // }
 }
 @include respond-above(xs) {
   #theNavbar {

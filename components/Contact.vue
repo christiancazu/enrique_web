@@ -116,7 +116,6 @@ export default {
     }),
 
     sendFormEmail () {
-      console.log(this)
       // this.sendEmail({ form: { ...this.form } })
       //   .then(response => {
       //     console.log('response', response)
