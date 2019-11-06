@@ -32,7 +32,16 @@
               aria-hidden="true"
             />
           </h6>
-          <modal-base
+          <button
+            type="button"
+            class="btn btn-block btn-primary mb-2"
+            @click="$Culqi.open()"
+          >
+            <small class="text-uppercase font-weight-bold">
+              Comprar libro
+            </small>
+          </button>
+          <!-- <modal-base
             id-modal="buyBook"
             label-btn="Comprar libro"
             class-btn="btn-primary"
@@ -252,7 +261,7 @@
                 </div>
               </div>
             </template>
-          </modal-base>
+          </modal-base> -->
           <modal-base
             id-modal="getSummary"
             label-btn="Adquirir resumen"
@@ -331,7 +340,7 @@ export default {
   },
   data () {
     return {
-      imgPath: IMG_BASE_PATH + '/books/'
+      imgPath: IMG_BASE_PATH + '/books/',
     }
   },
   computed: {
@@ -341,6 +350,6 @@ export default {
     header () {
       return this.$store.getters.headerSection('MyBooks')
     }
-  }
+  },
 }
 </script>

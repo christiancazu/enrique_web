@@ -42,6 +42,7 @@ export default {
       // { src: 'https://kit.fontawesome.com/3122b9c598.js' },
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' },
       { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' },
+      { src: 'https://checkout.culqi.com/js/v3' },
     ]
   },
   /*
@@ -66,6 +67,7 @@ export default {
    */
   plugins: [
     { src: 'plugins/owl.js', ssr: false },
+    { src: 'plugins/Culqi.js', ssr: false },
     '~/plugins/axios',
     '~/plugins/api'
   ],
