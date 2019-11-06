@@ -90,8 +90,8 @@ export default {
    */
   axios: {
     baseURL: process.env.NODE_ENV === 'production' ?
-      'http://192.168.1.130:8300/api/' :
-      'http://192.168.1.130:8300/api/'
+      'http://192.168.1.130:9007/api/' :
+      'http://192.168.1.130:9007/api/'
   },
   /*
    ** Build configuration

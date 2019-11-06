@@ -1,5 +1,5 @@
-import ContactAPI from '~/api/contactAPI'
+import contactAPI from '~/api/contactAPI'
 
 export default (ctx, inject) => {
-  inject('ContactAPI', ContactAPI(ctx.$axios))
+  inject('contactAPI', contactAPI(ctx.$axios))
 }

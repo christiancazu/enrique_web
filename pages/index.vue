@@ -23,6 +23,8 @@ import Contact from '~/components/Contact.vue'
 export default {
   components: {
     CarouselMain, MyBooks, About, Testimonials, Contact
-  }
+  },
+
+  
 }
 </script>
