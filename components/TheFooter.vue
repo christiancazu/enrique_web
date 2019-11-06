@@ -236,7 +236,18 @@ export default {
     return {
       cellPhoneNumber: CELLPHONE_NUMBER,
       address: ADDRESS,
-      emailAddress: EMAIL_ADDRESS
+      emailAddress: EMAIL_ADDRESS,
+
+      photos: [
+        {imgSrc: '/images/fotos/buscando-la-felicidad.jpg'},
+        {imgSrc: '/images/fotos/diciembre-20-2017-1-200x200.jpg'},
+        {imgSrc: '/images/fotos/diciembre-21-2017-1-200x200.jpg'},
+        {imgSrc: '/images/fotos/'},
+        {imgSrc: '/images/fotos/'},
+        {imgSrc: '/images/fotos/'},
+        {imgSrc: '/images/fotos/'},
+        {imgSrc: '/images/fotos/'}
+      ]
     }
   },
 }
