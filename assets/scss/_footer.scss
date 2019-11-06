@@ -155,14 +155,16 @@
 
 .noo-instagram ul li {
   display: inline-block;
-  width: 25%;
+  width: 33.3%;
   padding: 5px;
+  height: 100px;
 }
 
 .noo-instagram ul a {
   display: block;
   overflow: hidden;
   position: relative;
+  height: 100%;
 }
 
 .noo-instagram ul a:hover:after {
@@ -215,6 +217,8 @@
 
 .noo-instagram ul a img {
   width: 100%;
+  object-fit: unset;
+  height: 100%;
 }
 
 li .p {

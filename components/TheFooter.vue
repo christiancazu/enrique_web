@@ -79,87 +79,17 @@
               </h4>
               <div class="noo-instagram">
                 <ul>
-                  <li>
-                    <a
-                      class="flickr_image"
-                      href="https://live.staticflickr.com/65535/48816091336_546b59ffa8_b.jpg"
-                    ><img
-                      src="https://live.staticflickr.com/65535/48816091336_546b59ffa8_s.jpg"
-                      alt="Zimbabwe Jump"
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      class="flickr_image"
-                      href="https://live.staticflickr.com/65535/48804848648_b8386e267a_b.jpg"
-                    ><img
-                      src="https://live.staticflickr.com/65535/48804848648_b8386e267a_s.jpg"
-                      alt="A Memory of Elephants"
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      class="flickr_image"
-                      href="https://live.staticflickr.com/65535/48799559738_0cb220368c_b.jpg"
-                    ><img
-                      src="https://live.staticflickr.com/65535/48799559738_0cb220368c_s.jpg"
-                      alt="Love is Colourful"
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      class="flickr_image"
-                      href="https://live.staticflickr.com/65535/48784641257_fe99bdb751_b.jpg"
-                    ><img
-                      src="https://live.staticflickr.com/65535/48784641257_fe99bdb751_s.jpg"
-                      alt="Lion Cubs"
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      class="flickr_image"
-                      href="https://live.staticflickr.com/65535/48755830046_55600a5103_b.jpg"
-                    ><img
-                      src="https://live.staticflickr.com/65535/48755830046_55600a5103_s.jpg"
-                      alt="Lioness"
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      class="flickr_image"
-                      href="https://live.staticflickr.com/65535/48751760292_789285cc31_b.jpg"
-                    ><img
-                      src="https://live.staticflickr.com/65535/48751760292_789285cc31_s.jpg"
-                      alt="Giraffe Facts"
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      class="flickr_image"
-                      href="https://live.staticflickr.com/65535/48745141931_1173bd706c_b.jpg"
-                    ><img
-                      src="https://live.staticflickr.com/65535/48745141931_1173bd706c_s.jpg"
-                      alt="A majestic lion"
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      class="flickr_image"
-                      href="https://live.staticflickr.com/65535/48733682177_0f2e6481c8_b.jpg"
-                    ><img
-                      src="https://live.staticflickr.com/65535/48733682177_0f2e6481c8_s.jpg"
-                      alt="Mayan Warrior at Burning Man"
-                    ></a>
-                  </li>
-                  <li>
-                    <a
-                      class="flickr_image"
-                      href="https://live.staticflickr.com/65535/48728725746_5dfc456305_b.jpg"
-                    ><img
-                      src="https://live.staticflickr.com/65535/48728725746_5dfc456305_s.jpg"
-                      alt="Burning Man Rides"
-                    ></a>
-                  </li>
+                  <template v-for="(item, i) in photos">
+                    <li :key="i">
+                      <a
+                        class="flickr_image"
+                        :href="item.imgSrc"
+                      ><img
+                        :src="item.imgSrc"
+                        alt="Zimbabwe Jump"
+                      ></a>
+                    </li>
+                  </template>
                 </ul>
               </div>
             </div>
@@ -239,14 +169,15 @@ export default {
       emailAddress: EMAIL_ADDRESS,
 
       photos: [
+        {imgSrc: '/images/fotos/reyes_espana.png'},
         {imgSrc: '/images/fotos/buscando-la-felicidad.jpg'},
         {imgSrc: '/images/fotos/diciembre-20-2017-1-200x200.jpg'},
         {imgSrc: '/images/fotos/diciembre-21-2017-1-200x200.jpg'},
-        {imgSrc: '/images/fotos/'},
-        {imgSrc: '/images/fotos/'},
-        {imgSrc: '/images/fotos/'},
-        {imgSrc: '/images/fotos/'},
-        {imgSrc: '/images/fotos/'}
+        {imgSrc: '/images/fotos/familia_campo.png'},
+        {imgSrc: '/images/fotos/hablando-con-un-angel.jpg'},
+        {imgSrc: '/images/fotos/hermanos_pequenos.png'},
+        {imgSrc: '/images/fotos/luis_y_mario.png'},
+        {imgSrc: '/images/fotos/octubre-28-2018-1-200x200.jpg'}
       ]
     }
   },
