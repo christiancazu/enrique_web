@@ -1,7 +1,7 @@
 <template>
   <div>
     <the-navbar />
-    <!-- <div class="paleta-colors">
+    <div class="paleta-colors">
       <input
         v-model="color"
         type="text"
@@ -13,7 +13,7 @@
       >
         CARGAR
       </button>
-    </div> -->
+    </div>
     <nuxt />
 
     <TheFooter />
@@ -40,7 +40,7 @@ export default {
 
   methods: {
     changeColor () {
-
+      document.documentElement.style.setProperty('--primary', this.color)
     }
   },
 }
