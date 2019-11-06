@@ -67,7 +67,9 @@ export default {
    */
   plugins: [
     { src: 'plugins/owl.js', ssr: false },
-    { src: 'plugins/Culqi.js', ssr: false }
+    { src: 'plugins/Culqi.js', ssr: false },
+    '~/plugins/axios',
+    '~/plugins/api'
   ],
   /*
    ** Nuxt.js dev-modules
@@ -89,11 +91,9 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-    baseURL:
-      process.env.NODE_ENV === "production"
-        ? "http://192.168.1.130:8300/api/"
-        : "http://192.168.1.130:8300/api/"
+    baseURL: process.env.NODE_ENV === 'production' ?
+      'http://192.168.1.130:9007/api/' :
+      'http://192.168.1.130:9007/api/'
   },
   /*
    ** Build configuration

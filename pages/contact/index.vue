@@ -47,16 +47,6 @@
             </p>
           </div>
         </div>
-        <!-- <div class="col-sm-3">
-          <div class="noo-information">
-            <i class="fa fa-clock-o"></i>
-            <h5>open time</h5>
-            <p>
-              Mon - Fri: 9:00 - 22:00<br>
-              Sat - Sun: 10:00 - 20:00
-            </p>
-          </div>
-        </div> -->
       </div>
     </div>
 
