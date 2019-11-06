@@ -87,10 +87,21 @@ export default {
   components: {
     HeaderSection
   },
+
+  form: {
+    fullName: '',
+    email: '',
+    phoneNumber: '',
+    message: ''
+  },
+
   computed: {
     header() {
       return this.$store.getters.headerSection('Contact')
     }
+  },
+
+  created() {
   },
 }
 </script>

@@ -2,7 +2,7 @@ export default {
   mode: 'spa',
   /*
    ** Headers of the page
-   */  
+   */
   server: {
     host: '0.0.0.0'
   },
@@ -65,7 +65,9 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    { src: 'plugins/owl.js', ssr: false }
+    { src: 'plugins/owl.js', ssr: false },
+    '~/plugins/axios',
+    '~/plugins/api'
   ],
   /*
    ** Nuxt.js dev-modules
@@ -86,7 +88,11 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: process.env.NODE_ENV === 'production' ?
+      'http://192.168.1.130:8300/api/' :
+      'http://192.168.1.130:8300/api/'
+  },
   /*
    ** Build configuration
    */
