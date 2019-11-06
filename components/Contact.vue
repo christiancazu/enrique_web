@@ -71,7 +71,10 @@
         </div>
       </div>
       <div class="text-center">
-        <button class="btn btn-primary text-white">
+        <button
+          class="btn btn-primary text-white"
+          @click.prevent="sendFormEmail"
+        >
           Enviar
         </button>
       </div>
@@ -81,6 +84,7 @@
 
 <script>
 import HeaderSection from '~/components/HeaderSection'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'Contact',
@@ -96,12 +100,25 @@ export default {
   },
 
   computed: {
-    header() {
+    header () {
       return this.$store.getters.headerSection('Contact')
     }
   },
+  methods: {
+    ...mapActions({
+      sendEmail: 'contact/sendEmail'
+    }),
 
-  created() {
+    sendFormEmail () {
+      this.sendEmail({ form: { ...this.form } })
+        .then(response => {
+          console.log('response', response)
+        })
+        .catch(err => {
+          console.log(err, 'error')
+        })
+
+    }
   },
 }
 </script>
