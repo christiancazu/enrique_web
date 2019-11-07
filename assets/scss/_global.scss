@@ -5,7 +5,14 @@ button:focus {
 }
 button, .btn {
   text-transform: uppercase !important;
-  padding: 0.6rem 1.5rem !important;
+  // padding: 0.6rem 1.5rem !important;
+}
+
+@each $color, $value in $theme-colors {
+  .btn-fab-#{$color} {
+    // box-shadow: 0 10px 20px mix($color, $white, 10%);
+    @include button-fab-variant($value, $value);
+  }
 }
 
 // remove focus inputs
@@ -22,7 +29,7 @@ textarea.form-control:focus {
 .p,
 p {
   font-family: $font-family-paragraph;
-  color: #888888;
+  color: #7c7c7c;
 }
 h1,
 h2,
@@ -48,7 +55,7 @@ h6,
 }
 
 .form-control {
-  border: 1px solid transparent !important;
+  border: 1px solid transparent !important; // #e6e6e6 !important;
 
   &:focus {
     background-color: $input-bg !important;
