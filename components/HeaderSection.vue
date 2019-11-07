@@ -1,5 +1,5 @@
 <template>
-  <div class="row mb-4 header-section">
+  <!-- <div class="row mb-4 header-section">
     <div
       :class="[ 
         { 'col-md-6' : fullRow }, 
@@ -17,6 +17,13 @@
         v-html="description"
       />
     </div>
+  </div> -->
+  <div class="main-title mb-4">
+    <h1>
+      {{ attach }}
+      <span class="text-primary">{{ title }}</span>
+      <span class="small_line" />
+    </h1>
   </div>
 </template>
 

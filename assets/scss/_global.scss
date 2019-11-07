@@ -67,8 +67,9 @@ h6,
 .author {
   text-align: right;
   cite, .cite {
-    font-family: 'Yellowtail', cursive;
-    color: $primary;
+    // font-family: 'Yellowtail', cursive;
+    font-family: 'Josefin Sans', sans-serif !important;
+    color: $primary !important;
     text-shadow: 6px 3px 9px #000000;
     text-align: center;
   }

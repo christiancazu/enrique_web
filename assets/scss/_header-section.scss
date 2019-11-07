@@ -25,3 +25,25 @@
     }
   }
 }
+.main-title {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+
+   h1, .h1 {
+    width: fit-content;
+    border-bottom: 1px solid #f4f4f4;
+    position: relative;
+    font-weight: bold !important;
+   }
+
+   .small_line {
+    background-color: $primary;
+    width: 37px;
+    display: block;
+    height: 1px;
+    position: absolute;
+    bottom: 0px;
+    left: 48.5%;
+   }
+}

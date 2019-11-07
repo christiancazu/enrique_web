@@ -4,21 +4,25 @@ $enable-responsive-font-sizes: true;
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Yellowtail&display=swap');
 
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Source+Sans+Pro:400,700&display=swap');
+
 // fonts
-$font-family-paragraph:      'Raleway', sans-serif;
-$font-family-base:           'Montserrat', sans-serif;
+$font-family-paragraph:      'Source Sans Pro', sans-serif;
+$font-family-base:           'Source Sans Pro', sans-serif;
+// $headings-font-weight:        bold;
 // $font-size-base:             0.975rem;
 
 // inputs
 $input-border-radius:        0rem;
 // $input-border-width: 0px;
-$input-bg:                #f9f9f9;
-$input-color:                #747474;
+$input-bg:                  #f9f9f9;
+$input-color:               #747474;
 $input-height:               2.5rem;
 $input-font-size:            $font-size-base;
 
 // buttons
-$btn-border-radius:          0rem;
+$btn-border-radius:          .3rem;
 $btn-focus-width:            0rem;
 $btn-font-weight:            700;
 $btn-font-size:              $font-size-base;
@@ -37,43 +41,43 @@ $danger:                     $red;
 $light:                      $gray-100;
 $dark:                       $gray-800;
 
-$white: #fff;
-$veox-color: #479894;
+$white:                     #fff;
+$veox-color:                #479894;
 
 // custom theme colors
 $theme-colors: (
-  "primary": $primary,
-  "accent": $black
+  "primary":                 $primary,
+  "accent":                  $black
 );
 
 // custom text colors
 $text-colors: (
-  "dark": $dark,
-  "light": $light,
-  "gray": $gray-500,
-  "primary": $primary
+  "dark":         $dark,
+  "light":        $light,
+  "gray":         $gray-500,
+  "primary":      $primary
 );
 
 // body
-$body-bg: #fff;
+$body-bg:                           #fff;
 
 // navbar
-$navbar-bg: $dark;
-$navbar-bg-opacity: .8;
-$nav-text-color: $gray-100;
-$nav-text-color-active: $primary;
-$navbar-dark-toggler-border-color: transparent;
+$navbar-bg:                           $dark;
+$navbar-bg-opacity:                   .8;
+$nav-text-color:                      $gray-100;
+$nav-text-color-active:               $primary;
+$navbar-dark-toggler-border-color:    transparent;
 
 //sections
-$padding-y-section: 3rem;
-$margin-y-section: 3rem;
+$padding-y-section:                   3rem;
+$margin-y-section:                    3rem;
 
 //pages
-$margin-y-page: 7rem;
+$margin-y-page:                       7rem;
 
 //tabs navbs
-$link-color: #ccc;
-$link-hover-color: $primary;
-$nav-pills-link-active-color: $primary;
-$nav-pills-link-active-bg: transparent;
+$link-color:                          #ccc;
+$link-hover-color:                    $primary;
+$nav-pills-link-active-color:         $primary;
+$nav-pills-link-active-bg:            transparent;
 
