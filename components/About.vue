@@ -23,14 +23,31 @@
             </div>
             <div class="timeline-panel">
               <div class="timeline-heading">
-                <h4>{{ activity.title }}</h4>
-                <h4 class="subheading">
-                  {{ activity.date }}
-                </h4>
+                <span class="hexagono">
+                  <span class="hexagono-content small">
+                    <i
+                      class="fa fa-calendar"
+                      aria-hidden="true"
+                    />
+
+                  </span>
+                </span>
+                <h5 class="title">
+                  {{ activity.title }}
+                </h5>
               </div>
               <div class="timeline-body">
-                <p class="text-muted">
-                  {{ activity.description }}
+                <p>
+                  {{ activity.description.slice(0, 95) }}...
+                </p>
+              </div>
+              <div class="timeline-fotter">
+                <p class="small">
+                  <i
+                    class="fa fa-calendar"
+                    aria-hidden="true"
+                  />
+                  {{ activity.date }}
                 </p>
               </div>
             </div>
