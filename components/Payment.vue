@@ -4,6 +4,7 @@
     class="text-center"
   >
     <button
+      v-if="book.price"
       class="btn btn-fab-primary my-1"
       :class="{'btn-block': isblock}"
       @click="$Culqi.open()"
@@ -15,20 +16,8 @@
       Comprar {{ book.price }}
     </button>
 
-    <!-- <button
-      type="button"
-      :class="`btn btn-block mb-2 ${classBtn}`"
-    >
-      <small class="text-uppercase font-weight-bold">
-        {{ labelBtn }}
-        <strong
-          v-if="itsFree"
-          class="text-danger"
-        >(gratis)</strong>
-      </small>
-    </button> -->
-
     <button
+      v-if="book.price"
       class="btn btn-outline-primary my-1" 
       :class="{'btn-block': isblock}"
     >
@@ -37,6 +26,13 @@
         aria-hidden="true"
       />
       Resumen <strong class="text-danger">Gratis</strong>
+    </button>
+    <button
+      v-if="!book.price"
+      class="btn btn-outline-danger my-1" 
+      :class="{'btn-block': isblock}"
+    >
+      Proximo lanzamiento
     </button>
   </div>
 </template>

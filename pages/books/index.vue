@@ -21,17 +21,14 @@
           />
         </div>
         <div class="col-lg-6 books-details__description">
-          <h6 class="books-details__description__text mb-4">
-            <i
-              class="fa fa-quote-left books-details__description__text__quote--left"
-              aria-hidden="true"
-            />
+          <!-- <h6 class="books-details__description__text mb-4"> -->
+          <!-- </h6> -->
+          <h5 class="books-details__description__title">
+            {{ book.title }}
+          </h5>
+          <p class="books-details__description__content">
             {{ book.description }}
-            <i
-              class="fa fa-quote-right books-details__description__text__quote--right"
-              aria-hidden="true"
-            />
-          </h6>
+          </p>
 
           <payment
             :book="book"
@@ -93,12 +90,6 @@
         </div>
       </div>
       <hr v-if="i < books.length -1 ">
-
-      <!-- <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum odit consequuntur consectetur possimus sunt optio eos. Eos nulla recusandae odio deleniti omnis, tempore incidunt debitis quos eum quidem voluptates molestias.
-        Quod eaque nihil exercitationem ullam fuga commodi odio aliquam quisquam. Mollitia, quo sint voluptas magnam ullam iste minima inventore praesentium non distinctio eveniet ratione, nihil maxime! Voluptatibus eum eos dicta.
-        Autem magnam cum facere fugit, soluta provident nemo, porro assumenda consequuntur fuga, minima corrupti voluptatibus ex ad vero sed. Ut nostrum debitis quo eum amet nihil rem architecto voluptates quae.
-      </p> -->
     </div>
   </div>
 </template>

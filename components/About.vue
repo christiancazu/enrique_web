@@ -23,15 +23,6 @@
             </div>
             <div class="timeline-panel">
               <div class="timeline-heading">
-                <span class="hexagono">
-                  <!-- <span class="hexagono-content small">
-                    <i
-                      class="fa fa-calendar"
-                      aria-hidden="true"
-                    />
-
-                  </span> -->
-                </span>
                 <h5 class="title">
                   {{ activity.title }}
                 </h5>

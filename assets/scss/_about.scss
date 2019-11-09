@@ -107,8 +107,6 @@
   }
 
   .timeline-heading {
-    display: flex;
-    align-items: baseline;
 
     .title {
       margin-top: 0;
@@ -122,6 +120,10 @@
       }
       &:hover {
         color: #212529;
+      }
+      .fa {
+        min-width: auto !important;
+        font-size: 60%;
       }
     }
   }
@@ -143,7 +145,7 @@
     }
     > li {
       min-height: 100px;
-      margin-bottom: 100px;
+      margin-bottom: 90px;
       .timeline-panel {
         float: left;
         width: 41%;
@@ -209,69 +211,5 @@
         padding: 0 50px 20px 20px;
       }
     }
-  }
-}
-
-$hw : 24;
-$wh : ((50*$hw)/86)*1px;
-.hexagono{
-  position: relative;
-  display: block;
-  background-color: $primary;
-  width: $hw*1px;
-  height: $wh;
-  z-index: 999;
-  margin-right: .5rem;
-  //border: 1px solid #000;
-  //border-radius: 5%;
-  transition: all .5s ease-out;
-  // &:hover{
-  //   transform: scale(1.2);
-  //   transition: all .5s ease-out;
-  // }
-  &::after{
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    width: inherit;
-    height: inherit;
-    transform: rotate(60deg);
-    background-color: inherit;
-    //border-radius: 5%;
-  }
-  &::before{
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0px;
-    width: inherit;
-    height: inherit;
-    transform: rotate(-60deg);
-    background-color: inherit;
-    //border-radius: 5%;
-  }
-  .fa {
-    min-width: auto !important;
-  }
-}
-.hexagono-content{
-  position: absolute;
-  z-index: 1000;
-  width: 90%;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translate(0, -50%);
-  text-align: center;
-  font-weight: bold;
-  line-height: 25px;
-  color: #fff;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: normal;
-  font-size: 1.3rem;
-  strong{
-    display: block;
   }
 }

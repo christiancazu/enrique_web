@@ -10,7 +10,7 @@
       <div
         v-for="(book, i) in books"
         :key="i"
-        class="col-lg-5"
+        class="col-lg-4"
       >
         <book
           :img-src="imgPath + book.imgSrc"
