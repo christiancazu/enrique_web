@@ -14,6 +14,18 @@ button, .btn {
     @include button-fab-variant($value, $value);
   }
 }
+@each $color, $value in $theme-colors {
+  .btn-flat-#{$color} {
+    // box-shadow: 0 10px 20px mix($color, $white, 10%);
+    @include button-flat-variant($value, $value);
+    &.bottom {
+      // border-bottom: 1px solid $value !important;
+      border-top: 1px solid transparent !important;
+      border-left: 1px solid transparent !important;
+      border-right: 1px solid transparent !important;
+    }
+  }
+}
 
 // remove focus inputs
 input:focus, 

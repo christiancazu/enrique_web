@@ -3,13 +3,6 @@
     v-if="currentActivity" 
     class="container news-details-page"
   >
-    <header-section
-      :attach="currentActivity.title"
-      :title="currentActivity.date"
-      :description="``"
-      full-row
-    />
-
     <div class="row justify-content-center">
       <div class="col-12">
         <div class="card card-news-details">
@@ -31,6 +24,9 @@
             </owl-carousel>
           </no-ssr>        
           <div class="card-body card-news-details__body">
+            <h5 class="card-news-details__title">
+              {{ currentActivity.title }}
+            </h5>
             <p class="card-text card-news-details__body--text">
               {{ currentActivity.description }}
             </p>
@@ -42,12 +38,10 @@
 </template>
 
 <script>
-import HeaderSection from '~/components/HeaderSection'
 
 export default {
   name: 'NewsSlug',
   components: {
-    HeaderSection
   },
   computed: {
     currentActivity() {
