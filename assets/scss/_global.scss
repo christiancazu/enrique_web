@@ -5,7 +5,26 @@ button:focus {
 }
 button, .btn {
   text-transform: uppercase !important;
-  padding: 0.6rem 1.5rem !important;
+  // padding: 0.6rem 1.5rem !important;
+}
+
+@each $color, $value in $theme-colors {
+  .btn-fab-#{$color} {
+    // box-shadow: 0 10px 20px mix($color, $white, 10%);
+    @include button-fab-variant($value, $value);
+  }
+}
+@each $color, $value in $theme-colors {
+  .btn-flat-#{$color} {
+    // box-shadow: 0 10px 20px mix($color, $white, 10%);
+    @include button-flat-variant($value, $value);
+    &.bottom {
+      // border-bottom: 1px solid $value !important;
+      border-top: 1px solid transparent !important;
+      border-left: 1px solid transparent !important;
+      border-right: 1px solid transparent !important;
+    }
+  }
 }
 
 // remove focus inputs
@@ -22,7 +41,7 @@ textarea.form-control:focus {
 .p,
 p {
   font-family: $font-family-paragraph;
-  color: #888888;
+  color: #7c7c7c;
 }
 h1,
 h2,
@@ -37,6 +56,8 @@ h6,
 .h5,
 .h6 {
   font-family: $font-family-base;
+  transition: all 1s;
+
 }
 
 // class for images
@@ -48,7 +69,7 @@ h6,
 }
 
 .form-control {
-  border: 1px solid transparent !important;
+  border: 1px solid transparent !important; // #e6e6e6 !important;
 
   &:focus {
     background-color: $input-bg !important;
@@ -67,8 +88,9 @@ h6,
 .author {
   text-align: right;
   cite, .cite {
-    font-family: 'Yellowtail', cursive;
-    color: $primary;
+    // font-family: 'Yellowtail', cursive;
+    font-family: 'Josefin Sans', sans-serif !important;
+    color: $primary !important;
     text-shadow: 6px 3px 9px #000000;
     text-align: center;
   }

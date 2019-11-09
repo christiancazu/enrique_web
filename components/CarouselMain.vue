@@ -45,9 +45,11 @@
                     v-html="item.subtitle"
                   />
 
-                  <footer class="author h2">
-                    <cite title="Title">Luis E. Bustamante</cite>
-                  </footer>
+                  <h4 class="author">
+                    <cite
+                      title="Title"
+                    >Luis E. Bustamante</cite>
+                  </h4>
 
                   <nuxt-link
                     v-if=" item.button"

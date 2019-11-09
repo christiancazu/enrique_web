@@ -7,43 +7,19 @@
         flex-direction: column;
         justify-content: center;
 
-        &__text {
-
-            text-align: center;
+        &__title {
             position: relative;
-            color: text-color('gray');
+            color: $primary;
+            text-transform: uppercase;
+            font-weight: 600;
             transition: color $animation-time-quote;
-
-            &__quote {
-
-                &--left,
-                &--right {
-                    position: absolute;
-                    color: lighten($primary, 30%);
-                    font-size: 4em;
-                    z-index: -1;
-                }
-                &--left {
-                    top: 0;
-                    animation : $animation-time-quote quote-left-out forwards;
-                }
-                &--right {
-                    bottom: 0;
-                    animation : $animation-time-quote quote-right-out forwards;
-                }
-            }
+        }
+        &__content {
+            text-align: justify;
         }
         &:hover & {
-            &__text {
-                color: text-color('dark');
-                &__quote {
-                    &--left {
-                        animation : $animation-time-quote quote-left-in forwards;
-                    }
-                    &--right {
-                        animation : $animation-time-quote quote-right-in forwards;
-                    }
-                }
+            &__title {
+                color: black;
             }
         }
     }

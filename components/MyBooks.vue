@@ -10,13 +10,14 @@
       <div
         v-for="(book, i) in books"
         :key="i"
-        class="col-lg-5"
+        class="col-lg-4"
       >
         <book
           :img-src="imgPath + book.imgSrc"
           :title="book.title"
           :description="book.summary"
         />
+        <payment :book="book" />
       </div>
     </div>
   </section>
@@ -26,12 +27,13 @@
 import { IMG_BASE_PATH } from '~/config/constants'
 import HeaderSection from '~/components/HeaderSection'
 import Book from '~/components/Book'
+import Payment from '~/components/Payment'
 import { mapState } from 'vuex'
 
 export default {
   name: 'MyBooks',
   components: {
-    HeaderSection ,Book
+    HeaderSection, Book, Payment
   },
   data () {
     return {
@@ -42,7 +44,7 @@ export default {
     ...mapState({
       books: 'books'
     }),
-    header() {
+    header () {
       return this.$store.getters.headerSection('MyBooks')
     }
   },
