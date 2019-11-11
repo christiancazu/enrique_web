@@ -39,9 +39,7 @@
         aria-labelledby="home-tab"
       >
         <header-section
-          :attach="header.attach"
-          :title="header.title"
-          :description="header.description"
+          title="Luis enrique Bustamante Pérez"
           full-row
         />
 

@@ -1,8 +1,8 @@
 <template>
   <div class="history">
-    <div class="history__header">
+    <!-- <div class="history__header">
       <h4>{{ title }}</h4>
-    </div>
+    </div> -->
     <div class="container">
       <div
         :class="[
@@ -13,24 +13,25 @@
         <img
           :src="img"
           :alt="`${ownerName} - ${title}`"
-          class="col-12 col-md-6 history__body__img"
+          class="col-12 col-md-5 history__body__img"
         >
-        <div class="col-12 col-md-6 history__body__content">
-          <div class="history__body__content__quote">
+        <div class="col-12 col-md-7 history__body__content">
+          <!-- <div class="history__body__content__quote">
             <i
               class="fa fa-quote-left history__body__content__quote--left"
               aria-hidden="true"
             />
-          </div>
-          <p class="history__body__content__text">
-            {{ body }}
-          </p>
-          <div class="history__body__content__quote">
+          </div> -->
+          <p
+            class="history__body__content__text"
+            v-html="body"
+          />
+          <!-- <div class="history__body__content__quote">
             <i
               class="fa fa-quote-left history__body__content__quote--right"
               aria-hidden="true"
             />
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

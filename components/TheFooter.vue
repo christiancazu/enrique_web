@@ -25,7 +25,7 @@
             class="nav-item"
           >
             <nuxt-link
-              class="nav-link small"
+              class="nav-link"
               :to="{ name: nav.link }"
               exact
             >
