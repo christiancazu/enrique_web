@@ -1,6 +1,6 @@
 <template>
-  <!-- <div class="row mb-4 header-section">
-    <div
+  <!-- <div class="row mb-4 header-section"> -->
+  <!-- <div
       :class="[ 
         { 'col-md-6' : fullRow }, 
         'col header-section__content'
@@ -18,12 +18,25 @@
       />
     </div>
   </div> -->
-  <div class="main-title mb-4">
+  <!-- <div class="main-title mb-4">
     <h1>
       {{ attach }}
       <span class="text-primary">{{ title }}</span>
       <span class="small_line" />
     </h1>
+  </div> -->
+  <div
+    class="main-title-1 pb-4"
+    :class="{'center': center}"
+  >
+    <div class="attach small">
+      {{ attach }}
+    </div>
+    <h5 class="title">
+      {{ title }}
+      <!-- <span class="small_line" /> -->
+    </h5>
+    <p class="small_line" />
   </div>
 </template>
 
@@ -44,6 +57,9 @@ export default {
       default: ''
     },
     fullRow: {
+      type: Boolean, default: false
+    },
+    center: {
       type: Boolean, default: false
     }
   }

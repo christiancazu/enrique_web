@@ -20,7 +20,7 @@
             <li />
             <li>
               <h5
-                class="text-page"
+                class="text-page p"
                 v-html="description"
               />
               <nuxt-link

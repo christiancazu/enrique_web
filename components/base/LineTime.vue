@@ -16,14 +16,22 @@
             </div>
             <div class="timeline-panel">
               <div class="timeline-heading">
-                <h4>{{ item.title }}</h4>
-                <h4 class="subheading">
-                  {{ item.date }}
-                </h4>
+                <h6 class="title">
+                  {{ item.title }}
+                </h6>
               </div>
               <div class="timeline-body">
-                <p class="text-muted">
-                  {{ item.description }}
+                <p>
+                  {{ item.description.slice(0, 95) }}...
+                </p>
+              </div>
+              <div class="timeline-fotter">
+                <p class="small">
+                  <i
+                    class="fa fa-calendar"
+                    aria-hidden="true"
+                  />
+                  {{ item.date }}
                 </p>
               </div>
             </div>

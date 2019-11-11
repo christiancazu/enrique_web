@@ -1,17 +1,19 @@
 $enable-responsive-font-sizes: true;
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Yellowtail&display=swap');
 
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Source+Sans+Pro:400,700&display=swap');
 
+@import url('https://fonts.googleapis.com/css?family=Lora:400i&display=swap');
 // fonts
-$font-family-paragraph:      'Source Sans Pro', sans-serif;
-$font-family-base:           'Source Sans Pro', sans-serif;
-// $headings-font-weight:        bold;
-// $font-size-base:             0.975rem;
+$font-family-paragraph:      'Lora', serif;
+$font-family-base:           'Montserrat', sans-serif;
+$font-family-secondary:      'Raleway', sans-serif;
+// $headings-font-weight:        600;
+$font-size-base:             0.875rem;
 
 // inputs
 $input-border-radius:        3px;
@@ -22,14 +24,14 @@ $input-height:               2.5rem;
 $input-font-size:            $font-size-base;
 
 // buttons
-$btn-border-radius:          .2rem;
+$btn-border-radius:          0rem;
 $btn-focus-width:            0rem;
 $btn-font-weight:            700;
 $btn-font-size:              $font-size-base;
 // $body-color: $white;
 
 // colors
-$primary:                    #f5b900;
+$primary:                    #e6ae48;
 // $primary:                    #0cb799;
 // $primary:                    #00BCD4;
 // $primary:                    #f5b900;
@@ -62,9 +64,10 @@ $text-colors: (
 
 // body
 $body-bg:                           #fff;
+$section-bg:                           #f9f9f9;
 
 // navbar
-$navbar-bg:                           $dark;
+$navbar-bg:                           #252525;
 $navbar-bg-opacity:                   .8;
 $nav-text-color:                      $gray-100;
 $nav-text-color-active:               $primary;

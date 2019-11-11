@@ -23,9 +23,9 @@
             </div>
             <div class="timeline-panel">
               <div class="timeline-heading">
-                <h5 class="title">
+                <h6 class="title">
                   {{ activity.title }}
-                </h5>
+                </h6>
               </div>
               <div class="timeline-body">
                 <p>

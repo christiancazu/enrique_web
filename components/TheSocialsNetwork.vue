@@ -1,14 +1,20 @@
 <template>
   <div class="social-all">
-    <template v-for="(item, i) in socialNetwork">
-      <a
-        :key="i"
-        :href="item.url"
-        target="_bank"
-      >
-        <i :class="item.classIcon" />
-      </a>
-    </template>
+    <ul class="m-0">
+      <template v-for="(item, i) in socialNetwork">
+        <li
+          :key="i"
+        >
+          <a
+            :href="item.url"
+            target="_bank"
+            :class="{'small':isNavbar}"
+          >
+            <i :class="item.classIcon" />
+          </a>
+        </li>
+      </template>
+    </ul>
   </div>
 </template>
 
@@ -16,7 +22,11 @@
 import { SOCIAL_NETWORK } from '~/config/constants'
 
 export default {
-  data() {
+  props: {
+    isNavbar: { type: Boolean, default: false }
+  },
+
+  data () {
     return {
       socialNetwork: SOCIAL_NETWORK
     }

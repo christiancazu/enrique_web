@@ -1,0 +1,32 @@
+.social-all ul {
+  padding-left: 0;
+}
+.social-all li {
+  display: inline-block;
+  margin-right: .8rem;
+}
+.social-all li a {
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+  height: 33px;
+  width: 33px;
+  line-height: 32px;
+  border-radius: 50px;
+  display: inline-block;
+  border: 1px solid transparent;
+  -webkit-transition: all 1s ease 0s;
+  -moz-transition: all 1s ease 0s;
+  -o-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
+}
+.social-all li a:hover {
+  display: inline-block;
+  // height: 33px;
+  // width: 33px;
+  // line-height: 32px;
+  border-radius: 50%;
+  border: 1px solid $primary;
+  color: $primary;
+  text-align: center;
+}

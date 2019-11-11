@@ -1,6 +1,6 @@
 .about {
   padding: $padding-y-section 0;
-  margin: $margin-y-section 0;
+  // margin: $margin-y-section 0;
 }
 
 // Styling for the timeline section
@@ -109,10 +109,10 @@
   .timeline-heading {
 
     .title {
+      font-size: .87rem;
       margin-top: 0;
       color: $primary;
       text-transform: uppercase;
-      font-weight: 600;
 
       &.subheading {
         text-transform: none;
@@ -131,6 +131,7 @@
      > ul,
     > p {
       margin-bottom: 0;
+      font-size: .82rem;
     }
   }
 

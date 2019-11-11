@@ -4,6 +4,7 @@
       :attach="header.attach"
       :title="header.title"
       :description="header.description"
+      center
     />
 
     <div class="row justify-content-center">

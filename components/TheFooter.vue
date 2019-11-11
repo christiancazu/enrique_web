@@ -2,7 +2,38 @@
   <footer class="footer">
     <div class="wrap-footer">
       <div class="container">
-        <div class="row">
+        <nuxt-link
+          class="navbar-brand"
+          :to="{ name: 'index' }"
+        >
+          <div class="author">
+            <h4 class="cite logo">
+              Luis Enrique <br>
+              Bustamante Pérez
+            </h4>
+          </div>
+        </nuxt-link>
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-4 col-lg-6 col-xs-12">
+            <p>Cada nuevo día es una nueva oportunidad para ser una mejor persona. Una persona honorable, no puede pasar por este mundo, sin ayudat a otra persona.</p>
+          </div>
+        </div>
+        <ul class="nav justify-content-center p mb-2">
+          <li
+            v-for="(nav, i) in navs"
+            :key="i"
+            class="nav-item"
+          >
+            <nuxt-link
+              class="nav-link small"
+              :to="{ name: nav.link }"
+              exact
+            >
+              {{ nav.name }}
+            </nuxt-link>
+          </li>
+        </ul>
+        <!-- <div class="row">
           <div class="col-md-4">
             <nuxt-link
               class="navbar-brand"
@@ -14,11 +45,6 @@
                   Bustamante Pérez
                 </h2>
               </div>
-              <!-- <img
-          src="/images/logo/logo_yellow.png"
-          alt="Luis enrique"
-          class="img-fluid logo"
-        > -->
             </nuxt-link>
             <ul class="list-unstyled mt-4 info-personal">
               <li class="d-flex align-items-center pb-2">
@@ -105,10 +131,11 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
+        <TheSocialsNetwork />
       </div>
     </div>
-    <div class="container footer_creator py-1">
+    <div class="container footer_creator py-3">
       <div class="row align-items-center">
         <div class="col-md-6 text-xs-center">
           <span class="copyright small">
@@ -189,7 +216,15 @@ export default {
         { imgSrc: '/images/fotos/hermanos_pequenos.png' },
         { imgSrc: '/images/fotos/luis_y_mario.png' },
         { imgSrc: '/images/fotos/octubre-28-2018-1-200x200.jpg' }
-      ]
+      ],
+
+      navs: [
+        { name: 'Inicio', link: 'index' },
+        { name: 'Sobre mi', link: 'about' },
+        { name: 'libros', link: 'books' },
+        { name: 'Noticias', link: 'news' },
+        { name: 'contacto', link: 'contact' },
+      ],
     }
   },
 }

@@ -9,7 +9,7 @@
         &:after {
           width: 30px;
           height: 2px;
-          content: '';
+          content: "";
           background: $primary;
           display: inline-block;
           transform: translate(20px, -6px);
@@ -30,16 +30,17 @@
   justify-content: center;
   text-transform: uppercase;
 
-   h1, .h1 {
+  h1,
+  .h1 {
     width: fit-content;
     border-bottom: 1px solid #f4f4f4;
     position: relative;
     font-weight: bold !important;
     line-height: 1.6;
     text-align: center;
-   }
+  }
 
-   .small_line {
+  .small_line {
     background-color: $primary;
     width: 37px;
     display: block;
@@ -47,5 +48,32 @@
     position: absolute;
     bottom: 0px;
     left: 44.5%;
-   }
+  }
+}
+.main-title-1 {
+  text-transform: uppercase;
+  margin: $margin-y-section 0;
+
+  .attach {
+    color: $primary;
+    font-family: "Raleway", sans-serif;
+
+    letter-spacing: 2.2px !important;
+    font-weight: 600;
+    margin-bottom: 0.8375rem;
+  }
+  .title {
+    padding-bottom: 0.625rem;
+  }
+  .small_line {
+    width: 36px;
+    height: 2px;
+    background-color: #333;
+  }
+}
+.center {
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  flex-direction: column;
 }

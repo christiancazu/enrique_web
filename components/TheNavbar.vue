@@ -9,10 +9,10 @@
         :to="{ name: 'index' }"
       >
         <div class="author">
-          <h2 class="cite logo">
+          <h4 class="cite logo">
             Luis Enrique <br>
             Bustamante Pérez
-          </h2>
+          </h4>
         </div>
         <!-- <img
           src="/images/logo/logo_yellow.png"
@@ -42,7 +42,7 @@
             class="nav-item"
           >
             <nuxt-link
-              class="nav-link"
+              class="nav-link small"
               :to="{ name: nav.link }"
               exact
             >
@@ -50,7 +50,7 @@
             </nuxt-link>
           </li>
         </ul>
-        <TheSocialsNetwork />
+        <TheSocialsNetwork is-navbar />
       </div>
     </div>
   </nav>
