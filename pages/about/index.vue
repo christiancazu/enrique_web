@@ -39,6 +39,7 @@
         aria-labelledby="home-tab"
       >
         <header-section
+          attach="Yo soy"
           title="Luis enrique Bustamante Pérez"
           full-row
         />

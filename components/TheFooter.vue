@@ -15,7 +15,7 @@
         </nuxt-link>
         <div class="row d-flex justify-content-center">
           <div class="col-md-4 col-lg-6 col-xs-12">
-            <p>Cada nuevo día es una nueva oportunidad para ser una mejor persona. Una persona honorable, no puede pasar por este mundo, sin ayudat a otra persona.</p>
+            <p>Cada nuevo día es una nueva oportunidad para ser una mejor persona. Una persona honorable, no puede pasar por este mundo, sin ayudar a otra persona.</p>
           </div>
         </div>
         <ul class="nav justify-content-center p mb-2">

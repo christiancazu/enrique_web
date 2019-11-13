@@ -1,42 +1,46 @@
 .home .carousel-item {
   height: 100vh;
-  text-shadow: 1px 1px 7px rgb(39, 39, 39);
-
-  .title {
-    text-transform: uppercase;
-    font-weight: 700;
-    text-align: left;
-  }
-  .subtitle {
-    font-weight: 400;
-    color: white;
-    text-align: left;
-    font-family: $font-family-base;
-    line-height: 1.71429;
-  }
-  .btn {
-    text-shadow: none;
-  }
 }
 .overlay-home {
-position: absolute;
-width: 100%;
-height: 100%;
-background-color: rgba(0, 0, 0, 0.6);
-// background: rgba(32,36,40,.7);
-top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  // background: rgba(32,36,40,.7);
+  top: 0;
 }
 .carousel-caption-home {
   position: absolute;
-  top: 136px;
-  padding-bottom: 6rem;
-  width:100%;
-  height: calc(100% - 136px);
+  top: 51%;
+  width: 100%;
+  height: fit-content;
   z-index: 1;
 
   display: flex;
-  align-items: flex-end;
-  text-align: center;
+  align-items: flex-start;
+
+  .carousel-content {
+    .action, .title, .subtitle {
+      text-align: center;
+      text-shadow: 1px 1px 7px rgb(39, 39, 39);
+    }
+    .title {
+      font-weight: bold;
+      color: $white;
+      letter-spacing: 4px !important;
+    }
+    .subtitle {
+      text-transform: uppercase;
+      font-weight: bold !important;
+      color: $primary;
+      letter-spacing: 4px;
+    }
+    .action .btn {
+      color: $white !important;
+      text-shadow: none;
+    } 
+   
+  }
 }
 
 cite::before {
