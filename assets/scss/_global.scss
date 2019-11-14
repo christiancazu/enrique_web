@@ -8,6 +8,9 @@ button, .btn {
   letter-spacing: 2px;
   padding: 0.6rem 1.5rem !important;
 }
+.text-justify {
+  text-align: justify !important;
+}
 
 @each $color, $value in $theme-colors {
   .btn-fab-#{$color} {

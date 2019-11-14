@@ -7,7 +7,7 @@
       v-if="book.price"
       class="btn btn-fab-primary my-1"
       :class="{'btn-block': isblock}"
-      @click="$Culqi.open()"
+      @click="openModalCulqi(book)"
     >
       <i
         class="fa fa-credit-card-alt"
@@ -18,7 +18,7 @@
 
     <button
       v-if="book.price"
-      class="btn btn-outline-primary my-1" 
+      class="btn btn-outline-primary my-1"
       :class="{'btn-block': isblock}"
     >
       <i
@@ -29,7 +29,7 @@
     </button>
     <button
       v-if="!book.price"
-      class="btn btn-outline-danger my-1" 
+      class="btn btn-outline-danger my-1"
       :class="{'btn-block': isblock}"
     >
       Proximo lanzamiento
@@ -42,6 +42,14 @@ export default {
     book: { type: Object, default: null },
     labelBuy: { type: String, default: 'COMPRAR' },
     isblock: { type: Boolean, default: false }
-  }
+  },
+  
+  methods: {
+    openModalCulqi() {
+      // console.log(window)
+      window.Culqi.open()
+      
+    }
+  },
 }
 </script>

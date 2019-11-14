@@ -14,16 +14,27 @@
                 class="rounded-circle img-fluid"
               >
             </div>
-            <div class="timeline-panel">
+            <div
+              class="timeline-panel"
+              :class="{'p-0':textJustify }"
+            >
               <div class="timeline-heading">
-                <h6 class="title">
+                <h6
+                  class="title"
+                  :class="{'text-center': textJustify}"
+                >
                   {{ item.title }}
                 </h6>
               </div>
               <div class="timeline-body">
-                <p>
+                <p v-if="!lineComplet">
                   {{ item.description.slice(0, 95) }}...
                 </p>
+                <p
+                  v-else
+                  :class="{'text-justify': textJustify}"
+                  v-html="item.description"
+                />
               </div>
               <div class="timeline-fotter">
                 <p class="small">
@@ -59,6 +70,8 @@ export default {
   props: {
     items: { type: Array, default: () => [] },
     seeMore: { type: Boolean, default: false },
+    textJustify: { type: Boolean, default: false },
+    lineComplet: { type: Boolean, default: false },
     path: { type: String, default: '/' }
   }
 }
