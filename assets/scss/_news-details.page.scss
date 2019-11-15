@@ -19,6 +19,7 @@
   }
   &__title {
     text-transform: uppercase;
+    text-align: justify;
     color: $primary;
     // font-weight: 500;
   }
@@ -37,7 +38,8 @@
   border-radius: .3rem;
 
   img {
-    min-height: 235px;
+    height: 235px;
+    width: 100%;
     border-radius: .3rem;
     object-fit: cover;
   }

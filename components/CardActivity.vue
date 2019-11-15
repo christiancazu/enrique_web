@@ -5,7 +5,7 @@
       :alt="`${ownerName} - ${title}`"
       class="img-fluid"
     >
-    <h6 class="p-1 title">
+    <h6 class="p-1 title small">
       {{ title }}
     </h6>
     <div class="team-social-icon">
