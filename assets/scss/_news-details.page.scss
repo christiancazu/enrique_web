@@ -80,32 +80,20 @@
 }
 .team-member:hover .team-social-icon {
   opacity: 1;
-  transition: opacity 2s ease-in;
+  transition: opacity .4s ease-in;
 /* vendorless fallback */
-  -o-transition: opacity 2s ease-in;
+  -o-transition: opacity .4s ease-in;
 /* opera */
-  -ms-transition: opacity 2s ease-in;
+  -ms-transition: opacity .4s ease-in;
 /* IE 10 betas, not needed in final build. */
-  -moz-transition: opacity  2s ease-in;
+  -moz-transition: opacity  .4s ease-in;
 /* Firefox */
-  -webkit-transition: opacity 2s ease-in;
+  -webkit-transition: opacity .4s ease-in;
 /*safari and chrome */;
 }
-.team-member:hover .counter-block {
+.team-member:hover {
   opacity: 1;
   bottom: 0;
-}
-
-.counter-block {
-  position: absolute;
-  bottom: 50%;
-  opacity: 0;
-  left: 0;
-  right: 0;
-  -webkit-transition: all 1.3s ease 0s;
-  -moz-transition: all 1.3s ease 0s;
-  -o-transition: all 1.3s ease 0s;
-  transition: all 1.3s ease 0s;
 }
 /* -- Common Social Icons*/
 .social-icons {
