@@ -79,7 +79,7 @@ export default {
             ¡Hubo algún problema!
             Mostramos JSON de objeto error en consola
           */
-          console.log(Culqi.error);
+         _self.$toasted.error(Culqi.error)
         }
       }
     }

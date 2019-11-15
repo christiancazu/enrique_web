@@ -84,7 +84,8 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/toast'
   ],
   /*
    ** Axios module configuration
@@ -95,6 +96,20 @@ export default {
       'https://enriqueapi.herokuapp.com/api/' :
       'https://enriqueapi.herokuapp.com/api/'
   },
+
+  toast: {
+    position: 'top-right',
+    className: 'app-toast',
+    duration: 4000,
+    action: {
+      text: 'X',
+      // eslint-disable-next-line
+      onClick: (e, toastObject) => {
+        toastObject.goAway(0)
+      }
+    }
+  },
+
   /*
    ** Build configuration
    */
