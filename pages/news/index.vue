@@ -28,7 +28,7 @@
     <div class="col-md-4 col-sm-6 col-xs-6">
       <div class="team-member"> 
         <img
-          src="images/team-1.jpg"
+          src="images/team-1.png"
           alt="team"
           width="370"
           height="400"
@@ -95,7 +95,7 @@
     <div class="col-md-4 col-sm-6 col-xs-6">
       <div class="team-member">
         <img
-          src="images/team-3.jpg"
+          src="images/team-3.png"
           alt="team"
           width="370"
           height="400"

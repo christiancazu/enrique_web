@@ -208,14 +208,14 @@ export default {
 
       photos: [
         { imgSrc: '/images/fotos/reyes_espana.png' },
-        { imgSrc: '/images/fotos/buscando-la-felicidad.jpg' },
-        { imgSrc: '/images/fotos/diciembre-20-2017-1-200x200.jpg' },
-        { imgSrc: '/images/fotos/diciembre-21-2017-1-200x200.jpg' },
+        { imgSrc: '/images/fotos/buscando-la-felicidad.png' },
+        { imgSrc: '/images/fotos/diciembre-20-2017-1-200x200.png' },
+        { imgSrc: '/images/fotos/diciembre-21-2017-1-200x200.png' },
         { imgSrc: '/images/fotos/familia_campo.png' },
-        { imgSrc: '/images/fotos/hablando-con-un-angel.jpg' },
+        { imgSrc: '/images/fotos/hablando-con-un-angel.png' },
         { imgSrc: '/images/fotos/hermanos_pequenos.png' },
         { imgSrc: '/images/fotos/luis_y_mario.png' },
-        { imgSrc: '/images/fotos/octubre-28-2018-1-200x200.jpg' }
+        { imgSrc: '/images/fotos/octubre-28-2018-1.png' }
       ],
 
       navs: [
