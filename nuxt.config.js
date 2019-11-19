@@ -67,7 +67,6 @@ export default {
    */
   plugins: [
     { src: 'plugins/owl.js', ssr: false },
-    { src: 'plugins/Culqi.js', ssr: false },
     '~/plugins/axios',
     '~/plugins/api'
   ],
