@@ -27,6 +27,19 @@
             <h5 class="card-news-details__title">
               {{ currentActivity.title }}
             </h5>
+            <p class="small">
+              <i
+                class="fa fa-calendar"
+                aria-hidden="true"
+              />
+              {{ `${ currentActivity.date }` }}
+              <span class="pl-5">
+                <i
+                  class="fa fa-edit"
+                  aria-hidden="true"
+                />
+                {{ `${ currentActivity.by }` }}</span>
+            </p>
             <p
               class="card-text card-news-details__body--text"
               v-html="currentActivity.description"
