@@ -30,8 +30,14 @@
     "description": "Estos son los testimonios de las personas que me han conocido."
   },
   {
+    "section": "FormContact",
+    "attach": "Tienes alguna duda o pregunta",
+    "title": " escríbeme",
+    "description": "Quiero saber más de lo que pienses acerca de mis libros. Estaré atento a tus dudas, consultas o sugerencias."
+  },
+  {
     "section": "Contact",
-    "attach": "También puedes",
+    "attach": "",
     "title": "Contactarme",
     "description": "Quiero saber más de lo que pienses acerca de mis libros. Estaré atento a tus dudas, consultas o sugerencias."
   }
