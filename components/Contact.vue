@@ -109,7 +109,7 @@ export default {
 
   computed: {
     header () {
-      return this.$store.getters.headerSection('Contact')
+      return this.$store.getters.headerSection('FormContact')
     }
   },
   methods: {

@@ -13,13 +13,15 @@
         class="fa fa-credit-card-alt"
         aria-hidden="true"
       />
-      Comprar {{ book.price }}
+      Comprar ahora
     </button>
 
     <button
       v-if="book.price"
       class="btn btn-outline-primary my-1"
       :class="{'btn-block': isblock}"
+      data-toggle="modal"
+      :data-target="`#modalBookSummary${book.id}`"
     >
       <i
         class="fa fa-download"
@@ -34,11 +36,19 @@
     >
       Proximo lanzamiento
     </button>
+    <modal-book-summary
+      :id="book.id"
+      :title="book.title"
+    />
   </div>
 </template>
 <script>
 import { mapActions } from 'vuex'
+import ModalBookSummary from '~/components/ModalBookSummary'
+
 export default {
+
+  components:{ModalBookSummary},
   props: {
     book: { type: Object, default: null },
     labelBuy: { type: String, default: 'COMPRAR' },
@@ -79,7 +89,7 @@ export default {
             ¡Hubo algún problema!
             Mostramos JSON de objeto error en consola
           */
-         _self.$toasted.error(Culqi.error)
+          _self.$toasted.error(Culqi.error)
         }
       }
     }
