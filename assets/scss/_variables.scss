@@ -12,12 +12,10 @@ $enable-responsive-font-sizes: true;
 $font-family-paragraph:      'Lora', serif;
 $font-family-base:           'Montserrat', sans-serif;
 $font-family-secondary:      'Raleway', sans-serif;
-// $headings-font-weight:        600;
 $font-size-base:             0.9375rem;
 
 // inputs
 $input-border-radius:        3px;
-// $input-border-width: 0px;
 $input-bg:                  #f5f5f5;
 $input-color:               #747474;
 $input-height:               2.5rem;
@@ -28,15 +26,9 @@ $btn-border-radius:          0rem;
 $btn-focus-width:            0rem;
 $btn-font-weight:            700;
 $btn-font-size:              $font-size-base;
-// $body-color: $white;
 
 // colors
-// $primary:                    #e6ae48;
 $primary:                     #0cb799;
-// $primary:                    #00BCD4;
-// $primary:                    #f5b900;
-// $primary:                    #0cb799;
-
 $secondary:                  $gray-600;
 $success:                    $green;
 $info:                       $cyan;
@@ -44,7 +36,6 @@ $warning:                    $yellow;
 $danger:                     $red;
 $light:                      $gray-100;
 $dark:                       $gray-800;
-
 $white:                     #fff;
 $veox-color:                #479894;
 
@@ -63,8 +54,8 @@ $text-colors: (
 );
 
 // body
-$body-bg:                           #fff;
-$section-bg:                           #f9f9f9;
+$body-bg:                             #fff;
+$section-bg:                          #f9f9f9;
 
 // navbar
 $navbar-bg:                           #252525;
@@ -89,4 +80,4 @@ $nav-pills-link-active-bg:            transparent;
 // MODAL
 $close-color:                         $primary;
 $modal-content-border-width:          0;
-$modal-content-border-radius:          0.1rem;
+$modal-content-border-radius:         0.1rem;
