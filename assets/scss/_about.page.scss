@@ -1,3 +1,38 @@
+.history {
+  &__header,
+  &__body,
+  &__footer {
+    text-align: justify;
+  }
+  &__body {
+    align-items: center;
+    &__img {
+      @extend .px-0;
+      object-fit: cover;
+      max-height: 250px;
+      border-radius: 1rem ;
+      filter: grayscale(.7);
+    }
+    &__content {
+      &__text {
+        margin-bottom: 0;
+        text-align: justify;
+        padding: 1.5rem 1rem;
+        transition: color 1s;
+      }
+    }
+    &:hover & {
+      &__content {
+        &__text {
+          color: text-color("dark");
+        }
+      }
+      &__body__img {
+        filter: none;
+      }
+    }
+  }
+}
 #tabsAbout {
   border-bottom: 1px solid #ccc;
 

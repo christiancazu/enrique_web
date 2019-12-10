@@ -1,14 +1,9 @@
 <template>
   <div class="history">
-    <!-- <div class="history__header">
-      <h4>{{ title }}</h4>
-    </div> -->
     <div class="container">
       <div
-        :class="[
-          { 'flex-row-reverse' : reverse },
-          'row history__body'
-        ]"
+        :class="[{ 'flex-row-reverse' : reverse },
+                 'row history__body']"
       >
         <img
           :src="img"
@@ -16,22 +11,10 @@
           class="col-12 col-md-5 history__body__img"
         >
         <div class="col-12 col-md-7 history__body__content">
-          <!-- <div class="history__body__content__quote">
-            <i
-              class="fa fa-quote-left history__body__content__quote--left"
-              aria-hidden="true"
-            />
-          </div> -->
           <p
             class="history__body__content__text"
             v-html="body"
           />
-          <!-- <div class="history__body__content__quote">
-            <i
-              class="fa fa-quote-left history__body__content__quote--right"
-              aria-hidden="true"
-            />
-          </div> -->
         </div>
       </div>
     </div>
