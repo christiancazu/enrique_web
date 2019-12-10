@@ -1,42 +1,15 @@
 <template>
-  <!-- <div class="row mb-4 header-section"> -->
-  <!-- <div
-      :class="[ 
-        { 'col-md-6' : fullRow }, 
-        'col header-section__content'
-      ]"
-    >
-      <h5 class="header-section__content__text--attach">
-        {{ attach }}
-      </h5>
-      <h1 class="header-section__content__text--title">
-        {{ title }}
-      </h1>
-      <p
-        class="header-section__content__text--description"
-        v-html="description"
-      />
-    </div>
-  </div> -->
-  <!-- <div class="main-title mb-4">
-    <h1>
-      {{ attach }}
-      <span class="text-primary">{{ title }}</span>
-      <span class="small_line" />
-    </h1>
-  </div> -->
   <div
-    class="main-title-1 pb-4"
+    class="main-title"
     :class="{'center': center}"
   >
-    <div class="attach small">
+    <div class="attach">
       {{ attach }}
     </div>
-    <h4 class="title">
+    <h2 class="title">
       {{ title }}
-      <!-- <span class="small_line" /> -->
-    </h4>
-    <p class="small_line" />
+    </h2>
+    <div class="small_line" />
   </div>
 </template>
 
