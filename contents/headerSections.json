@@ -2,7 +2,7 @@
   {
     "section": "MyBooks",
     "attach": "Te presento",
-    "title": "mis libros",
+    "title": "mis libros hasta ahora",
     "description": "Te invito a que los leas. <br> Porque cuando el entorno se desmorona es más difícil plantarle cara a las circunstancias, cada línea de estos libros tienen un valor inmenso."
   },
   {
@@ -13,8 +13,8 @@
   },
   {
     "section": "Letters",
-    "attach": "Gracias por lo que me escribieron",
-    "title": "Maravillosas cartas",
+    "attach": "Gracias por sus",
+    "title": "Comentarios",
     "description": ""
   },
   {
@@ -25,7 +25,7 @@
   },
   {
     "section": "Testimonials",
-    "attach": "Quienes me conocen",
+    "attach": "Mis lectores",
     "title": "Opinan",
     "description": "Estos son los testimonios de las personas que me han conocido."
   },

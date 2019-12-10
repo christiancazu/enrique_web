@@ -25,7 +25,7 @@
           role="tab"
           aria-controls="profile"
           aria-selected="false"
-        >Cartas</a>
+        >Comentarios</a>
       </li>
     </ul>
     <div

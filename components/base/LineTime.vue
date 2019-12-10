@@ -16,7 +16,6 @@
             </div>
             <div
               class="timeline-panel"
-              :class="{'p-0':textJustify }"
             >
               <div class="timeline-heading">
                 <h6
