@@ -11,14 +11,14 @@
       <div
         v-for="(book, i) in books"
         :key="i"
-        class="col-lg-4"
+        class="col-lg-6"
       >
         <book
           :img-src="imgPath + book.imgSrc"
           :title="book.title"
           :description="book.summary"
         />
-        <div class="px-4">
+        <div class="px-5">
           <payment
             :book="book"
             isblock

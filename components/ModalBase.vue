@@ -1,98 +1,54 @@
 <template>
-  <div>
-    <button
-      type="button"
-      :class="`btn btn-block mb-2 ${classBtn}`"
-      data-toggle="modal"
-      :data-target="`#${idModal}`"
-    >
-      <small class="text-uppercase font-weight-bold">
-        {{ labelBtn }}
-        <strong
-          v-if="itsFree"
-          class="text-danger"
-        >(gratis)</strong>
-      </small>
-    </button>
-    <div
-      :id="idModal"
-      class="modal fade"
-      tabindex="-1"
-      role="dialog"
-      :aria-labelledby="`${idModal}Title`"
-      aria-hidden="true"
-    >
-      <div
-        class="modal-dialog modal-dialog-scrollable"
-        role="document"
-      >
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5
-              :id="`${idModal}Title`"
-              class="modal-title"
-            >
-              {{ titleModal }}
-            </h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <slot name="body-content" />
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              cancelar
-            </button>
-            <button
-              type="button"
-              class="btn btn-primary"
-            >
-              {{ toBuy? 'Comprar' : 'Enviar y descargar resumen' }}
-            </button>
-          </div>
+  <modal-base
+    id-modal="getSummary"
+    label-btn="Adquirir resumen"
+    title-modal="Déjanos tus datos"
+    its-free
+  >
+    <template v-slot:body-content>
+      <form action="">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Nombres"
+            aria-label="Nombres"
+            aria-describedby="basic-addon1"
+          >
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Apellidos"
+            aria-label="Apellidos"
+            aria-describedby="basic-addon1"
+          >
         </div>
-      </div>
-    </div>
-  </div>
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Correo electrónico"
+            aria-label="Correo electrónico"
+            aria-describedby="basic-addon1"
+          >
+        </div>
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Celular"
+            aria-label="Celular"
+            aria-describedby="basic-addon1"
+          >
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Celular 2"
+            aria-label="Celular 2"
+            aria-describedby="basic-addon1"
+          >
+        </div>
+      </form>
+    </template>
+  </modal-base>
 </template>
-<script>
-export default {
-  props: {
-    idModal: {
-      type: String,
-      default: ''
-    },
-    classBtn: {
-      type: String,
-      default: 'btn-secondary'
-    },
-    labelBtn: {
-      type: String,
-      default: ''
-    },
-    titleModal: {
-      type: String,
-      default: ''
-    },
-    itsFree: {
-      type: Boolean,
-      default: false
-    },
-    toBuy: {
-      type: Boolean,
-      default: false
-    }
-  }
-}
-</script>

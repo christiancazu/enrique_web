@@ -13,7 +13,7 @@
         class="fa fa-credit-card-alt"
         aria-hidden="true"
       />
-      Comprar {{ book.price }}
+      Comprar ahora
     </button>
 
     <button
