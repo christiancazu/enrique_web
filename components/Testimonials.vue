@@ -46,7 +46,7 @@
                 </p>
               </div>
               <div class="testimony__footer">
-                <!-- <img width="85" height="85" src="https://cdn.shopify.com/s/files/1/1297/1881/t/7/assets/testimonial_author_1.jpg?0" alt="" />  -->
+                <!-- <img width="85" height="85" src="https://cdn.shopify.com/s/files/1/1297/1881/t/7/assets/testimonial_author_1.png?0" alt="" />  -->
                 <h6 class="testimony__footer__text--author-name">
                   {{ testimony.authorName }}
                 </h6>

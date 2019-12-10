@@ -15,7 +15,7 @@
         </nuxt-link>
         <div class="row d-flex justify-content-center">
           <div class="col-md-4 col-lg-6 col-xs-12">
-            <p>Cada nuevo día es una nueva oportunidad para ser una mejor persona. Una persona honorable, no puede pasar por este mundo, sin ayudat a otra persona.</p>
+            <p>Cada nuevo día es una nueva oportunidad para ser una mejor persona. Una persona honorable, no puede pasar por este mundo, sin ayudar a otra persona.</p>
           </div>
         </div>
         <ul class="nav justify-content-center p mb-2">
@@ -208,14 +208,14 @@ export default {
 
       photos: [
         { imgSrc: '/images/fotos/reyes_espana.png' },
-        { imgSrc: '/images/fotos/buscando-la-felicidad.jpg' },
-        { imgSrc: '/images/fotos/diciembre-20-2017-1-200x200.jpg' },
-        { imgSrc: '/images/fotos/diciembre-21-2017-1-200x200.jpg' },
+        { imgSrc: '/images/fotos/buscando-la-felicidad.png' },
+        { imgSrc: '/images/fotos/diciembre-20-2017-1-200x200.png' },
+        { imgSrc: '/images/fotos/diciembre-21-2017-1-200x200.png' },
         { imgSrc: '/images/fotos/familia_campo.png' },
-        { imgSrc: '/images/fotos/hablando-con-un-angel.jpg' },
+        { imgSrc: '/images/fotos/hablando-con-un-angel.png' },
         { imgSrc: '/images/fotos/hermanos_pequenos.png' },
         { imgSrc: '/images/fotos/luis_y_mario.png' },
-        { imgSrc: '/images/fotos/octubre-28-2018-1-200x200.jpg' }
+        { imgSrc: '/images/fotos/octubre-28-2018-1.png' }
       ],
 
       navs: [

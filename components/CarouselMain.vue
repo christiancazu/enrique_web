@@ -34,30 +34,25 @@
         <div class="overlay-home" />
         <div class="carousel-caption-home">
           <div class="container">
-            <div class="row w-100 justify-content-center">
-              <div class="col-xs-12 col-md-6 col-lg-4">
-                <div class="">
-                  <h5 class="text-primary title">
+            <div class="row m-0 w-100 justify-content-center">
+              <div class="col-xs-12 col-md-8 p-0">
+                <div class="carousel-content">
+                  <p class="title">
                     {{ item.title }}
-                  </h5>
-                  <p
-                    class="subtitle h6"
+                  </p>
+                  <h4
+                    class="subtitle"
                     v-html="item.subtitle"
                   />
-
-                  <h4 class="author">
-                    <cite
-                      title="Title"
-                    >Luis E. Bustamante</cite>
-                  </h4>
-
-                  <nuxt-link
-                    v-if=" item.button"
-                    to=""
-                    class="btn btn-primary text-white"
-                  >
-                    {{ item.button.label }}
-                  </nuxt-link>
+                  <div class="action pt-3">
+                    <nuxt-link
+                      v-if=" item.button"
+                      to=""
+                      class="btn btn-primary"
+                    >
+                      {{ item.button.label }}
+                    </nuxt-link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -105,12 +100,13 @@ export default {
       items: [
         {
           src: '/images/home/presente_mi_libro.png', alt: '',
-          title: "",
-          subtitle: 'Cada nuevo día es una nueva oportunidad para ser una mejor persona. Una persona honorable, no puede pasar por este mundo, sin ayudat a otra persona.'
+          title: "Una persona honorable, no puede pasar por este mundo, sin ayudar a otra persona.",
+          subtitle: 'Cada nuevo día es una nueva oportunidad para ser una mejor persona.'
         },
         {
           src: '/images/home/books.png', alt: '',
-          subtitle: 'Discapacitados no somos nosotros, sino las personas de corazón mezquino',
+          title: 'Discapacitados no somos nosotros,',
+          subtitle: 'sino las personas de corazón mezquino',
           button: {
             label: 'Mis libros',
             path: '/myBooks'
@@ -119,8 +115,8 @@ export default {
 
         {
           src: '/images/home/luis_y_mario.png', alt: '',
-          title: "Los limites uno mismo se los pone",
-          subtitle: 'La discapacidad es parte de este mundo, no un mundo a parte.'
+          title: "La discapacidad es parte de este mundo,",
+          subtitle: 'no un mundo a parte.'
         }
       ]
     }

@@ -1,12 +1,12 @@
 <template>
   <div
-    v-if="currentActivity" 
+    v-if="currentActivity"
     class="container news-details-page"
   >
     <div class="row justify-content-center">
       <div class="col-12">
         <div class="card card-news-details">
-          <no-ssr>    
+          <no-ssr>
             <owl-carousel
               :autoplay="true"
               :responsive="{
@@ -22,14 +22,28 @@
 
               <img src="https://placeimg.com/200/200/any?4">
             </owl-carousel>
-          </no-ssr>        
-          <div class="card-body card-news-details__body">
+          </no-ssr>
+          <div class="card-body card-news-details__body pb-3">
             <h5 class="card-news-details__title">
               {{ currentActivity.title }}
             </h5>
-            <p class="card-text card-news-details__body--text">
-              {{ currentActivity.description }}
+            <p class="small">
+              <i
+                class="fa fa-calendar"
+                aria-hidden="true"
+              />
+              {{ `${ currentActivity.date }` }}
+              <span class="pl-5">
+                <i
+                  class="fa fa-edit"
+                  aria-hidden="true"
+                />
+                {{ `${ currentActivity.by }` }}</span>
             </p>
+            <p
+              class="card-text card-news-details__body--text"
+              v-html="currentActivity.description"
+            />
           </div>
         </div>
       </div>
@@ -44,7 +58,7 @@ export default {
   components: {
   },
   computed: {
-    currentActivity() {
+    currentActivity () {
       return this.$store.getters.currentActivity(this.$route.params.slug)
     }
   }

@@ -25,5 +25,8 @@ export default ({ $axios }) => {
         if (code === 422) {
             Vue.prototype.$toasted.error('')
         } 
+        if (code === 500) {
+            Vue.prototype.$toasted.error(error.response)
+        } 
     })
 }

@@ -32,10 +32,10 @@
     <div class="attach small">
       {{ attach }}
     </div>
-    <h5 class="title">
+    <h4 class="title">
       {{ title }}
       <!-- <span class="small_line" /> -->
-    </h5>
+    </h4>
     <p class="small_line" />
   </div>
 </template>

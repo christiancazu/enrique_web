@@ -5,7 +5,11 @@ button:focus {
 }
 button, .btn {
   text-transform: uppercase !important;
-  // padding: 0.6rem 1.5rem !important;
+  letter-spacing: 2px;
+  padding: 0.6rem 1.5rem !important;
+}
+.text-justify {
+  text-align: justify !important;
 }
 
 @each $color, $value in $theme-colors {
@@ -90,9 +94,11 @@ h6,
 .author {
   text-align: right;
   cite, .cite {
-    text-transform: uppercase;
+    text-transform: capitalize;
+    font-style: italic;
     // font-family: 'Yellowtail', cursive;
-    font-family: 'Open Sans', sans-serif !important;
+    font-family: 'Lora', serif !important;
+    // font-family: 'Open Sans', sans-serif !important;
     // font-family: 'Josefin Sans', sans-serif !important;
     color: $white !important;
     font-weight: 400 !important;

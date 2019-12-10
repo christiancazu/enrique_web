@@ -1,13 +1,10 @@
 <template>
-  <div class="team-member"> 
+  <div class="team-member">
     <img
-      :src="img" 
+      :src="img"
       :alt="`${ownerName} - ${title}`"
       class="img-fluid"
     >
-    <h6 class="p-1 title">
-      {{ title }}
-    </h6>
     <div class="team-social-icon">
       <h6 class="title">
         {{ title }}
@@ -15,15 +12,25 @@
       <p class="description small">
         {{ description.slice(0, 100) }}...
       </p>
-      <nuxt-link 
+      <nuxt-link
         class="btn btn-block btn-flat-primary bottom"
         :to="{ path: `/news/${slug}` }"
       >
         Leer más
       </nuxt-link>
+      <p class="small mt-2">
+        <i
+          class="fa fa-calendar"
+          aria-hidden="true"
+        />
+        {{ `${day}/${mounth}/${year}` }}
+      </p>
     </div>
-    <div class="counter-block px-4">
-      <p class="small">
+    <div class="counter-block">
+      <h6 class="p-1 title small">
+        {{ title }}
+      </h6>
+      <p>
         <i
           class="fa fa-calendar"
           aria-hidden="true"
@@ -99,7 +106,7 @@ export default {
       default: ''
     }
   },
-  data() {
+  data () {
     return {
       ownerName: OWNER_NAME,
       day: '',
@@ -107,7 +114,7 @@ export default {
       year: ''
     }
   },
-  mounted() {
+  mounted () {
     // spliting date value format 31-feb-9999 to 31 feb 9999
     const dateParts = this.date.split('-')
     this.day = dateParts[0]
@@ -118,7 +125,7 @@ export default {
   methods: {
     crop (string) {
       console.warn(string)
-      const x=  string.slice(0, 90)
+      const x = string.slice(0, 90)
       console.warn(x, 'x')
       return x
     }

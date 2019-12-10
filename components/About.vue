@@ -4,6 +4,7 @@
       :attach="header.attach"
       :title="header.title"
       :description="header.description"
+      center
     />
 
     <div class="row">
@@ -18,7 +19,7 @@
               <img
                 :src="imgPath + activity.imgSmall"
                 :alt="'Luis Enrique Bustamante Pérez - ' + activity.title"
-                class="rounded-circle img-fluid"
+                class="img-fluid"
               >
             </div>
             <div class="timeline-panel">
@@ -29,7 +30,7 @@
               </div>
               <div class="timeline-body">
                 <p>
-                  {{ activity.description.slice(0, 95) }}...
+                  {{ activity.description.slice(0, 110) }}...
                 </p>
               </div>
               <div class="timeline-fotter">
@@ -45,7 +46,7 @@
           </li>
           <li class="timeline-inverted">
             <div class="timeline-image">
-              <button 
+              <button
                 class="btn rounded-circle h-100 w-100"
                 @click="$router.push('/about')"
               >
@@ -73,34 +74,34 @@ export default {
       imgPath: IMG_BASE_PATH + '/about/',
       activities: [
         {
-          title: 'Medalla de Honor de la UNAP',
-          date: 'Diciembre 20, 2017',
-          description: 'La Universidad Nacional del altiplano otorga Medalla de Honor a Luis Enrique Bustamante Pérez.',
+          title: 'El prodigioso dedo meñique de Luis Enrique Bustamante',
+          date: '24 de Octubre del 2008',
+          description: '“Yo nací en el campo, con el olor a la tierra mojada, con el polvo que levanta un pala y con las peleas de toros como mi mayor afición, es ahí pienso, dónde encuentro la fuerza, el coraje y el valor que hacen que mi vida tome sentido”, Luis Enrique Bustamante ',
           link: '',
-          imgSmall: 'diciembre-20-2017-1-200x200.jpg',
-          imgBig: 'diciembre-20-2017-1.jpg'
+          imgSmall: '20_oct_2008.png',
+          imgBig: '20_oct_2008.png'
         },
         {
-          title: 'Reconocimiento en Ayaviri',
-          date: 'Diciembre 21, 2017',
-          description: 'Luis Enrique recibe la Medalla de Honor por parte de la Municipalidad Provincial de Ayaviri.',
-          link: '',
-          imgSmall: 'diciembre-21-2017-1-200x200.jpg',
-          imgBig: 'diciembre-21-2017-1.jpg'
+          title: 'Joven Arequipeño tetrapléjico escribió libro solo con su dedo meñique',
+          date: '09 de Octubre del 2008',
+          description: 'Luis Enrique Bustamante quedó tetrapléjico a los 20 años y escribió un libro solo con su dedo meñique.',
+          link: 'https://larepublica.pe/sociedad/1353667-joven-tetraplejico-escribio-libro-dedo-menique-video/',
+          imgSmall: '09_oct_2008.png',
+          imgBig: '09_oct_2008.png'
         },
         {
-          title: 'Joven arequipeño dio emotivo discurso utilizando un puntero y una computadora',
-          date: 'Octubre 28, 2018',
-          description: 'Luis Enrique Bustamante Perez (32) fue hoy el protagonista de un momento emotivo en el compartir de personas con discapacidad que se llevó a cabo ayer en el comedor de la Universidad Nacional de San Agustín, donde estuvo a cargo del discurso central.',
-          link: '',
-          imgSmall: 'octubre-28-2018-1-200x200.jpg',
-          imgBig: 'octubre-28-2018-1.jpg'
+          title: 'La discapacidad no fue motivo para que deje de estudiar y ser escritor',
+          date: '28 de Octubre del 2018',
+          link: 'https://diariocorreo.pe/edicion/arequipa/la-discapacidad-no-fue-motivo-para-que-deje-de-estudiar-y-ser-escritor-fotos-y-video-850523/1',
+          description: 'El joven arequipeño tiene discapacidad física total y limitaciones en el habla. Sin embargo, eso no lo detuvo para cumplir sus sueños y pudo terminar su carrera de economista en la UNSA y es autor dos libros como son Hablando con un Angel y Buscando la Felicidad, que los escribió mediante un puntero que coloca en su cabeza y lo que desea decir lo plasma en una computadora.',
+          imgSmall: 'octubre-28-2018-1.png',
+          imgBig: 'octubre-28-2018-1.png'
         }
       ]
     }
   },
   computed: {
-    header() {
+    header () {
       return this.$store.getters.headerSection('About')
     }
   }
