@@ -18,7 +18,12 @@
           :title="book.title"
           :description="book.summary"
         />
-        <payment :book="book" />
+        <div class="px-4">
+          <payment
+            :book="book"
+            isblock
+          />
+        </div>
       </div>
     </div>
   </section>
