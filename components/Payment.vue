@@ -21,7 +21,7 @@
       class="btn btn-outline-primary my-1"
       :class="{'btn-block': isblock}"
       data-toggle="modal"
-      data-target="#modalBookSummary"
+      :data-target="`#modalBookSummary${book.id}`"
     >
       <i
         class="fa fa-download"
@@ -36,7 +36,10 @@
     >
       Proximo lanzamiento
     </button>
-    <modal-book-summary :title="book.title" />
+    <modal-book-summary
+      :id="book.id"
+      :title="book.title"
+    />
   </div>
 </template>
 <script>

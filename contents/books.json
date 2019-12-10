@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "imgSrc": "hablando-con-un-angel.png",
     "price": "25.00",
     "currency": "PEN",
@@ -8,6 +9,7 @@
     "description": "Este libro que grita con fuerza a la vida es sólo una minúscula parte del universo de Luis Enrique, con todos sus grandes y sus pequeños acontecimientos. Reales o adornados de algo de literatura, por él se asoman con curiosidad pensamientos brutalmente sinceros, miedos, anhelos, recuerdos y amores perdidos, encontrados y vueltos a perder. Es una carta que invita a compartir con una sonrisa sus confidencias y a descubrir que es posible dar un paso al frente aun cuando el mundo se empeña en dar la espalda."
   },
   {
+    "id": 2,
     "imgSrc": "buscando-la-felicidad.png",
     "price": "25.00 ",
     "currency": "PEN",

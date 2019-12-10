@@ -1,10 +1,10 @@
 <template>
   <div
-    id="modalBookSummary"
+    :id="`modalBookSummary${id}`"
     class="modal fade"
     tabindex="-1"
     role="dialog"
-    aria-labelledby="ModalLabel"
+    :aria-labelledby="`ModalLabel${id}`"
     aria-hidden="true"
   >
     <div
@@ -14,7 +14,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h6
-            id="ModalLabel"
+            :id="`ModalLabel${id}`"
             class="modal-title text-uppercase"
           >
             {{ title }}
@@ -95,7 +95,8 @@
 <script>
 export default {
   props: {
-    title: { type: String, default: '' }
+    title: { type: String, default: '' },
+    id: { type: Number, default: 0 }
   }
 }
 </script>
