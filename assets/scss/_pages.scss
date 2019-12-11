@@ -1,7 +1,10 @@
 .books-page,
 .about-page,
 .news-page,
-.contact-page,
 .news-details-page {
-    @include margin-y-page;
+  @include margin-y-page;
+}
+.contact-page {
+  margin-top: $margin-y-page;
+  margin-bottom: $margin-y-page - 5rem;
 }
