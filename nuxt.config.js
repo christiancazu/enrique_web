@@ -68,7 +68,8 @@ export default {
   plugins: [
     { src: 'plugins/owl.js', ssr: false },
     '~/plugins/axios',
-    '~/plugins/api'
+    '~/plugins/api',
+    '~/plugins/VeeValidate'
   ],
   /*
    ** Nuxt.js dev-modules
