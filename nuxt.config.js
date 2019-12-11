@@ -69,6 +69,7 @@ export default {
     { src: 'plugins/owl.js', ssr: false },
     '~/plugins/axios',
     '~/plugins/api'
+    // { src: '~/plugins/vee-validate', mode: 'client' }
   ],
   /*
    ** Nuxt.js dev-modules
@@ -84,7 +85,15 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/toast'
+    '@nuxtjs/toast',
+    ['nuxt-validate', {
+      lang: 'es',
+      nuxti18n: {
+        locale: {
+          'zh-CN': 'zh_CN'
+        }
+      }
+    }]
   ],
   /*
    ** Axios module configuration
@@ -99,7 +108,7 @@ export default {
   toast: {
     position: 'top-right',
     className: 'app-toast',
-    duration: 4000,
+    duration: 5000,
     action: {
       text: 'X',
       // eslint-disable-next-line

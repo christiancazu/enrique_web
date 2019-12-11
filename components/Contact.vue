@@ -12,46 +12,61 @@
           <div class="col-md-5">
             <div class="form-group">
               <label
-                for="name"
+                for="inputFullName"
                 class="form-contact--label"
               >Nombres y Apellidos</label>
               <input
-                id="name"
+                id="inputFullName"
                 v-model="form.fullName"
+                v-validate="'required'"
                 type="text"
                 name="name"
-                class="form-control"
-                aria-describedby="namelHelp"
+                aria-describedby="name"
+                :class="['form-control', {'is-danger': errors.has('name') }]"
               >
+              <span
+                v-show="errors.has('name')"
+                class="error-message"
+              >Ingresa tus nombres</span>
             </div>
             <div class="form-group">
               <label
-                for="exampleInputEmail1"
+                for="inputEmail"
                 class="form-contact--label"
               >Correo Electronico</label>
               <input
-                id="exampleInputEmail1"
+                id="inputEmail"
                 v-model="form.email"
+                v-validate="'required|email'"
                 type="email"
                 name="email"
-                class="form-control"
-                aria-describedby="emailHelp"
+                :class="['form-control', {'is-danger': errors.has('email') }]"
+                aria-describedby="email"
               >
+              <span
+                v-show="errors.has('email')"
+                class="error-message"
+              >Ingresa un correo valido</span>
             </div>
             <div class="form-group">
               <label
-                for="exampleInputPhone"
+                for="inputPhone"
                 class="form-contact--label"
               >Telefono</label>
               <input
-                id="exampleInputPhone"
+                id="inputPhone"
                 v-model="form.phone"
-                type="text"
+                v-validate="'required|numeric'"
+                type="tel"
                 name="phone"
-                class="form-control"
+                :class="['form-control', {'is-danger': errors.has('phone') }]"
                 pattern="[0-9\-]*"
                 aria-describedby="phoneHelp"
               >
+              <span
+                v-show="errors.has('phone')"
+                class="error-message"
+              >Ingresa un número valido</span>
             </div>
           </div>
           <div class="col-md-7">
@@ -63,12 +78,17 @@
               <textarea
                 id="inputMessage"
                 v-model="form.message"
-                name="contact[body]"
+                v-validate="'required'"
+                name="message"
                 cols="40"
                 rows="8"
-                class="form-control"
-                aria-describedby="messageHelp"
+                :class="['form-control', {'is-danger': errors.has('message') }]"
+                aria-describedby="message"
               />
+              <span
+                v-show="errors.has('message')"
+                class="error-message"
+              >Escribe un mensaje</span>
             </div>
           </div>
         </div>
@@ -78,7 +98,7 @@
             type="submit"
             @click.prevent="sendFormEmail"
           >
-            Enviar
+            Enviar mensaje
           </button>
         </div>
       </form>
@@ -117,29 +137,16 @@ export default {
       sendEmail: 'contact/sendEmail'
     }),
 
-    sendFormEmail () {
-      // this.sendEmail({ form: { ...this.form } })
-      //   .then(response => {
-      //     console.log('response', response)
-      //   })
-      //   .catch(err => {
-      //     console.log(err, 'error')
-      //   })
-
-      new Promise((resolve, reject) => {
-        this.$contactAPI
-          .sendEmail({ data: this.form })
-          .then(response => {
-            console.log('Su mensaje ha sido enviado con éxito')
-            // window.confirm("Su mensaje ha sido enviado con éxito");
-            resolve(response);
-          })
-          .catch(error => {
-            console.log('Su mensaje NO ha sido enviado con éxito')
-            // window.confirm("Datos incorrectos");
-            reject(error)
-          });
-      });
+    async sendFormEmail () {
+      try {
+        const data = this.form
+        let validForm = false
+        await this.$validator.validateAll().then((result) => validForm = result)
+        if (validForm)
+          await this.sendEmail({ data })
+      }
+      // eslint-disable-next-line no-empty
+      catch (e) { }
     }
   },
 }

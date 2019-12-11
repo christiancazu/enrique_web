@@ -1,5 +1,5 @@
 .contact {
-  padding-top: $padding-y-section;
+  padding: $padding-y-section 0;
   background: $section-bg;
 }
 .noo-information {
@@ -28,4 +28,12 @@
 .form-contact--label {
   text-transform: uppercase;
   font-weight: 400;
+}
+.is-danger {
+  border: 1px solid $danger !important;
+}
+.error-message {
+  @extend .small;
+  @extend .text-danger;
+  @extend .text-uppercase;
 }
