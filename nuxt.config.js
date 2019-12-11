@@ -68,8 +68,8 @@ export default {
   plugins: [
     { src: 'plugins/owl.js', ssr: false },
     '~/plugins/axios',
-    '~/plugins/api',
-    '~/plugins/VeeValidate'
+    '~/plugins/api'
+    // { src: '~/plugins/vee-validate', mode: 'client' }
   ],
   /*
    ** Nuxt.js dev-modules
@@ -85,7 +85,15 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/toast'
+    '@nuxtjs/toast',
+    ['nuxt-validate', {
+      lang: 'es',
+      nuxti18n: {
+        locale: {
+          'zh-CN': 'zh_CN'
+        }
+      }
+    }]
   ],
   /*
    ** Axios module configuration
