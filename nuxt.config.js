@@ -108,7 +108,7 @@ export default {
   toast: {
     position: 'top-right',
     className: 'app-toast',
-    duration: 4000,
+    duration: 5000,
     action: {
       text: 'X',
       // eslint-disable-next-line

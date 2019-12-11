@@ -137,12 +137,16 @@ export default {
       sendEmail: 'contact/sendEmail'
     }),
 
-    sendFormEmail () {
-      this.$validator.validateAll().then((result) => {
-        if (result) {
-          return;
-        }
-      })
+    async sendFormEmail () {
+      try {
+        const data = this.form
+        let validForm = false
+        await this.$validator.validateAll().then((result) => validForm = result)
+        if (validForm)
+          await this.sendEmail({ data })
+      }
+      // eslint-disable-next-line no-empty
+      catch (e) { }
     }
   },
 }
