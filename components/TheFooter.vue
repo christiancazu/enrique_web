@@ -2,114 +2,39 @@
   <footer class="footer">
     <div class="wrap-footer">
       <div class="container">
-        <nuxt-link
-          class="navbar-brand"
-          :to="{ name: 'index' }"
-        >
-          <div class="author">
-            <h4 class="cite logo">
-              Luis Enrique <br>
-              Bustamante Pérez
-            </h4>
-          </div>
-        </nuxt-link>
-        <div class="row d-flex justify-content-center">
-          <div class="col-md-4 col-lg-6 col-xs-12">
-            <p>Cada nuevo día es una nueva oportunidad para ser una mejor persona. Una persona honorable, no puede pasar por este mundo, sin ayudar a otra persona.</p>
-          </div>
-        </div>
-        <ul class="nav justify-content-center p mb-2">
-          <li
-            v-for="(nav, i) in navs"
-            :key="i"
-            class="nav-item"
-          >
-            <nuxt-link
-              class="nav-link"
-              :to="{ name: nav.link }"
-              exact
-            >
-              {{ nav.name }}
-            </nuxt-link>
-          </li>
-        </ul>
-        <!-- <div class="row">
-          <div class="col-md-4">
+        <div class="row">
+          <div class="col-xs-12 col-md-6 col-lg-6">
             <nuxt-link
               class="navbar-brand"
               :to="{ name: 'index' }"
             >
               <div class="author">
-                <h2 class="cite logo">
+                <h4 class="cite logo">
                   Luis Enrique <br>
                   Bustamante Pérez
-                </h2>
+                </h4>
               </div>
             </nuxt-link>
-            <ul class="list-unstyled mt-4 info-personal">
-              <li class="d-flex align-items-center pb-2">
-                <i class="fa fa-map-marker text-gray" />
-                <p class="m-0">
-                  {{ address }}
-                </p>
-              </li>
-              <li class="d-flex align-items-center pb-2">
-                <i
-                  class="fa fa-phone text-gray"
-                  aria-hidden="true"
-                />
-                <p class="m-0">
-                  {{ cellPhoneNumber }}
-                </p>
-              </li>
-              <li class="d-flex align-items-center pb-2">
-                <i
-                  class="fa fa-envelope text-gray"
-                  aria-hidden="true"
-                />
-                <p class="m-0">
-                  {{ emailAddress }}
-                </p>
+            <p>Cada nuevo día es una nueva oportunidad para ser una mejor persona. Una persona honorable, no puede pasar por este mundo, sin ayudar a otra persona.</p>
+            <ul class="nav p mb-2 justify-content-center">
+              <li
+                v-for="(nav, i) in navs"
+                :key="i"
+                class="nav-item"
+              >
+                <nuxt-link
+                  class="nav-link"
+                  :to="{ name: nav.link }"
+                  exact
+                >
+                  {{ nav.name }}
+                </nuxt-link>
               </li>
             </ul>
-
             <TheSocialsNetwork />
           </div>
-          <div class="col-md-4">
-            <div class="widget widget_nav_menu">
-              <h4 class="widget-title">
-                Sobre Mi
-              </h4>
-              <ul class="menu list-unstyled">
-                <li>
-                  <nuxt-link
-                    to="/about"
-                    class="p"
-                    no-exact
-                  >
-                    ¿Quieres saber más de mi?
-                  </nuxt-link>
-                </li>
-                <li>
-                  <nuxt-link
-                    to="/books"
-                    class="p"
-                  >
-                    ¿Ver mis libros?
-                  </nuxt-link>
-                </li>
-                <li>
-                  <nuxt-link
-                    to="/contact"
-                    class="p"
-                  >
-                    Contáctame
-                  </nuxt-link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-4">
+
+          <div class="col-xs-12 offset-md-1 col-md-5 col-lg-5">
             <div class="widget widget_noo_widget_instagram">
               <h4 class="widget-title">
                 Mis Fotos
@@ -131,8 +56,7 @@
               </div>
             </div>
           </div>
-        </div> -->
-        <TheSocialsNetwork />
+        </div>
       </div>
     </div>
     <div class="container footer_creator py-3">
@@ -208,14 +132,13 @@ export default {
 
       photos: [
         { imgSrc: '/images/fotos/reyes_espana.png' },
+        { imgSrc: '/images/fotos/reyes_espana.png' },
         { imgSrc: '/images/fotos/buscando-la-felicidad.png' },
-        { imgSrc: '/images/fotos/diciembre-20-2017-1-200x200.png' },
-        { imgSrc: '/images/fotos/diciembre-21-2017-1-200x200.png' },
         { imgSrc: '/images/fotos/familia_campo.png' },
         { imgSrc: '/images/fotos/hablando-con-un-angel.png' },
+        { imgSrc: '/images/fotos/hablando-con-un-angel.png' },
         { imgSrc: '/images/fotos/hermanos_pequenos.png' },
-        { imgSrc: '/images/fotos/luis_y_mario.png' },
-        { imgSrc: '/images/fotos/octubre-28-2018-1.png' }
+        { imgSrc: '/images/fotos/luis_y_mario.png' }
       ],
 
       navs: [
@@ -223,7 +146,7 @@ export default {
         { name: 'Sobre mi', link: 'about' },
         { name: 'libros', link: 'books' },
         { name: 'Noticias', link: 'news' },
-        { name: 'contacto', link: 'contact' },
+        { name: 'Contacto', link: 'contact' },
       ],
     }
   },

@@ -69,7 +69,6 @@ export default {
     { src: 'plugins/owl.js', ssr: false },
     '~/plugins/axios',
     '~/plugins/api'
-    // { src: '~/plugins/vee-validate', mode: 'client' }
   ],
   /*
    ** Nuxt.js dev-modules
