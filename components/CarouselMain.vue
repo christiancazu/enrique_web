@@ -28,7 +28,7 @@
       >
         <img
           :src="item.src"
-          class="h-100 w-100 cover"
+          :class="`h-100 w-100 cover ${item.align}`"
           :alt="item.alt"
         >
         <div class="overlay-home" />
@@ -99,24 +99,27 @@ export default {
       imgPath: IMG_BASE_PATH + '/carousel-main/',
       items: [
         {
-          src: '/images/home/presente_mi_libro.png', alt: '',
+          src: '/images/home/2.png', alt: '',
           title: "Una persona honorable, no puede pasar por este mundo, sin ayudar a otra persona.",
-          subtitle: 'Cada nuevo día es una nueva oportunidad para ser una mejor persona.'
+          subtitle: 'Cada nuevo día es una nueva oportunidad para ser una mejor persona.',
+          align: 'left'
         },
         {
-          src: '/images/home/books.png', alt: '',
+          src: '/images/home/3.png', alt: '',
           title: 'Discapacitados no somos nosotros,',
           subtitle: 'sino las personas de corazón mezquino',
           button: {
             label: 'Mis libros',
             path: '/myBooks'
-          }
+          },
+          align: ''
         },
 
         {
-          src: '/images/home/luis_y_mario.png', alt: '',
+          src: '/images/home/1.png', alt: '',
           title: "La discapacidad es parte de este mundo,",
-          subtitle: 'no un mundo a parte.'
+          subtitle: 'no un mundo a parte.',
+          align: ''
         }
       ]
     }
