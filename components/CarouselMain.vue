@@ -40,7 +40,7 @@
                   <p class="title">
                     {{ item.title }}
                   </p>
-                  <h4
+                  <h3
                     class="subtitle"
                     v-html="item.subtitle"
                   />
