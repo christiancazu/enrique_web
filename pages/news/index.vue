@@ -16,9 +16,9 @@
           :id="activity.id"
           :title="activity.title"
           :date="activity.date"
-          :description="activity.description"
+          :description="activity.title"
           :slug="activity.slug"
-          :img="imgPath + activity.img"
+          :img="imgPath + activity.coverImage"
         />
       </div>
     </div>

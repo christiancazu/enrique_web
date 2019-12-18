@@ -25,8 +25,13 @@
   }
 
   img {
-    height: 370px;
+    height: 380px;
     object-fit: cover;
+    filter: drop-shadow(2px 4px 6px black);
+  }
+  .cover-image img {
+      width: 100%;
+      object-fit: cover;
   }
 }
 

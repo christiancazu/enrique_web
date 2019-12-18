@@ -6,23 +6,32 @@
     <div class="row justify-content-center">
       <div class="col-12">
         <div class="card card-news-details">
-          <no-ssr>
-            <owl-carousel
-              :autoplay="true"
-              :responsive="{
-                0: { items: 1 },
-                992: { items: 2 }
-              }"
-            >
-              <img src="https://placeimg.com/200/200/any?1">
+          <template v-if="currentActivity.images.lenght !== 0">
+            <no-ssr>
+              <owl-carousel
+                :autoplay="true"
+                :responsive="{
+                  0: { items: 1, dots:false },
+                  992: { items: 2, dots:false }
+                }"
+                :nav="false"
+              >
+                <template v-for="(img, i) in currentActivity.images">
+                  <img
+                    :key="i"
+                    :src="`/images/news/${img}`"
+                  >
+                </template>
+              </owl-carousel>
+            </no-ssr>
+          </template>
+          <div
+            v-else
+            class="cover-image"
+          >
+            <img :src="`/images/news/${currentActivity.coverImage}`">
+          </div>
 
-              <img src="https://placeimg.com/200/200/any?2">
-
-              <img src="https://placeimg.com/200/200/any?3">
-
-              <img src="https://placeimg.com/200/200/any?4">
-            </owl-carousel>
-          </no-ssr>
           <div class="card-body card-news-details__body pb-3">
             <h5 class="card-news-details__title">
               {{ currentActivity.title }}
@@ -41,9 +50,25 @@
                 {{ `${ currentActivity.by }` }}</span>
             </p>
             <p
-              class="card-text card-news-details__body--text"
-              v-html="currentActivity.description"
+              class="card-text card-news-details__body--text font-weight-bold"
+              v-html="currentActivity.subtitle"
             />
+            <hr>
+            <p
+              class="card-text card-news-details__body--text"
+              v-html="currentActivity.body"
+            />
+            <hr>
+            <p
+              v-if="currentActivity.url"
+              class="text-uppercase font-weight-bold pt-2 text-right text-primary"
+            >
+              Ver la nota completa <a
+                target="bank"
+                class="text-danger"
+                :href="currentActivity.url"
+              >aquí</a>
+            </p>
           </div>
         </div>
       </div>
