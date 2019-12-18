@@ -6,7 +6,7 @@
       :description="`Estas son mis activities`"
     />
 
-    <div class="row justify-content-center">
+    <div class="row">
       <div
         v-for="(activity, i) in activities"
         :key="i"
