@@ -45,7 +45,6 @@
                     <li :key="i">
                       <a
                         class="flickr_image"
-                        :href="item.imgSrc"
                       ><img
                         :src="item.imgSrc"
                         alt="Zimbabwe Jump"
@@ -131,14 +130,14 @@ export default {
       emailAddress: EMAIL_ADDRESS,
 
       photos: [
-        { imgSrc: '/images/fotos/reyes_espana.png' },
-        { imgSrc: '/images/fotos/reyes_espana.png' },
-        { imgSrc: '/images/fotos/buscando-la-felicidad.png' },
-        { imgSrc: '/images/fotos/familia_campo.png' },
-        { imgSrc: '/images/fotos/hablando-con-un-angel.png' },
-        { imgSrc: '/images/fotos/hablando-con-un-angel.png' },
-        { imgSrc: '/images/fotos/hermanos_pequenos.png' },
-        { imgSrc: '/images/fotos/luis_y_mario.png' }
+        { imgSrc: '/images/footer/a.png' },
+        { imgSrc: '/images/footer/b.png' },
+        { imgSrc: '/images/footer/c.png' },
+        { imgSrc: '/images/footer/d.png' },
+        { imgSrc: '/images/footer/e.png' },
+        { imgSrc: '/images/footer/f.png' },
+        { imgSrc: '/images/footer/g.png' },
+        { imgSrc: '/images/footer/h.png' }
       ],
 
       navs: [
