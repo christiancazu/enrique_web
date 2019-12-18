@@ -34,8 +34,9 @@
           />
         </div>
       </div>
-      <hr v-if="i < books.length -1 ">
+      <hr>
     </div>
+    <testimonials />
   </div>
 </template>
 
@@ -44,11 +45,12 @@ import { IMG_BASE_PATH } from '~/config/constants'
 import HeaderSection from '~/components/HeaderSection'
 import { mapState } from 'vuex'
 import Book from '~/components/Book'
+import Testimonials from '~/components/Testimonials'
 import Payment from '~/components/Payment'
 
 export default {
   components: {
-    HeaderSection, Book, Payment
+    HeaderSection, Book, Payment,Testimonials
   },
   data () {
     return {
