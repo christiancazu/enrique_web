@@ -9,21 +9,21 @@
               :to="{ name: 'index' }"
             >
               <div class="author">
-                <h4 class="cite logo">
+                <h4 class="cite logo text-left">
                   Luis Enrique <br>
                   Bustamante Pérez
                 </h4>
               </div>
             </nuxt-link>
             <p>Cada nuevo día es una nueva oportunidad para ser una mejor persona. Una persona honorable, no puede pasar por este mundo, sin ayudar a otra persona.</p>
-            <ul class="nav p mb-2 justify-content-center">
+            <ul class="nav p mb-2">
               <li
                 v-for="(nav, i) in navs"
                 :key="i"
                 class="nav-item"
               >
                 <nuxt-link
-                  class="nav-link"
+                  class="nav-link pl-0"
                   :to="{ name: nav.link }"
                   exact
                 >
