@@ -1,10 +1,10 @@
-import activitiesContent from '~/contents/activities'
+import news from '~/contents/news'
 import headerSectionsContent from '~/contents/headerSections'
 import booksContent from '~/contents/books'
 import aboutContent from '~/contents/about'
 
 export const state = () => ({
-  activities: resolveActivitiesSlugs(),
+  activities: resolveNewsSlugs(),
   currentActivity: null,
   headerSections: headerSectionsContent,
   books: booksContent,
@@ -30,8 +30,8 @@ export const getters = {
  * and transform text to lowerCase
  * 
  */
-const resolveActivitiesSlugs = () => {
-  return activitiesContent.map(ac => ({
+const resolveNewsSlugs = () => {
+  return news.map(ac => ({
     ...ac, slug: ac.title.replace(/\s/g, '-').toLowerCase()
   }))
 }

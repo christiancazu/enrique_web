@@ -6,7 +6,7 @@
       :description="`Estas son mis activities`"
     />
 
-    <div class="row justify-content-center">
+    <div class="row">
       <div
         v-for="(activity, i) in activities"
         :key="i"
@@ -16,9 +16,9 @@
           :id="activity.id"
           :title="activity.title"
           :date="activity.date"
-          :description="activity.description"
+          :description="activity.title"
           :slug="activity.slug"
-          :img="imgPath + activity.img"
+          :img="imgPath + activity.coverImage"
         />
       </div>
     </div>
@@ -38,7 +38,7 @@ export default {
   },
   data () {
     return {
-      imgPath: IMG_BASE_PATH + '/activities/',
+      imgPath: IMG_BASE_PATH + '/news/',
     }
   },
   computed: {
