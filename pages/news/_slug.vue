@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
       <div class="col-12">
         <div class="card card-news-details">
-          <template v-if="currentActivity.images.lenght !== 0">
+          <template v-if="currentActivity.images.length > 1">
             <no-ssr>
               <owl-carousel
                 :autoplay="true"
@@ -83,6 +83,9 @@ export default {
   components: {
   },
   computed: {
+    images: function() {
+      return this.currentActivity.images.length
+    },
     currentActivity () {
       return this.$store.getters.currentActivity(this.$route.params.slug)
     }

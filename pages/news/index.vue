@@ -38,7 +38,7 @@ export default {
   },
   data () {
     return {
-      imgPath: IMG_BASE_PATH + '/activities/',
+      imgPath: IMG_BASE_PATH + '/news/',
     }
   },
   computed: {
