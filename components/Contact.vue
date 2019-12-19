@@ -7,6 +7,26 @@
         :description="header.description"
       />
 
+      <div
+        v-if="showMessageSuccess"
+        class="alert alert-success p alert-dismissible fade show"
+        role="alert"
+      >
+        <i
+          class="fa fa-check"
+          aria-hidden="true"
+        />
+        <strong>Gracias por contactarme</strong>, revisa tu correo electrónico nos pondremos en contacto por ese medio.
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
       <form @submit.prevent="sendFormEmail">
         <div class="row">
           <div class="col-md-5">
@@ -124,6 +144,8 @@ export default {
         phone: '',
         message: ''
       },
+      showMessageSuccess: false,
+      processingForm: false
     }
   },
 
@@ -139,14 +161,27 @@ export default {
 
     async sendFormEmail () {
       try {
+        this.showMessageSuccess = false
         const data = this.form
         let validForm = false
         await this.$validator.validateAll().then((result) => validForm = result)
-        if (validForm)
+        if (validForm) {
           await this.sendEmail({ data })
+          this.cleanForm()
+          this.showMessageSuccess = true
+        }
+
       }
       // eslint-disable-next-line no-empty
       catch (e) { }
+    },
+
+    cleanForm () {
+      this.form.fullName = ''
+      this.form.email = ''
+      this.form.phone = ''
+      this.form.message = ''
+      this.$nextTick(() => this.$validator.reset())
     }
   },
 }
