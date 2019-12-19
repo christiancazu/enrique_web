@@ -2,6 +2,9 @@
   "name": "Luis Enrique",
   "version": "1.0.0",
   "description": "Soy Luis Enrique",
+  "engines": {
+    "node": "10.16.0"
+  },
   "author": "Veox",
   "private": true,
   "scripts": {
