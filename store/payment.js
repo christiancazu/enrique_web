@@ -1,11 +1,12 @@
+/* eslint-disable no-empty-pattern */
+/* eslint-disable no-empty */
 export const actions = {
-  // eslint-disable-next-line no-empty-pattern
-  async paymentBook ({}, payload) {
+  async paymentBook ({ }, form) {
     try {
-      await this.$paymentAPI.create(payload);
-    } catch (error) {
-      if (!error.response) return
-      // throw error
+      await this.$paymentAPI.create(form);
+      this.$toasted.success('Tu compra se realizo con exito, revisa tu correo electrónico')
     }
+    catch (e) { }
+
   }
 }
