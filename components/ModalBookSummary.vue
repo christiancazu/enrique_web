@@ -42,8 +42,7 @@
             <button
               type="button"
               class="close"
-              data-dismiss="alert"
-              aria-label="Close"
+              @click="showMessageSuccess = false"
             >
               <span aria-hidden="true">&times;</span>
             </button>
@@ -161,10 +160,11 @@ export default {
         const data = this.form
         let validForm = false
         await this.$validator.validateAll().then((result) => validForm = result)
-        if (validForm)
+        if (validForm) {
           await this.sendSumary({ data })
           this.showMessageSuccess = true
           this.cleanForm()
+        }
       }
       // eslint-disable-next-line no-empty
       catch (e) { }
