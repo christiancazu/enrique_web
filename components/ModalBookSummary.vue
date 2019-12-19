@@ -29,6 +29,25 @@
           </button>
         </div>
         <div class="modal-body">
+          <div
+            v-if="showMessageSuccess"
+            class="alert alert-success p alert-dismissible fade show"
+            role="alert"
+          >
+            <i
+              class="fa fa-check"
+              aria-hidden="true"
+            />
+            <strong>Gracias por contactarme</strong>, enviaremos un resumen del libro a tu correo electrónico.
+            <button
+              type="button"
+              class="close"
+              data-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
           <form @submit.prevent="sendForm">
             <div class="mb-3">
               <div class="input-group">
@@ -108,6 +127,8 @@
   </div>
 </template>
 <script>
+/* eslint-disable no-undef */
+
 import { mapActions } from 'vuex'
 
 export default {
@@ -123,7 +144,8 @@ export default {
         email: "",
         bookName: "",
         message: ""
-      }
+      },
+      showMessageSuccess: false
     }
   },
 
@@ -134,16 +156,27 @@ export default {
 
     async sendForm () {
       try {
+        this.showMessageSuccess = false
         this.form.bookName = this.title
         const data = this.form
         let validForm = false
         await this.$validator.validateAll().then((result) => validForm = result)
-        console.log(validForm, this.form)
         if (validForm)
           await this.sendSumary({ data })
+          this.showMessageSuccess = true
+          this.cleanForm()
       }
       // eslint-disable-next-line no-empty
       catch (e) { }
+    },
+
+    cleanForm () {
+      this.form.name = ''
+      this.form.lastName = ''
+      this.form.email = ''
+      this.form.bookName = ''
+      this.form.message = ''
+      this.$nextTick(() => this.$validator.reset())
     }
   },
 }

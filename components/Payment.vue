@@ -101,8 +101,6 @@ export default {
     }),
     openModalCulqi (book) {
       this.bookSelected = book
-      // console.log(this.bookSelected, 'open')
-
       const amount = parseInt(book.price) * 100
 
       window.Culqi.settings({
