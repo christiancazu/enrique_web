@@ -47,7 +47,7 @@
                   <div class="action pt-3">
                     <nuxt-link
                       v-if=" item.button"
-                      to=""
+                      :to="{ name: 'books' }"
                       class="btn btn-primary"
                     >
                       {{ item.button.label }}

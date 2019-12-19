@@ -23,18 +23,23 @@ export default {
         content: '#646464'
       },
       {
+        hid: 'msapplication-TileImage',
+        name: 'msapplication-TileImage',
+        content: '/ms-icon-144x144.png'
+      },
+      {
         hid: 'theme-color',
         name: 'theme-color',
         content: '#ffffff'
       },
     ],
     link: [
-      { rel: 'icon', type: 'image/png', sizes: "32x32", href: 'images/icon/favicon-32x32.png' },
-      { rel: 'icon', type: 'image/png', sizes: "16x16", href: 'images/icon/favicon-16x16.png' },
-      { rel: 'manifest', href: 'images/icon/site.webmanifest' },
+      { rel: 'icon', type: 'image/png', sizes: "32x32", href: '/images/icon/favicon-32x32.png' },
+      { rel: 'icon', type: 'image/png', sizes: "16x16", href: '/images/icon/favicon-16x16.png' },
+      { rel: 'manifest', href: '/images/icon/manifest.json' },
       { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#ffd400" },
       { rel: "apple-touch-icon", sizes: "152x152", href: "/apple-touch-icon.png" },
-      { rel: 'icon', type: 'image/x-icon', href: 'images/icon/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/images/icon/favicon.ico' },
       { href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', rel: "stylesheet" },
     ],
     script: [

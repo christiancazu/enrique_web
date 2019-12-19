@@ -14,11 +14,6 @@
             Bustamante Pérez
           </h4>
         </div>
-        <!-- <img
-          src="/images/logo/logo_yellow.png"
-          alt="Luis enrique"
-          class="img-fluid logo"
-        > -->
       </nuxt-link>
       <button
         class="navbar-toggler navbar-toggler-right"
