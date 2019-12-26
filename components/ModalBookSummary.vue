@@ -148,6 +148,14 @@ export default {
     }
   },
 
+  mounted () {
+    const _self = this
+    // eslint-disable-next-line no-unused-vars
+    $(`#modalBookSummary${this.id}`).on('hide.bs.modal', function (e) {
+      _self.cleanForm()
+    })
+  },
+
   methods: {
     ...mapActions({
       sendSumary: 'contact/sendSummary'

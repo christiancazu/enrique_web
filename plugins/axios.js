@@ -2,6 +2,7 @@ import Vue from 'vue'
 
 export default ({ $axios }) => {
     $axios.onError((error) => {
+        console.log(error, error.response.status)
         
         const code = parseInt(error.response && error.response.status)
 
