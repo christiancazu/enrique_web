@@ -1,5 +1,7 @@
 <template>
-  <section class="container my-books">
+  <section
+    class="container my-books"
+  >
     <header-section
       :attach="header.attach"
       :title="header.title"

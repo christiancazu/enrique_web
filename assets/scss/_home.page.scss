@@ -23,7 +23,9 @@
   align-items: flex-start;
 
   .carousel-content {
-    .action, .title, .subtitle {
+    .action,
+    .title,
+    .subtitle {
       text-align: center;
       text-shadow: 1px 1px 7px rgb(19, 19, 19);
     }
@@ -42,11 +44,38 @@
     .action .btn {
       color: $white !important;
       text-shadow: none;
-    } 
-   
+    }
   }
 }
 
 cite::before {
   content: " — ";
+}
+
+.arrow-down {
+  text-align: center;
+  height: 50px;
+  position: relative;
+  i {
+    animation: arrow 1s ease-in-out infinite;
+    font-size: 20px;
+    text-shadow: 1px 1px 7px #131313;
+  }
+  i:hover {
+    animation: arrow 1s ease-out infinite;
+    color: $primary;
+  }
+}
+@keyframes arrow {
+  0% {
+    transform: translate(0px, 50px);
+  }
+ 
+   50% {
+    transform: translate(0px, 60px);
+  }
+  
+  100% {
+    transform: translate(0px, 50px);
+  }
 }

@@ -14,9 +14,9 @@
             font-weight: 600;
             transition: color $animation-time-quote;
         }
-        &__content {
-            text-align: justify;
-        }
+        // &__content {
+        //     text-align: justify;
+        // }
         &:hover & {
             &__title {
                 color: black;

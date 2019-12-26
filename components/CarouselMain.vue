@@ -53,6 +53,12 @@
                       {{ item.button.label }}
                     </nuxt-link>
                   </div>
+                  <div class="arrow-down">
+                    <i
+                      class="fa fa-chevron-down text-primary"
+                      aria-hidden="true"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
