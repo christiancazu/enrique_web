@@ -34,7 +34,6 @@
         </div>
       </button>
       <button
-        v-if="book.price"
         class="btn btn-fab-primary"
         @click="openModalCulqi(book)"
       >
@@ -47,7 +46,6 @@
     </div>
 
     <button
-      v-if="book.price"
       class="btn btn-outline-primary my-1"
       :class="{'btn-block': isblock}"
       data-toggle="modal"
@@ -58,13 +56,6 @@
         aria-hidden="true"
       />
       Resumen <strong class="text-danger">Gratis</strong>
-    </button>
-    <button
-      v-if="!book.price"
-      class="btn btn-outline-danger my-1"
-      :class="{'btn-block': isblock}"
-    >
-      Proximo lanzamiento
     </button>
     <modal-book-summary
       :id="book.id"
