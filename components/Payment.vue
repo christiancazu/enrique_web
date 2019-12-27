@@ -3,18 +3,48 @@
     v-if="book"
     class="text-center"
   >
-    <button
-      v-if="book.price"
-      class="btn btn-fab-primary my-1"
-      :class="{'btn-block': isblock}"
-      @click="openModalCulqi(book)"
+    <div
+      class="btn-group btn-block"
+      role="group"
+      aria-label="Basic example"
     >
-      <i
-        class="fa fa-credit-card-alt"
-        aria-hidden="true"
-      />
-      Comprar ahora
-    </button>
+      <button
+        type="button"
+        class="btn currency"
+      >
+        <div
+          :class="{'selected': !isCurrencyUSD}"
+          @click="isCurrencyUSD = !isCurrencyUSD"
+        >
+          <i
+            v-if="!isCurrencyUSD"
+            class="fa fa-check"
+            aria-hidden="true"
+          /> Soles(S/)
+        </div>
+        <div
+          :class="{'selected': isCurrencyUSD}"
+          @click="isCurrencyUSD = !isCurrencyUSD"
+        >
+          <i
+            v-if="isCurrencyUSD"
+            class="fa fa-check"
+            aria-hidden="true"
+          /> USD($)
+        </div>
+      </button>
+      <button
+        v-if="book.price"
+        class="btn btn-fab-primary"
+        @click="openModalCulqi(book)"
+      >
+        <i
+          class="fa fa-credit-card-alt"
+          aria-hidden="true"
+        />
+        Comprar ahora
+      </button>
+    </div>
 
     <button
       v-if="book.price"
@@ -48,7 +78,7 @@ import ModalBookSummary from '~/components/ModalBookSummary'
 
 export default {
 
-  components:{ModalBookSummary},
+  components: { ModalBookSummary },
   props: {
     book: { type: Object, default: null },
     labelBuy: { type: String, default: 'COMPRAR' },
@@ -58,7 +88,8 @@ export default {
   data () {
     return {
       publicKey: 'pk_test_CKBD2k26x8WluUoY',
-      bookSelected: null
+      bookSelected: null,
+      isCurrencyUSD: true
     }
   },
 
@@ -82,8 +113,6 @@ export default {
           }
 
           _self.paymentBook({ data })
-
-
         } else {
           /* 
             ¡Hubo algún problema!
@@ -101,7 +130,8 @@ export default {
     }),
     openModalCulqi (book) {
       this.bookSelected = book
-      const amount = parseInt(book.price) * 100
+      let amount = 0
+      this.isCurrencyUSD ? amount = parseInt(book.priceUSD) * 100 : amount = parseInt(book.pricePEN) * 100
 
       window.Culqi.settings({
         title: `${book.title}`,
