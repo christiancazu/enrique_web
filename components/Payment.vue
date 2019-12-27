@@ -100,6 +100,7 @@ export default {
             amount: settings.amount,
             description: settings.title,
             email: token.email,
+            currenciCode: settings.currency,
             source_id: token.id
           }
 
@@ -122,12 +123,19 @@ export default {
     openModalCulqi (book) {
       this.bookSelected = book
       let amount = 0
-      this.isCurrencyUSD ? amount = parseInt(book.priceUSD) * 100 : amount = parseInt(book.pricePEN) * 100
+      let currency = 'USD'
+      if (this.isCurrencyUSD) {
+        amount = parseInt(book.priceUSD) * 100
+        currency = 'USD'
+      } else {
+        amount = parseInt(book.pricePEN) * 100
+        currency = 'PEN'
+      }
 
       window.Culqi.settings({
         title: `${book.title}`,
-        currency: `${book.currency}`,
         description: `Autor: Luis E. Bustamante`,
+        currency,
         amount
       });
 
