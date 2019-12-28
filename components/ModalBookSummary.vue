@@ -80,7 +80,6 @@
             </div>
             <div class="form-group">
               <input
-                id="inputEmail"
                 v-model="form.email"
                 v-validate="'required|email'"
                 type="email"

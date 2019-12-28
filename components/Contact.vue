@@ -50,11 +50,11 @@
             </div>
             <div class="form-group">
               <label
-                for="inputEmail"
+                for="inputEmailContact"
                 class="form-contact--label"
               >Correo Electronico</label>
               <input
-                id="inputEmail"
+                id="inputEmailContact"
                 v-model="form.email"
                 v-validate="'required|email'"
                 type="email"
