@@ -105,7 +105,7 @@ export default {
    */
   axios: {
     baseURL: process.env.NODE_ENV === 'production' ?
-      'https://enriqueapi.herokuapp.com/api/' :
+      'http://192.168.1.130:9950/api/' :
       'http://192.168.1.130:9950/api/'
   },
 

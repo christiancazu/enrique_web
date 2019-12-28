@@ -3,21 +3,49 @@
     v-if="book"
     class="text-center"
   >
-    <button
-      v-if="book.price"
-      class="btn btn-fab-primary my-1"
-      :class="{'btn-block': isblock}"
-      @click="openModalCulqi(book)"
+    <div
+      class="btn-group btn-block"
+      role="group"
+      aria-label="Basic example"
     >
-      <i
-        class="fa fa-credit-card-alt"
-        aria-hidden="true"
-      />
-      Comprar ahora
-    </button>
+      <button
+        type="button"
+        class="btn currency"
+      >
+        <div
+          :class="{'selected': !isCurrencyUSD}"
+          @click="isCurrencyUSD = !isCurrencyUSD"
+        >
+          <i
+            v-if="!isCurrencyUSD"
+            class="fa fa-check"
+            aria-hidden="true"
+          /> Soles(S/)
+        </div>
+        <div
+          :class="{'selected': isCurrencyUSD}"
+          @click="isCurrencyUSD = !isCurrencyUSD"
+        >
+          <i
+            v-if="isCurrencyUSD"
+            class="fa fa-check"
+            aria-hidden="true"
+          /> USD($)
+        </div>
+      </button>
+      <button
+        class="btn btn-fab-primary"
+        @click="openModalCulqi(book)"
+      >
+        <i
+          class="fa fa-credit-card-alt"
+          aria-hidden="true"
+        />
+        Comprar ahora
+      </button>
+    </div>
 
     <button
-      v-if="book.price"
       class="btn btn-outline-primary my-1"
       :class="{'btn-block': isblock}"
       data-toggle="modal"
@@ -28,13 +56,6 @@
         aria-hidden="true"
       />
       Resumen <strong class="text-danger">Gratis</strong>
-    </button>
-    <button
-      v-if="!book.price"
-      class="btn btn-outline-danger my-1"
-      :class="{'btn-block': isblock}"
-    >
-      Proximo lanzamiento
     </button>
     <modal-book-summary
       :id="book.id"
@@ -48,7 +69,7 @@ import ModalBookSummary from '~/components/ModalBookSummary'
 
 export default {
 
-  components:{ModalBookSummary},
+  components: { ModalBookSummary },
   props: {
     book: { type: Object, default: null },
     labelBuy: { type: String, default: 'COMPRAR' },
@@ -58,7 +79,8 @@ export default {
   data () {
     return {
       publicKey: 'pk_test_CKBD2k26x8WluUoY',
-      bookSelected: null
+      bookSelected: null,
+      isCurrencyUSD: true
     }
   },
 
@@ -78,12 +100,11 @@ export default {
             amount: settings.amount,
             description: settings.title,
             email: token.email,
+            currenciCode: settings.currency,
             source_id: token.id
           }
 
           _self.paymentBook({ data })
-
-
         } else {
           /* 
             ¡Hubo algún problema!
@@ -101,12 +122,20 @@ export default {
     }),
     openModalCulqi (book) {
       this.bookSelected = book
-      const amount = parseInt(book.price) * 100
+      let amount = 0
+      let currency = 'USD'
+      if (this.isCurrencyUSD) {
+        amount = parseInt(book.priceUSD) * 100
+        currency = 'USD'
+      } else {
+        amount = parseInt(book.pricePEN) * 100
+        currency = 'PEN'
+      }
 
       window.Culqi.settings({
         title: `${book.title}`,
-        currency: `${book.currency}`,
         description: `Autor: Luis E. Bustamante`,
+        currency,
         amount
       });
 
