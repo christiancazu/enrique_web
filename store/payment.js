@@ -5,9 +5,10 @@ export const actions = {
     try {
       await this.$paymentAPI.create(form);
       this.$toasted.success('Tu compra se realizo con exito, revisa tu correo electrónico')
-      console.log('teste')
     }
-    catch (e) { }
+    catch (e) { 
+      this.$toasted.error('No se realizo la operación')
+    }
 
   }
 }
