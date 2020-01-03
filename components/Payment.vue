@@ -100,7 +100,7 @@ export default {
             amount: settings.amount,
             description: settings.title,
             email: token.email,
-            currenciCode: settings.currency,
+            currency_code: settings.currency,
             source_id: token.id
           }
 
