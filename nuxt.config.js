@@ -79,10 +79,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
-  ],
+  buildModules: [],
   /*
    ** Nuxt.js modules
    */
@@ -91,14 +88,18 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/toast',
-    ['nuxt-validate', {
-      lang: 'es',
-      nuxti18n: {
-        locale: {
-          'zh-CN': 'zh_CN'
+    [
+      'nuxt-validate',
+      {
+        lang: 'es',
+        nuxti18n: {
+          locale: {
+            'zh-CN': 'zh_CN'
+          }
         }
       }
-    }]
+    ],
+    '@nuxtjs/style-resources'
   ],
   /*
    ** Axios module configuration
@@ -138,7 +139,7 @@ export default {
           test: /\.(js|vue)$/,
           loader: "eslint-loader",
           exclude: /(node_modules)/
-        });
+        })
       }
     }
   }

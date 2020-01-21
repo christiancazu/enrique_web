@@ -1,37 +1,37 @@
 const $ = window.jQuery
 
 export default {
-  mounted() {
+  mounted () {
     this.verifyCurrentRoute()
   },
   methods: {
-    verifyCurrentRoute() {
+    verifyCurrentRoute () {
       if (this.$route.path === '/') {
         this.loadJQNavbarOnHome()
       } else {
         this.loadJQNavbarWhereNotHome()
       }
     },
-    loadJQNavbarWhereNotHome() {
+    loadJQNavbarWhereNotHome () {
       const mainNav = $("#theNavbar")
 
       $(window).off("scroll", window['navbarCollapse'])
-      $(mainNav).addClass("navbar-shrink");
+      $(mainNav).addClass("navbar-shrink")
     },
-    loadJQNavbarOnHome() {
+    loadJQNavbarOnHome () {
       const mainNav = $("#theNavbar")
-      
+
       const navbarCollapse = () => {
         if ($(mainNav).offset().top > 100) {
-          $(mainNav).addClass("navbar-shrink");
+          $(mainNav).addClass("navbar-shrink")
         } else {
-          $(mainNav).removeClass("navbar-shrink");
+          $(mainNav).removeClass("navbar-shrink")
         }
-      };
+      }
       // Collapse now if page is not at top
-      navbarCollapse();
+      navbarCollapse()
       // Collapse the navbar when page is scrolled
-      $(window).scroll(navbarCollapse); 
+      $(window).scroll(navbarCollapse)
     }
   },
   watch: {

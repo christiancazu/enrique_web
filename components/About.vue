@@ -1,64 +1,64 @@
 <template>
-  <section class="container about">
-    <header-section
-      :attach="header.attach"
-      :title="header.title"
-      :description="header.description"
-      center
-    />
+<section class="container about">
+  <header-section
+    :attach="header.attach"
+    :title="header.title"
+    :description="header.description"
+    center
+  />
 
-    <div class="row">
-      <div class="col">
-        <ul class="timeline">
-          <li
-            v-for="(activity, i) in activities"
-            :key="i"
-            :class="{ 'timeline-inverted': i % 2 }"
-            @click="$router.push(activity.link)"
-          >
-            <div class="timeline-image">
-              <img
-                :src="imgPath + activity.imgSmall"
-                :alt="'Luis Enrique Bustamante Pérez - ' + activity.title"
-                class="img-fluid"
-              >
+  <div class="row">
+    <div class="col">
+      <ul class="timeline">
+        <li
+          v-for="(activity, i) in activities"
+          :key="i"
+          :class="{ 'timeline-inverted': i % 2 }"
+          @click="$router.push(activity.link)"
+        >
+          <div class="timeline-image">
+            <img
+              :src="imgPath + activity.imgSmall"
+              :alt="'Luis Enrique Bustamante Pérez - ' + activity.title"
+              class="img-fluid"
+            >
+          </div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h6 class="title">
+                {{ activity.title }}
+              </h6>
             </div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <h6 class="title">
-                  {{ activity.title }}
-                </h6>
-              </div>
-              <div class="timeline-body">
-                <p>
-                  {{ activity.description.slice(0, 110) }}...
-                </p>
-              </div>
-              <div class="timeline-fotter">
-                <p class="small">
-                  <i
-                    class="fa fa-calendar"
-                    aria-hidden="true"
-                  />
-                  {{ activity.date }}
-                </p>
-              </div>
+            <div class="timeline-body">
+              <p>
+                {{ activity.description.slice(0, 110) }}...
+              </p>
             </div>
-          </li>
-          <li class="timeline-inverted">
-            <div class="timeline-image">
-              <button
-                class="btn rounded-circle h-100 w-100"
-                @click="$router.push('/about')"
-              >
-                Ver más
-              </button>
+            <div class="timeline-fotter">
+              <p class="small">
+                <i
+                  class="fa fa-calendar"
+                  aria-hidden="true"
+                />
+                {{ activity.date }}
+              </p>
             </div>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-image">
+            <button
+              class="btn rounded-circle h-100 w-100"
+              @click="$router.push('/about')"
+            >
+              Ver más
+            </button>
+          </div>
+        </li>
+      </ul>
     </div>
-  </section>
+  </div>
+</section>
 </template>
 
 <script>

@@ -1,9 +1,9 @@
 export default {
-  mounted() {
+  mounted () {
     this.loadJQCarouselMain()
   },
   methods: {
-    loadJQCarouselMain() {
+    loadJQCarouselMain () {
       window.jQuery('#carouselMain').carousel({
         interval: 4000
       })

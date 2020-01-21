@@ -1,44 +1,44 @@
 <template>
-  <div class="team-member">
-    <img
-      :src="img"
-      :alt="`${ownerName} - ${title}`"
-      class="img-fluid"
+<div class="team-member">
+  <img
+    :src="img"
+    :alt="`${ownerName} - ${title}`"
+    class="img-fluid"
+  >
+  <div class="team-social-icon">
+    <h6 class="title">
+      {{ title }}
+    </h6>
+    <p class="description small">
+      {{ description.slice(0, 100) }}...
+    </p>
+    <nuxt-link
+      class="btn btn-block btn-flat-primary bottom"
+      :to="{ path: `/news/${slug}` }"
     >
-    <div class="team-social-icon">
-      <h6 class="title">
-        {{ title }}
-      </h6>
-      <p class="description small">
-        {{ description.slice(0, 100) }}...
-      </p>
-      <nuxt-link
-        class="btn btn-block btn-flat-primary bottom"
-        :to="{ path: `/news/${slug}` }"
-      >
-        Leer más
-      </nuxt-link>
-      <p class="small mt-2">
-        <i
-          class="fa fa-calendar"
-          aria-hidden="true"
-        />
-        {{ `${day}/${mounth}/${year}` }}
-      </p>
-    </div>
-    <div class="counter-block">
-      <h6 class="p-1 title small">
-        {{ title }}
-      </h6>
-      <p>
-        <i
-          class="fa fa-calendar"
-          aria-hidden="true"
-        />
-        {{ `${day}/${mounth}/${year}` }}
-      </p>
-    </div>
+      Leer más
+    </nuxt-link>
+    <p class="small mt-2">
+      <i
+        class="fa fa-calendar"
+        aria-hidden="true"
+      />
+      {{ `${day}/${mounth}/${year}` }}
+    </p>
   </div>
+  <div class="counter-block">
+    <h6 class="p-1 title small">
+      {{ title }}
+    </h6>
+    <p>
+      <i
+        class="fa fa-calendar"
+        aria-hidden="true"
+      />
+      {{ `${day}/${mounth}/${year}` }}
+    </p>
+  </div>
+</div>
 </template>
 
 <script>

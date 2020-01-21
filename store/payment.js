@@ -3,10 +3,10 @@
 export const actions = {
   async paymentBook ({ }, form) {
     try {
-      await this.$paymentAPI.create(form);
+      await this.$paymentAPI.create(form)
       this.$toast.success('Tu compra se realizo con exito, revisa tu correo electrónico')
     }
-    catch (e) { 
+    catch (e) {
       this.$toast.error('No se realizo la operación')
     }
 

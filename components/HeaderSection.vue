@@ -1,16 +1,16 @@
 <template>
-  <div
-    class="main-title"
-    :class="{'center': center}"
-  >
-    <div class="attach">
-      {{ attach }}
-    </div>
-    <h2 class="title">
-      {{ title }}
-    </h2>
-    <div class="small_line" />
+<div
+  class="main-title"
+  :class="{'center': center}"
+>
+  <div class="attach">
+    {{ attach }}
   </div>
+  <h2 class="title">
+    {{ title }}
+  </h2>
+  <div class="small_line" />
+</div>
 </template>
 
 <script>
