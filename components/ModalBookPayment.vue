@@ -147,6 +147,7 @@
                         v-validate="'required'"
                         type="text"
                         size="4"
+                        maxlength="4"
                         data-culqi="card[cvv]"
                         placeholder="CVV"
                         aria-label="CVV"
@@ -172,6 +173,7 @@
                     aria-label="month"
                     placeholder="month"
                     size="2"
+                    maxlength="2"
                     name="month"
                     data-culqi="card[exp_month]"
                     :class="['form-control', {'is-danger': errors.has('month') }]"
@@ -182,11 +184,12 @@
                   <input
                     :id="`card[exp_year]${id}`"
                     v-model="form.year"
-                    v-validate="'required'"
+                    v-validate="'required|length:4'"
                     type="text"
                     aria-label="year"
                     placeholder="year"
                     size="4"
+                    maxlength="4"
                     name="year"
                     data-culqi="card[exp_year]"
                     :class="['form-control', {'is-danger': errors.has('year') }]"
@@ -338,11 +341,11 @@ export default {
     },
 
     cleanForm () {
-      this.form.name = ''
-      this.form.lastName = ''
       this.form.email = ''
-      this.form.bookName = ''
-      this.form.message = ''
+      this.form.cvv = ''
+      this.form.numberCard = ''
+      this.form.month = ''
+      this.form.year = ''
       this.$nextTick(() => this.$validator.reset())
     }
   },
