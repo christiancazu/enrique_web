@@ -11,7 +11,10 @@
     class="modal-dialog modal-lg"
     role="document"
   >
-    <div class="modal-content">
+    <div
+      ref="modalBuyBook"
+      class="modal-content"
+    >
       <div class="modal-header">
         <h6
           :id="`ModalLabel${id}`"
@@ -207,6 +210,9 @@
           @click.prevent="sendForm"
         >
           Comprar ahora
+          <span class="h5">
+            {{ `${selectedCurrency.symbol} ${selectedCurrency.price}` }}
+          </span>
         </button>
       </div>
     </div>
@@ -216,6 +222,7 @@
 <script>
 /* eslint-disable no-undef */
 import { mapActions } from 'vuex'
+// import { SET_IS_LOADING } from '@/store/mutations.types'
 
 export default {
   props: {
@@ -231,13 +238,14 @@ export default {
         month: '',
         year: ''
       },
+      isLoading: null,
       showMessageSuccess: false,
       currency: [
         { id: 1, title: "Dolar", symbol: "$", selected: false, price: '8.00', name: 'USD' },
         { id: 2, title: "Sol", symbol: "S/.", selected: true, price: '26.00', name: 'PEN' },
         { id: 3, title: "Euro", symbol: "€", selected: false, price: '7.00', name: 'EUR' }
       ],
-      selectedCurrency: null,
+      selectedCurrency: { id: 2, title: "Sol", symbol: "S/.", selected: true, price: '26.00', name: 'PEN' },
       language: [
         { id: 1, title: "Ingles", available: false, selected: false },
         { id: 2, title: "Español", available: true, selected: true },
@@ -252,7 +260,9 @@ export default {
     selectedCurrency: function (val) {
       window.Culqi.settings({
         currency: val.name,
-        amount: parseInt(val.price) * 100
+        amount: parseInt(val.price) * 100,
+        title: this.title,
+        description: `Autor: Luis E. Bustamante`,
       })
     }
 
@@ -275,9 +285,8 @@ export default {
 
   methods: {
     ...mapActions({
-      sendSumary: 'contact/sendSummary',
-      paymentBook: 'payment/paymentBook'
-
+      paymentBook: 'payment/paymentBook',
+      setLoading: 'payment/setLoading'
     }),
 
     async sendForm () {
@@ -285,35 +294,19 @@ export default {
       try {
         this.showMessageSuccess = false
         let validForm = false
-
         await this.$validator.validateAll().then((result) => validForm = result)
         if (!validForm) return false
+        //active loading
+        // this.activeLoading()
+
         // get token
         await window.Culqi.createToken()
 
         // completed buy book
-        window.culqi = () => {
-          const settings = window.Culqi.getSettings
-          if (Culqi.token) {
-            // ¡Objeto Token creado exitosamente!
-            const token = window.Culqi.token
-            const data = {
-              amount: settings.amount,
-              description: settings.description,
-              email: token.email,
-              currencyCode: settings.currency,
-              tokenId: token.id,
-              language: this.selectedLanguage
-            }
-            _self.paymentBook({ data })
-          } else {
-            /*
-              ¡Hubo algún problema!
-              Mostramos JSON de objeto error en consola
-            */
-            _self.$toast.error(Culqi.error)
-          }
-        }
+        this.submitDataFormPaymentBook(_self)
+
+        //desactive loading
+        // this.desactiveLoading()
         // this.showMessageSuccess = true
         // this.cleanForm()
       }
@@ -337,6 +330,45 @@ export default {
       this.language.forEach(val => {
         val.selected = id === val.id ? true : false
       })
+    },
+
+    submitDataFormPaymentBook (_self) {
+      window.culqi = () => {
+        const settings = window.Culqi.getSettings
+        if (Culqi.token) {
+          // ¡Objeto Token creado exitosamente!
+          const token = window.Culqi.token
+          const data = {
+            amount: settings.amount,
+            description: settings.description,
+            email: token.email,
+            currencyCode: settings.currency,
+            tokenId: token.id,
+            language: this.selectedLanguage
+          }
+          _self.paymentBook({ data })
+        } else {
+          /*
+            ¡Hubo algún problema!
+            Mostramos JSON de objeto error en consola
+          */
+          _self.$toast.error(Culqi.error)
+        }
+      }
+    },
+
+    activeLoading () {
+      this.isLoading = this.$loading.show({
+        container: this.$refs.modalBuyBook,
+        onCancel: this.onCancelNow,
+      })
+      this.setLoading(this.isLoading)
+
+      // this.$store.commit(`payment/${SET_IS_LOADING}`, this.isLoading)
+    },
+
+    desactiveLoading () {
+      this.isLoading.hide()
     },
 
     cleanForm () {

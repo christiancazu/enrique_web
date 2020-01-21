@@ -74,7 +74,8 @@ export default {
   plugins: [
     { src: 'plugins/owl.js', ssr: false },
     '~/plugins/axios',
-    '~/plugins/api'
+    '~/plugins/api',
+    '~/plugins/vue-loading'
   ],
   /*
    ** Nuxt.js dev-modules
