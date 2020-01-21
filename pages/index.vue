@@ -6,7 +6,7 @@
 
   <testimonials />
 
-  <about />
+  <main-news />
 
   <contact-form />
 </main>
@@ -15,13 +15,18 @@
 <script>
 import CarouselMain from '~/components/CarouselMain'
 import MyBooks from '~/components/books/MyBooks'
-import About from '~/components/About'
+import MainNews from '~/components/MainNews'
 import Testimonials from '~/components/Testimonials'
 import ContactForm from '~/components/ContactForm.vue'
 
 export default {
   components: {
-    CarouselMain, MyBooks, About, Testimonials, ContactForm
+    CarouselMain, MyBooks, MainNews, Testimonials, ContactForm
+  },
+  data () {
+    return {
+
+    }
   },
 
 
