@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Soy Luis Enrique",
   "engines": {
-    "node": "10.16.0"
+    "node": "8.10.0"
   },
   "author": "Veox",
   "private": true,
