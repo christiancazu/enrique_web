@@ -9,31 +9,6 @@
       aria-label="Basic example"
     >
       <button
-        type="button"
-        class="btn currency"
-      >
-        <div
-          :class="{'selected': !isCurrencyUSD}"
-          @click="isCurrencyUSD = !isCurrencyUSD"
-        >
-          <i
-            v-if="!isCurrencyUSD"
-            class="fa fa-check"
-            aria-hidden="true"
-          /> Soles(S/)
-        </div>
-        <div
-          :class="{'selected': isCurrencyUSD}"
-          @click="isCurrencyUSD = !isCurrencyUSD"
-        >
-          <i
-            v-if="isCurrencyUSD"
-            class="fa fa-check"
-            aria-hidden="true"
-          /> USD($)
-        </div>
-      </button>
-      <button
         class="btn btn-fab-primary"
         data-toggle="modal"
         :data-target="`#modalBookPay${book.id}`"
@@ -92,35 +67,8 @@ export default {
 
   created () {
     if (process.client) {
-      console.log(window.Culqi)
       window.Culqi.publicKey = this.publicKey
       window.Culqi.init()
-      // const _self = this
-      // window.culqi = () => {
-      //   const Culqi = window.Culqi
-      //   const settings = Culqi.getSettings
-
-      //   if (Culqi.token) {
-      //     // ¡Objeto Token creado exitosamente!
-      //     const token = Culqi.token
-
-      //     const data = {
-      //       amount: settings.amount,
-      //       description: settings.title,
-      //       email: token.email,
-      //       currency_code: settings.currency,
-      //       source_id: token.id
-      //     }
-
-      //     _self.paymentBook({ data })
-      //   } else {
-      //     /* 
-      //       ¡Hubo algún problema!
-      //       Mostramos JSON de objeto error en consola
-      //     */
-      //     _self.$toasted.error(Culqi.error)
-      //   }
-      // }
     }
   },
 

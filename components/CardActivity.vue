@@ -90,9 +90,7 @@ export default {
 
   methods: {
     crop (string) {
-      console.warn(string)
       const x = string.slice(0, 90)
-      console.warn(x, 'x')
       return x
     }
   },

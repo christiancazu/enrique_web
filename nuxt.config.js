@@ -106,8 +106,8 @@ export default {
    */
   axios: {
     baseURL: process.env.NODE_ENV === 'production' ?
-      'http://192.168.1.130:9950/api/' :
-      'http://192.168.1.8:9999/api/'
+      'http://enriqueapi.herokuapp.com/api/' :
+      'http://enriqueapi.herokuapp.com/api/'
   },
 
   toast: {

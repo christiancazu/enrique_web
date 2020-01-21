@@ -49,7 +49,7 @@
           </div>
           <form @submit.prevent="sendForm">
             <div class="row">
-              <div class="col-xs-12 col-md-6 pr-0">
+              <div class="col-xs-12 col-md-6">
                 <h6 class="text-left small">
                   <label
                     class="m-0"
@@ -57,10 +57,7 @@
                   >Tipo de Moneda / Currency type</label>
                 </h6>
                 <div class="input-group mb-3">
-                  <div
-                    id="button-addon3"
-                    class="input-group-prepend btn-block"
-                  >
+                  <div class="input-group-prepend btn-block">
                     <button
                       v-for="(item, i) in currency"
                       :key="i"
@@ -79,10 +76,7 @@
                   >Idioma del libro</label>
                 </h6>
                 <div class="input-group mb-3">
-                  <div
-                    id="button-addon3"
-                    class="input-group-prepend"
-                  >
+                  <div class="input-group-prepend">
                     <button
                       v-for="(item, i) in language"
                       :key="i"
@@ -101,10 +95,10 @@
                   El Libro no esta disponible en el idioma seleccionado <br>
                 </h6>
               </div>
-              <div class="col-xs-12 col-md-6">
+              <div class="col-xs-12 col-md-6 pl-0">
                 <div class="form-group">
                   <input
-                    id="card[email]"
+                    :id="`card[email]${id}`"
                     v-model="form.email"
                     v-validate="'required|email'"
                     type="email"
@@ -117,7 +111,7 @@
                   >
                   <span
                     v-show="errors.has('email')"
-                    class="error-message"
+                    class="error-message text-left"
                   >Ingresa un correo valido</span>
                 </div>
                 <div class="row">
@@ -125,8 +119,8 @@
                     <div class="mb-3">
                       <div class="form-group">
                         <input
-                          id="card[number]"
-                          v-model="form.name"
+                          :id="`card[number]${id}`"
+                          v-model="form.numberCard"
                           v-validate="'required'"
                           type="text"
                           size="20"
@@ -134,32 +128,31 @@
                           class="form-control"
                           placeholder="Número de tarjeta"
                           aria-label="Número de tarjeta"
-                          name="name"
+                          name="numberCard"
                           aria-describedby="Número de tarjeta"
-                          :class="['form-control', {'is-danger': errors.has('name') }]"
+                          :class="['form-control', {'is-danger': errors.has('numberCard') }]"
                         >
+                        <span
+                          v-show="errors.has('numberCard') && errors.has('numberCard')"
+                          class="error-message"
+                        >Número de tarjeta no valida</span>
                       </div>
-                      <span
-                        v-show="errors.has('name') && errors.has('lastName')"
-                        class="error-message"
-                      >Número de tarjeta no valida</span>
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
                       <input
-                        id="card[cvv]"
-                        v-model="form.lastName"
+                        :id="`card[cvv]${id}`"
+                        v-model="form.cvv"
                         v-validate="'required'"
                         type="text"
                         size="4"
                         data-culqi="card[cvv]"
-                        class="form-control"
                         placeholder="CVV"
                         aria-label="CVV"
-                        name="CVV"
+                        name="cvv"
                         aria-describedby="CVV"
-                        :class="['form-control', {'is-danger': errors.has('lastName') }]"
+                        :class="['form-control', {'is-danger': errors.has('cvv') }]"
                       >
                     </div>
                   </div>
@@ -172,25 +165,31 @@
                 </h6>
                 <div class="input-group">
                   <input
-                    id="card[exp_month]"
+                    :id="`card[exp_month]${id}`"
+                    v-model="form.month"
+                    v-validate="'required'"
                     type="text"
                     aria-label="month"
                     placeholder="month"
-                    class="form-control"
                     size="2"
+                    name="month"
                     data-culqi="card[exp_month]"
+                    :class="['form-control', {'is-danger': errors.has('month') }]"
                   >
                   <div class="input-group-prepend">
                     <span class="input-group-text">/</span>
                   </div>
                   <input
-                    id="card[exp_year]"
+                    :id="`card[exp_year]${id}`"
+                    v-model="form.year"
+                    v-validate="'required'"
                     type="text"
                     aria-label="year"
                     placeholder="year"
-                    class="form-control"
                     size="4"
+                    name="year"
                     data-culqi="card[exp_year]"
+                    :class="['form-control', {'is-danger': errors.has('year') }]"
                   >
                 </div>
               </div>
@@ -224,11 +223,11 @@ export default {
   data () {
     return {
       form: {
-        name: "",
-        lastName: "",
         email: "",
-        bookName: "",
-        message: ""
+        cvv: '',
+        numberCard: '',
+        month: '',
+        year: ''
       },
       showMessageSuccess: false,
       currency: [
@@ -280,18 +279,17 @@ export default {
     }),
 
     async sendForm () {
-      // window.Culqi.createToken()
-      // const settings = Culqi.getSettings
-      // const token = Culqi.token
-      // console.log(token, 'token')
       const _self = this
-
       try {
         this.showMessageSuccess = false
-        // let validForm = false
+        let validForm = false
 
+        await this.$validator.validateAll().then((result) => validForm = result)
+        if (!validForm) return false
+        // get token
         await window.Culqi.createToken()
 
+        // completed buy book
         window.culqi = () => {
           const settings = window.Culqi.getSettings
           if (Culqi.token) {
@@ -314,15 +312,13 @@ export default {
             _self.$toast.error(Culqi.error)
           }
         }
-        // await this.$validator.validateAll().then((result) => validForm = result)
-        // if (validForm) {
-        //   await this.sendSumary({ data })
-        //   this.showMessageSuccess = true
-        //   this.cleanForm()
-        // }
+        // this.showMessageSuccess = true
+        // this.cleanForm()
       }
       // eslint-disable-next-line no-empty
-      catch (e) { }
+      catch (e) {
+        console.log('Error')
+       }
     },
 
     onChangeCurrency (item) {
