@@ -47,7 +47,8 @@ export default {
       // { src: 'https://kit.fontawesome.com/3122b9c598.js' },
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' },
       { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' },
-      { src: 'https://checkout.culqi.com/js/v3' },
+      // { src: 'https://checkout.culqi.com/js/v3' },
+      { src: 'https://checkout.culqi.com/v2' },
     ]
   },
   /*
@@ -106,7 +107,7 @@ export default {
   axios: {
     baseURL: process.env.NODE_ENV === 'production' ?
       'http://192.168.1.130:9950/api/' :
-      'http://192.168.1.130:9950/api/'
+      'http://192.168.1.8:9999/api/'
   },
 
   toast: {

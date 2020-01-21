@@ -2,12 +2,13 @@
 /* eslint-disable no-empty */
 export const actions = {
   async paymentBook ({ }, form) {
+    console.log(this)
     try {
       await this.$paymentAPI.create(form);
-      this.$toasted.success('Tu compra se realizo con exito, revisa tu correo electrónico')
+      this.$toast.success('Tu compra se realizo con exito, revisa tu correo electrónico')
     }
     catch (e) { 
-      this.$toasted.error('No se realizo la operación')
+      this.$toast.error('No se realizo la operación')
     }
 
   }

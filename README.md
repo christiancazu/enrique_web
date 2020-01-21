@@ -5,6 +5,8 @@
 ## Build Setup
 
 ``` bash
+# node version
+$ node v8.10
 # install dependencies
 $ npm run install
 

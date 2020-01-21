@@ -35,7 +35,8 @@
       </button>
       <button
         class="btn btn-fab-primary"
-        @click="openModalCulqi(book)"
+        data-toggle="modal"
+        :data-target="`#modalBookPay${book.id}`"
       >
         <i
           class="fa fa-credit-card-alt"
@@ -61,15 +62,20 @@
       :id="book.id"
       :title="book.title"
     />
+    <modal-book-payment
+      :id="book.id"
+      :title="book.title"
+    />
   </div>
 </template>
 <script>
 import { mapActions } from 'vuex'
 import ModalBookSummary from '~/components/ModalBookSummary'
+import ModalBookPayment from '~/components/ModalBookPayment'
 
 export default {
 
-  components: { ModalBookSummary },
+  components: { ModalBookSummary, ModalBookPayment },
   props: {
     book: { type: Object, default: null },
     labelBuy: { type: String, default: 'COMPRAR' },
@@ -86,33 +92,35 @@ export default {
 
   created () {
     if (process.client) {
+      console.log(window.Culqi)
       window.Culqi.publicKey = this.publicKey
-      const _self = this
-      window.culqi = () => {
-        const Culqi = window.Culqi
-        const settings = Culqi.getSettings
+      window.Culqi.init()
+      // const _self = this
+      // window.culqi = () => {
+      //   const Culqi = window.Culqi
+      //   const settings = Culqi.getSettings
 
-        if (Culqi.token) {
-          // ¡Objeto Token creado exitosamente!
-          const token = Culqi.token
+      //   if (Culqi.token) {
+      //     // ¡Objeto Token creado exitosamente!
+      //     const token = Culqi.token
 
-          const data = {
-            amount: settings.amount,
-            description: settings.title,
-            email: token.email,
-            currency_code: settings.currency,
-            source_id: token.id
-          }
+      //     const data = {
+      //       amount: settings.amount,
+      //       description: settings.title,
+      //       email: token.email,
+      //       currency_code: settings.currency,
+      //       source_id: token.id
+      //     }
 
-          _self.paymentBook({ data })
-        } else {
-          /* 
-            ¡Hubo algún problema!
-            Mostramos JSON de objeto error en consola
-          */
-          _self.$toasted.error(Culqi.error)
-        }
-      }
+      //     _self.paymentBook({ data })
+      //   } else {
+      //     /* 
+      //       ¡Hubo algún problema!
+      //       Mostramos JSON de objeto error en consola
+      //     */
+      //     _self.$toasted.error(Culqi.error)
+      //   }
+      // }
     }
   },
 

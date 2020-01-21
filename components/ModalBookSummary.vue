@@ -168,7 +168,7 @@ export default {
         let validForm = false
         await this.$validator.validateAll().then((result) => validForm = result)
         if (validForm) {
-          await this.sendSumary({ data })
+          await this.paymentBook({ data })
           this.showMessageSuccess = true
           this.cleanForm()
         }
