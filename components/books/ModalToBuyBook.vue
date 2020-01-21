@@ -1,6 +1,6 @@
 <template>
 <div
-  :id="`modalBookPay${id}`"
+  :id="`modalToBuyBook${id}`"
   class="modal fade"
   tabindex="-1"
   role="dialog"
@@ -267,7 +267,7 @@ export default {
     })
     const _self = this
     // eslint-disable-next-line no-unused-vars
-    $(`#modalBookPay${this.id}`).on('hide.bs.modal', function (e) {
+    $(`#modalToBuyBook${this.id}`).on('hide.bs.modal', function (e) {
       _self.cleanForm()
     })
 

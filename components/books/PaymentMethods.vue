@@ -11,7 +11,7 @@
     <button
       class="btn btn-fab-primary"
       data-toggle="modal"
-      :data-target="`#modalBookPay${book.id}`"
+      :data-target="`#modalToBuyBook${book.id}`"
     >
       <i class="fa fa-credit-card-alt" />
       Comprar ahora
@@ -22,7 +22,7 @@
     class="btn btn-outline-primary my-1"
     :class="{'btn-block': isblock}"
     data-toggle="modal"
-    :data-target="`#modalBookSummary${book.id}`"
+    :data-target="`#modalToBookSummary${book.id}`"
   >
     <i
       class="fa fa-download"
@@ -31,22 +31,22 @@
     Resumen <strong class="text-danger">Gratis</strong>
   </button>
 
-  <modal-book-summary
+  <modal-to-book-summary
     :id="book.id"
     :title="book.title"
   />
-  <modal-book-payment
+  <modal-to-buy-book
     :id="book.id"
     :title="book.title"
   />
 </div>
 </template>
 <script>
-import ModalBookSummary from '~/components/ModalBookSummary'
-import ModalBookPayment from '~/components/ModalBookPayment'
+import ModalToBookSummary from '~/components/books/ModalToBookSummary'
+import ModalToBuyBook from '~/components/books/ModalToBuyBook'
 
 export default {
-  components: { ModalBookSummary, ModalBookPayment },
+  components: { ModalToBookSummary, ModalToBuyBook },
   props: {
     book: { type: Object, default: null },
     isblock: { type: Boolean, default: false }

@@ -3,16 +3,16 @@
   <header-section
     attach="ultimas"
     :title="`Noticias`"
-    :description="`Estas son mis activities`"
+    :description="`Estas son mis news`"
   />
 
   <div class="row">
     <div
-      v-for="(activity, i) in activities"
+      v-for="(activity, i) in news"
       :key="i"
       class="col-sm-6 col-md-4 mb-3"
     >
-      <card-activity
+      <card-new
         :id="activity.id"
         :title="activity.title"
         :date="activity.date"
@@ -27,14 +27,14 @@
 
 <script>
 import { IMG_BASE_PATH } from '~/config/constants'
-import HeaderSection from '~/components/HeaderSection'
-import CardActivity from '~/components/CardActivity'
+import HeaderSection from '~/components/base/HeaderSection'
+import CardNew from '~/components/news/CardNew'
 import { mapGetters } from 'vuex'
 
 export default {
   name: 'News',
   components: {
-    HeaderSection, CardActivity
+    HeaderSection, CardNew
   },
   data () {
     return {
@@ -43,7 +43,7 @@ export default {
   },
   computed: {
     ...mapGetters({
-      activities: 'activitiesReverseOrder'
+      news: 'newsReverseOrder'
     })
   },
 }

@@ -2,7 +2,7 @@
 <main>
   <carousel-main />
 
-  <my-books />
+  <my-books full-row />
 
   <testimonials />
 
@@ -14,7 +14,7 @@
 
 <script>
 import CarouselMain from '~/components/CarouselMain'
-import MyBooks from '~/components/MyBooks'
+import MyBooks from '~/components/books/MyBooks'
 import About from '~/components/About'
 import Testimonials from '~/components/Testimonials'
 import ContactForm from '~/components/ContactForm.vue'

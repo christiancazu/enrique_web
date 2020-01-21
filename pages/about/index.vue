@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import HeaderSection from '~/components/HeaderSection'
+import HeaderSection from '~/components/base/HeaderSection'
 import History from '~/components/History'
 import LineTime from '~/components/base/LineTime'
 import { IMG_BASE_PATH } from '~/config/constants'

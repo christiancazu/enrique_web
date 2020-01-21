@@ -11,7 +11,7 @@
     <div class="col">
       <ul class="timeline">
         <li
-          v-for="(activity, i) in activities"
+          v-for="(activity, i) in news"
           :key="i"
           :class="{ 'timeline-inverted': i % 2 }"
           @click="$router.push(activity.link)"
@@ -63,7 +63,7 @@
 
 <script>
 import { IMG_BASE_PATH } from '~/config/constants'
-import HeaderSection from '~/components/HeaderSection'
+import HeaderSection from '~/components/base/HeaderSection'
 
 export default {
   name: 'About',
@@ -73,7 +73,7 @@ export default {
   data () {
     return {
       imgPath: IMG_BASE_PATH + '/about/',
-      activities: [
+      news: [
         {
           title: 'El prodigioso dedo meñique de Luis Enrique Bustamante',
           date: '24 de Octubre del 2008',

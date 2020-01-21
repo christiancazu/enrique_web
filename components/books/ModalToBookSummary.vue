@@ -1,6 +1,6 @@
 <template>
 <div
-  :id="`modalBookSummary${id}`"
+  :id="`modalToBookSummary${id}`"
   class="modal fade"
   tabindex="-1"
   role="dialog"
@@ -150,7 +150,7 @@ export default {
   mounted () {
     const _self = this
     // eslint-disable-next-line no-unused-vars
-    $(`#modalBookSummary${this.id}`).on('hide.bs.modal', function (e) {
+    $(`#modalToBookSummary${this.id}`).on('hide.bs.modal', function (e) {
       _self.cleanForm()
     })
   },

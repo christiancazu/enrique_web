@@ -66,7 +66,7 @@
 import { IMG_BASE_PATH } from '~/config/constants'
 import jqCarouselTestimonial from '~/jq-script/jq.carousel.testimonials'
 import testimonialsContent from '~/contents/testimonials.json'
-import HeaderSection from '~/components/HeaderSection'
+import HeaderSection from '~/components/base/HeaderSection'
 
 export default {
   name: 'Testimonials',

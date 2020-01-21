@@ -4,7 +4,7 @@ import booksContent from '~/contents/books'
 import aboutContent from '~/contents/about'
 
 export const state = () => ({
-  activities: resolveNewsSlugs(),
+  news: resolveNewsSlugs(),
   currentActivity: null,
   headerSections: headerSectionsContent,
   books: booksContent,
@@ -13,17 +13,17 @@ export const state = () => ({
 
 export const getters = {
   currentActivity: state => slug =>
-    state.activities.find(ca => ca.slug === slug)
+    state.news.find(ca => ca.slug === slug)
   ,
   headerSection: state => section =>
     state.headerSections.find(hs => hs.section === section)
   ,
   // eslint-disable-next-line no-unused-vars
-  threeLastActivities: (state, getters) =>
-    getters.activitiesReverseOrder.slice(0, 3)
+  threeLastnews: (state, getters) =>
+    getters.newsReverseOrder.slice(0, 3)
   ,
-  activitiesReverseOrder: state =>
-    state.activities.slice().reverse()
+  newsReverseOrder: state =>
+    state.news.slice().reverse()
 }
 
 /**

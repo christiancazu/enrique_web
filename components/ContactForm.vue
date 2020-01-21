@@ -126,7 +126,7 @@
 </template>
 
 <script>
-import HeaderSection from '~/components/HeaderSection'
+import HeaderSection from '~/components/base/HeaderSection'
 import { mapActions } from 'vuex'
 
 export default {

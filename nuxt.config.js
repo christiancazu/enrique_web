@@ -107,8 +107,8 @@ export default {
    */
   axios: {
     baseURL: process.env.NODE_ENV === 'production' ?
-      'http://enriqueapi.herokuapp.com/api/' :
-      'http://enriqueapi.herokuapp.com/api/'
+      'https://enriqueapi.herokuapp.com/api/' :
+      'https://enriqueapi.herokuapp.com/api/'
   },
 
   toast: {
