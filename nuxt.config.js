@@ -74,15 +74,13 @@ export default {
   plugins: [
     { src: 'plugins/owl.js', ssr: false },
     '~/plugins/axios',
-    '~/plugins/api'
+    '~/plugins/api',
+    '~/plugins/vue-loading'
   ],
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
-  ],
+  buildModules: [],
   /*
    ** Nuxt.js modules
    */
@@ -91,14 +89,18 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/toast',
-    ['nuxt-validate', {
-      lang: 'es',
-      nuxti18n: {
-        locale: {
-          'zh-CN': 'zh_CN'
+    [
+      'nuxt-validate',
+      {
+        lang: 'es',
+        nuxti18n: {
+          locale: {
+            'zh-CN': 'zh_CN'
+          }
         }
       }
-    }]
+    ],
+    '@nuxtjs/style-resources'
   ],
   /*
    ** Axios module configuration
@@ -106,8 +108,8 @@ export default {
    */
   axios: {
     baseURL: process.env.NODE_ENV === 'production' ?
-      'http://192.168.1.130:9950/api/' :
-      'http://192.168.1.8:9999/api/'
+      'https://enriqueapi.herokuapp.com/api/' :
+      'https://enriqueapi.herokuapp.com/api/'
   },
 
   toast: {
@@ -138,7 +140,7 @@ export default {
           test: /\.(js|vue)$/,
           loader: "eslint-loader",
           exclude: /(node_modules)/
-        });
+        })
       }
     }
   }

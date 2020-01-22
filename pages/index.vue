@@ -1,29 +1,34 @@
 <template>
-  <main>
-    <carousel-main />
+<main>
+  <carousel-main />
 
-    <my-books />
+  <my-books full-row />
 
-    <testimonials />
+  <testimonials />
 
-    <about />
+  <main-news />
 
-    <contact />
-  </main>
+  <contact-form />
+</main>
 </template>
 
 <script>
 import CarouselMain from '~/components/CarouselMain'
-import MyBooks from '~/components/MyBooks'
-import About from '~/components/About'
+import MyBooks from '~/components/books/MyBooks'
+import MainNews from '~/components/MainNews'
 import Testimonials from '~/components/Testimonials'
-import Contact from '~/components/Contact.vue'
+import ContactForm from '~/components/ContactForm.vue'
 
 export default {
   components: {
-    CarouselMain, MyBooks, About, Testimonials, Contact
+    CarouselMain, MyBooks, MainNews, Testimonials, ContactForm
+  },
+  data () {
+    return {
+
+    }
   },
 
-  
+
 }
 </script>

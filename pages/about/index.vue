@@ -1,82 +1,82 @@
 <template>
-  <div class="container about-page">
-    <ul
-      id="tabsAbout"
-      class="nav nav-pills nav-justified mb-5"
-      role="tablist"
-    >
-      <li class="nav-item">
-        <a
-          id="home-tab"
-          class="nav-link active h6 mb-0"
-          data-toggle="tab"
-          href="#home"
-          role="tab"
-          aria-controls="home"
-          aria-selected="true"
-        >Biografía</a>
-      </li>
-      <li class="nav-item">
-        <a
-          id="profile-tab"
-          class="nav-link h6 mb-0"
-          data-toggle="tab"
-          href="#profile"
-          role="tab"
-          aria-controls="profile"
-          aria-selected="false"
-        >Comentarios</a>
-      </li>
-    </ul>
+<div class="container about-page">
+  <ul
+    id="tabsAbout"
+    class="nav nav-pills nav-justified mb-5"
+    role="tablist"
+  >
+    <li class="nav-item">
+      <a
+        id="home-tab"
+        class="nav-link active h6 mb-0"
+        data-toggle="tab"
+        href="#home"
+        role="tab"
+        aria-controls="home"
+        aria-selected="true"
+      >Biografía</a>
+    </li>
+    <li class="nav-item">
+      <a
+        id="profile-tab"
+        class="nav-link h6 mb-0"
+        data-toggle="tab"
+        href="#profile"
+        role="tab"
+        aria-controls="profile"
+        aria-selected="false"
+      >Comentarios</a>
+    </li>
+  </ul>
+  <div
+    id="myTabContent"
+    class="tab-content"
+  >
     <div
-      id="myTabContent"
-      class="tab-content"
+      id="home"
+      class="tab-pane fade show active"
+      role="tabpanel"
+      aria-labelledby="home-tab"
     >
-      <div
-        id="home"
-        class="tab-pane fade show active"
-        role="tabpanel"
-        aria-labelledby="home-tab"
-      >
-        <header-section
-          attach="Yo soy"
-          title="Luis enrique Bustamante Pérez"
-          full-row
-        />
+      <header-section
+        attach="Yo soy"
+        title="Luis enrique Bustamante Pérez"
+        full-row
+      />
 
-        <history
-          v-for="(about, i) in abouts"
-          :key="i"
-          :img="imgPath + about.img"
-          :title="about.title"
-          :body="about.body"
-          :footer="about.footer"
-          :reverse="!!(i % 2)"
-        />
-      </div>
-      <div
-        id="profile"
-        class="tab-pane fade"
-        role="tabpanel"
-        aria-labelledby="profile-tab"
-      >
-        <header-section
-          :attach="headerTabLetters.attach"
-          :title="headerTabLetters.title"
-          :description="headerTabLetters.description"
-        />
-        <LineTime
-          :items="letters"
-          line-complet
-          text-justify
-        />
-      </div>
+      <history
+        v-for="(about, i) in abouts"
+        :key="i"
+        :img="imgPath + about.img"
+        :title="about.title"
+        :body="about.body"
+        :footer="about.footer"
+        :reverse="!!(i % 2)"
+      />
+    </div>
+    <div
+      id="profile"
+      class="tab-pane fade"
+      role="tabpanel"
+      aria-labelledby="profile-tab"
+    >
+      <header-section
+        :attach="headerTabLetters.attach"
+        :title="headerTabLetters.title"
+        :description="headerTabLetters.description"
+      />
+      <line-time
+        :items="letters"
+        line-complet
+        text-justify
+      />
     </div>
   </div>
+</div>
 </template>
 
 <script>
-import HeaderSection from '~/components/HeaderSection'
+import HeaderSection from '~/components/base/HeaderSection'
 import History from '~/components/History'
 import LineTime from '~/components/base/LineTime'
 import { IMG_BASE_PATH } from '~/config/constants'

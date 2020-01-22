@@ -1,21 +1,21 @@
 <template>
-  <div class="social-all">
-    <ul class="m-0">
-      <template v-for="(item, i) in socialNetwork">
-        <li
-          :key="i"
+<div class="social-all">
+  <ul class="m-0">
+    <template v-for="(item, i) in socialNetwork">
+      <li
+        :key="i"
+      >
+        <a
+          :href="item.url"
+          target="_bank"
+          :class="{'small':isNavbar}"
         >
-          <a
-            :href="item.url"
-            target="_bank"
-            :class="{'small':isNavbar}"
-          >
-            <i :class="item.classIcon" />
-          </a>
-        </li>
-      </template>
-    </ul>
-  </div>
+          <i :class="item.classIcon" />
+        </a>
+      </li>
+    </template>
+  </ul>
+</div>
 </template>
 
 <script>

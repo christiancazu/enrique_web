@@ -1,50 +1,38 @@
 <template>
-  <div class="contact-page">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-4">
-          <div class="noo-information">
-            <i
-              class="fa fa-phone"
-              aria-hidden="true"
-            />
-            <h5>Comunicate</h5>
-            <p>
-              CEL: {{ cellPhoneNumber }} <br>
-            </p>
-          </div>
+<div class="contact-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="noo-information">
+          <i class="fa fa-location-arrow" />
+          <h5>Encuentrame</h5>
+          <p> {{ address }}</p>
         </div>
-        <div class="col-sm-4">
-          <div class="noo-information">
-            <i class="fa fa-location-arrow" />
-            <h5>Encuentrame</h5>
-            <p> {{ address }}</p>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="noo-information">
-            <i class="fa fa-envelope-o" />
-            <h5>Correo electrónico</h5>
-            <p>
-              {{ emailAddress }}
-            </p>
-          </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="noo-information">
+          <i class="fa fa-envelope-o" />
+          <h5>Correo electrónico</h5>
+          <p>
+            {{ emailAddress }}
+          </p>
         </div>
       </div>
     </div>
-    <contact />
   </div>
+  <contact-form />
+</div>
 </template>
 
 <script>
-import Contact from '~/components/Contact.vue'
+import ContactForm from '~/components/ContactForm.vue'
 import { CELLPHONE_NUMBER } from '~/config/constants'
 import { ADDRESS } from '~/config/constants'
 import { EMAIL_ADDRESS } from '~/config/constants'
 
 export default {
   components: {
-    Contact
+    ContactForm
   },
 
   data () {
