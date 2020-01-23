@@ -38,6 +38,7 @@
               id="inputFullName"
               v-model="form.fullName"
               v-validate="'required'"
+              :disabled="processingForm"
               type="text"
               name="name"
               aria-describedby="name"
@@ -59,6 +60,7 @@
               v-validate="'required|email'"
               type="email"
               name="email"
+              :disabled="processingForm"
               :class="['form-control', {'is-danger': errors.has('email') }]"
               aria-describedby="email"
             >
@@ -77,6 +79,7 @@
               v-model="form.phone"
               v-validate="'required|numeric'"
               type="tel"
+              :disabled="processingForm"
               name="phone"
               :class="['form-control', {'is-danger': errors.has('phone') }]"
               pattern="[0-9\-]*"
@@ -100,6 +103,7 @@
               v-validate="'required'"
               name="message"
               cols="40"
+              :disabled="processingForm"
               rows="8"
               :class="['form-control', {'is-danger': errors.has('message') }]"
               aria-describedby="message"
@@ -115,9 +119,16 @@
         <button
           class="btn btn-primary text-white"
           type="submit"
+          :disabled="processingForm"
           @click.prevent="sendFormEmail"
         >
           Enviar mensaje
+          <span
+            v-if="processingForm"
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+          />
         </button>
       </div>
     </form>
@@ -165,14 +176,17 @@ export default {
         let validForm = false
         await this.$validator.validateAll().then((result) => validForm = result)
         if (validForm) {
+          this.processingForm = true
           await this.sendEmail({ data })
           this.cleanForm()
           this.showMessageSuccess = true
+          this.processingForm = false
         }
-
       }
       // eslint-disable-next-line no-empty
-      catch (e) { }
+      catch (e) {
+        this.processingForm = false
+      }
     },
 
     cleanForm () {

@@ -54,6 +54,7 @@
                 v-model="form.name"
                 v-validate="'required'"
                 type="text"
+                :disabled="processingForm"
                 class="form-control"
                 placeholder="Nombres"
                 aria-label="Nombres"
@@ -68,6 +69,7 @@
                 class="form-control"
                 placeholder="Apellidos"
                 aria-label="Apellidos"
+                :disabled="processingForm"
                 name="lastName"
                 aria-describedby="Apellidos"
                 :class="['form-control', {'is-danger': errors.has('lastName') }]"
@@ -84,6 +86,7 @@
               v-validate="'required|email'"
               type="email"
               name="email"
+              :disabled="processingForm"
               placeholder="Correo Electrónico"
               :class="['form-control', {'is-danger': errors.has('email') }]"
               aria-describedby="email"
@@ -97,6 +100,7 @@
             <textarea
               v-model="form.message"
               v-validate="'required'"
+              :disabled="processingForm"
               placeholder="Escribe un mensaje"
               name="message"
               cols="40"
@@ -114,10 +118,17 @@
       <div class="modal-footer">
         <button
           type="button"
+          :disabled="processingForm"
           class="btn btn-block btn-primary"
           @click.prevent="sendForm"
         >
           Adquirir resumen
+          <span
+            v-if="processingForm"
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+          />
         </button>
       </div>
     </div>
@@ -143,7 +154,8 @@ export default {
         bookName: "",
         message: ""
       },
-      showMessageSuccess: false
+      showMessageSuccess: false,
+      processingForm: false,
     }
   },
 
@@ -168,13 +180,17 @@ export default {
         let validForm = false
         await this.$validator.validateAll().then((result) => validForm = result)
         if (validForm) {
+          this.processingForm = true
           await this.paymentBook({ data })
           this.showMessageSuccess = true
+          this.processingForm = false
           this.cleanForm()
         }
       }
       // eslint-disable-next-line no-empty
-      catch (e) { }
+      catch (e) {
+        this.processingForm = false
+      }
     },
 
     cleanForm () {

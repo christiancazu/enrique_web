@@ -1,1 +1,2 @@
 export const SET_IS_LOADING = 'SET_IS_LOADING'
+export const SET_SHOW_MESSAGE = 'SET_SHOW_MESSAGE'

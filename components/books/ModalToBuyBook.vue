@@ -33,7 +33,7 @@
       </div>
       <div class="modal-body">
         <div
-          v-if="showMessageSuccess"
+          v-if="showMessage"
           class="alert alert-success p alert-dismissible fade show"
           role="alert"
         >
@@ -41,18 +41,18 @@
             class="fa fa-check"
             aria-hidden="true"
           />
-          <strong>Gracias por contactarme</strong>, enviaremos un resumen del libro a tu correo electrónico.
+          <strong>Gracias por tu compra</strong>, enviaremos el libro adquirido a tu correo electrónico.
           <button
             type="button"
             class="close"
-            @click="showMessageSuccess = false"
+            @click="$store.commit(`payment/SET_SHOW_MESSAGE`, false)"
           >
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <form @submit.prevent="sendForm">
           <div class="row">
-            <div class="col-xs-12 col-md-6">
+            <div class="col-xs-12 col-sm-12 col-md-6">
               <h6 class="text-left small">
                 <label
                   class="m-0"
@@ -64,6 +64,7 @@
                   <button
                     v-for="(item, i) in currency"
                     :key="i"
+                    :disabled="isLoading"
                     :class="['btn btn-outline-primary', {'active': item.selected}]"
                     type="button"
                     @click="onChangeCurrency(item)"
@@ -83,6 +84,7 @@
                   <button
                     v-for="(item, i) in language"
                     :key="i"
+                    :disabled="isLoading"
                     :class="['btn btn-outline-primary', {'active': item.selected}]"
                     type="button"
                     @click="onChangeLanguage(item)"
@@ -98,7 +100,7 @@
                 El Libro no esta disponible en el idioma seleccionado <br>
               </h6>
             </div>
-            <div class="col-xs-12 col-md-6 pl-0">
+            <div class="col-xs-12 col-sm-12 col-md-6 pl-0">
               <div class="form-group">
                 <input
                   :id="`card[email]${id}`"
@@ -106,6 +108,7 @@
                   v-validate="'required|email'"
                   type="email"
                   name="email"
+                  :disabled="isLoading"
                   placeholder="Correo Electrónico"
                   :class="['form-control', {'is-danger': errors.has('email') }]"
                   aria-describedby="email"
@@ -118,7 +121,7 @@
                 >Ingresa un correo valido</span>
               </div>
               <div class="row">
-                <div class="col-md-9 pr-0">
+                <div class="col-9 pr-0">
                   <div class="mb-3">
                     <div class="form-group">
                       <input
@@ -126,6 +129,7 @@
                         v-model="form.numberCard"
                         v-validate="'required'"
                         type="text"
+                        :disabled="isLoading"
                         size="20"
                         data-culqi="card[number]"
                         class="form-control"
@@ -142,7 +146,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-3">
                   <div class="form-group">
                     <input
                       :id="`card[cvv]${id}`"
@@ -150,6 +154,7 @@
                       v-validate="'required|min:3'"
                       type="text"
                       size="4"
+                      :disabled="isLoading"
                       maxlength="4"
                       data-culqi="card[cvv]"
                       placeholder="CVV"
@@ -173,6 +178,7 @@
                   v-model="form.month"
                   v-validate="'required|min:2'"
                   type="text"
+                  :disabled="isLoading"
                   aria-label="month"
                   placeholder="month"
                   size="2"
@@ -189,6 +195,7 @@
                   v-model="form.year"
                   v-validate="'required|min:4'"
                   type="text"
+                  :disabled="isLoading"
                   aria-label="year"
                   placeholder="year"
                   size="4"
@@ -205,6 +212,7 @@
       <div class="modal-footer">
         <button
           id="btn_pagar"
+          :disabled="isLoading"
           type="button"
           class="btn btn-block btn-primary"
           @click.prevent="sendForm"
@@ -213,6 +221,12 @@
           <span class="h5">
             {{ `${selectedCurrency.symbol} ${selectedCurrency.price}` }}
           </span>
+          <span
+            v-if="isLoading"
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+          />
         </button>
       </div>
     </div>
@@ -221,8 +235,8 @@
 </template>
 <script>
 /* eslint-disable no-undef */
-import { mapActions } from 'vuex'
-// import { SET_IS_LOADING } from '@/store/mutations.types'
+import { mapActions, mapState } from 'vuex'
+// import { SET_SHOW_MESSAGE } from '@/store/mutations.types'
 
 export default {
   props: {
@@ -238,7 +252,6 @@ export default {
         month: '',
         year: ''
       },
-      isLoading: null,
       showMessageSuccess: false,
       currency: [
         { id: 1, title: "Dolar", symbol: "$", selected: false, price: '8.00', name: 'USD' },
@@ -247,13 +260,20 @@ export default {
       ],
       selectedCurrency: { id: 2, title: "Sol", symbol: "S/.", selected: true, price: '26.00', name: 'PEN' },
       language: [
-        { id: 1, title: "Ingles", available: false, selected: false },
-        { id: 2, title: "Español", available: true, selected: true },
-        { id: 3, title: "Italiano", available: false, selected: false }
+        { id: 1, title: "english", available: false, selected: false },
+        { id: 2, title: "spanish", available: true, selected: true },
+        { id: 3, title: "italian", available: false, selected: false }
       ],
-      selectedLanguage: 'Español',
+      selectedLanguage: 'spanish',
       isAvailableLanguage: false
     }
+  },
+
+  computed: {
+    ...mapState({
+      isLoading: (state) => state.payment.isLoading,
+      showMessage: (state) => state.payment.showMessage
+    })
   },
 
   watch: {
@@ -261,17 +281,20 @@ export default {
       window.Culqi.settings({
         currency: val.name,
         amount: parseInt(val.price) * 100,
-        title: this.title,
-        description: `Autor: Luis E. Bustamante`,
+        description: this.title,
       })
+    },
+    showMessage: function (val){
+      if(val){
+        this.cleanForm()
+      }
     }
 
   },
 
   mounted () {
     window.Culqi.settings({
-      title: this.title,
-      description: `Autor: Luis E. Bustamante`,
+      description: this.title,
       currency: 'PEN',
       amount: 2600,
     })
@@ -292,28 +315,20 @@ export default {
     async sendForm () {
       const _self = this
       try {
-        this.showMessageSuccess = false
         let validForm = false
         await this.$validator.validateAll().then((result) => validForm = result)
         if (!validForm) return false
         //active loading
-        // this.activeLoading()
+        this.setLoading(true)
 
         // get token
         await window.Culqi.createToken()
 
         // completed buy book
         this.submitDataFormPaymentBook(_self)
-
-        //desactive loading
-        // this.desactiveLoading()
-        // this.showMessageSuccess = true
-        // this.cleanForm()
       }
       // eslint-disable-next-line no-empty
-      catch (e) {
-        console.log('Error')
-      }
+      catch (e) { }
     },
 
     onChangeCurrency (item) {
@@ -339,8 +354,9 @@ export default {
           // ¡Objeto Token creado exitosamente!
           const token = window.Culqi.token
           const data = {
+            idBook: this.id,
             amount: settings.amount,
-            description: settings.description,
+            titleBook: settings.description,
             email: token.email,
             currencyCode: settings.currency,
             tokenId: token.id,
@@ -355,20 +371,6 @@ export default {
           _self.$toast.error(Culqi.error)
         }
       }
-    },
-
-    activeLoading () {
-      this.isLoading = this.$loading.show({
-        container: this.$refs.modalBuyBook,
-        onCancel: this.onCancelNow,
-      })
-      this.setLoading(this.isLoading)
-
-      // this.$store.commit(`payment/${SET_IS_LOADING}`, this.isLoading)
-    },
-
-    desactiveLoading () {
-      this.isLoading.hide()
     },
 
     cleanForm () {
