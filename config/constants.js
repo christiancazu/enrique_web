@@ -1,6 +1,6 @@
 export const IMG_BASE_PATH = '/images'
 export const OWNER_NAME = 'Luis Enrique Bustamante Perez'
-export const EMAIL_ADDRESS = 'caridad1006@gmail.com'
+export const EMAIL_ADDRESS = 'luisenrybus@gmail.com'
 export const CELLPHONE_NUMBER = '+51 987 865 609'
 export const ADDRESS = 'Arequipa, Arequipa, PERÚ'
 export const SOCIAL_NETWORK = [
