@@ -1,26 +1,23 @@
 <template>
 <div
-  :id="`modalToBuyBook${id}`"
+  id="modalToBuyBook"
   class="modal fade"
   tabindex="-1"
   role="dialog"
-  :aria-labelledby="`ModalLabel${id}`"
+  aria-labelledby="modalToBuyBookTitle"
   aria-hidden="true"
 >
   <div
     class="modal-dialog modal-lg"
     role="document"
   >
-    <div
-      ref="modalBuyBook"
-      class="modal-content"
-    >
+    <div class="modal-content">
       <div class="modal-header">
         <h6
-          :id="`ModalLabel${id}`"
+          id="modalToBuyBookTitle"
           class="modal-title text-uppercase"
         >
-          {{ title }}
+          {{ book? book.title: '' }}
         </h6>
         <button
           type="button"
@@ -50,7 +47,10 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form @submit.prevent="sendForm">
+        <form
+          v-if="book"
+          @submit.prevent="sendForm"
+        >
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6">
               <h6 class="text-left small">
@@ -103,7 +103,7 @@
             <div class="col-xs-12 col-sm-12 col-md-6 pl-0">
               <div class="form-group">
                 <input
-                  :id="`card[email]${id}`"
+                  :id="`card[email]`"
                   v-model="form.email"
                   v-validate="'required|email'"
                   type="email"
@@ -125,7 +125,7 @@
                   <div class="mb-3">
                     <div class="form-group">
                       <input
-                        :id="`card[number]${id}`"
+                        :id="`card[number]`"
                         v-model="form.numberCard"
                         v-validate="'required'"
                         type="text"
@@ -149,7 +149,7 @@
                 <div class="col-3">
                   <div class="form-group">
                     <input
-                      :id="`card[cvv]${id}`"
+                      :id="`card[cvv]`"
                       v-model="form.cvv"
                       v-validate="'required|min:3'"
                       type="text"
@@ -174,7 +174,7 @@
               </h6>
               <div class="input-group">
                 <input
-                  :id="`card[exp_month]${id}`"
+                  :id="`card[exp_month]`"
                   v-model="form.month"
                   v-validate="'required|min:2'"
                   type="text"
@@ -191,7 +191,7 @@
                   <span class="input-group-text">/</span>
                 </div>
                 <input
-                  :id="`card[exp_year]${id}`"
+                  :id="`card[exp_year]`"
                   v-model="form.year"
                   v-validate="'required|min:4'"
                   type="text"
@@ -239,10 +239,6 @@ import { mapActions, mapState } from 'vuex'
 // import { SET_SHOW_MESSAGE } from '@/store/mutations.types'
 
 export default {
-  props: {
-    title: { type: String, default: '' },
-    id: { type: Number, default: 0 }
-  },
   data () {
     return {
       form: {
@@ -271,6 +267,7 @@ export default {
 
   computed: {
     ...mapState({
+      book: (state) => state.payment.bookSelected,
       isLoading: (state) => state.payment.isLoading,
       showMessage: (state) => state.payment.showMessage
     })
@@ -281,29 +278,32 @@ export default {
       window.Culqi.settings({
         currency: val.name,
         amount: parseInt(val.price) * 100,
-        description: this.title,
+        description: this.book.title,
       })
     },
-    showMessage: function (val){
-      if(val){
+    showMessage: function (val) {
+      if (val) {
         this.cleanForm()
       }
+    },
+    book: function (val) {
+      if (val) {
+        window.Culqi.settings({
+          description: this.book.title,
+          currency: 'PEN',
+          amount: 2600,
+        })
+      }
     }
-
   },
 
   mounted () {
-    window.Culqi.settings({
-      description: this.title,
-      currency: 'PEN',
-      amount: 2600,
-    })
     const _self = this
     // eslint-disable-next-line no-unused-vars
-    $(`#modalToBuyBook${this.id}`).on('hide.bs.modal', function (e) {
+    $(`#modalToBuyBook`).on('hide.bs.modal', function (e) {
+      _self.$store.commit(`payment/SET_SHOW_MESSAGE`, false)
       _self.cleanForm()
     })
-
   },
 
   methods: {
@@ -354,7 +354,7 @@ export default {
           // ¡Objeto Token creado exitosamente!
           const token = window.Culqi.token
           const data = {
-            idBook: this.id,
+            idBook: this.book.id,
             amount: settings.amount,
             titleBook: settings.description,
             email: token.email,
@@ -371,6 +371,10 @@ export default {
           _self.$toast.error(Culqi.error)
         }
       }
+    },
+    validNumberCard () {
+      console.log(this.form.numberCard, 'val')
+
     },
 
     cleanForm () {

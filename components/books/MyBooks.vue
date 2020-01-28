@@ -63,6 +63,9 @@
       <hr v-if="i < books.length-1">
     </div>
   </template>
+
+  <!-- Modal to buy book -->
+  <modal-to-buy-book />
 </section>
 </template>
 
@@ -71,12 +74,14 @@ import { IMG_BASE_PATH } from '~/config/constants'
 import HeaderSection from '~/components/base/HeaderSection'
 import Book from '~/components/books/Book'
 import PaymentMethods from '~/components/books/PaymentMethods'
+import ModalToBuyBook from '~/components/books/ModalToBuyBook'
+
 import { mapState } from 'vuex'
 
 export default {
   name: 'MyBooks',
   components: {
-    HeaderSection, Book, PaymentMethods
+    HeaderSection, Book, ModalToBuyBook, PaymentMethods
   },
   props: {
     fullRow: { type: Boolean, default: false },
@@ -84,7 +89,9 @@ export default {
   },
   data () {
     return {
-      imgPath: IMG_BASE_PATH + '/books/'
+      imgPath: IMG_BASE_PATH + '/books/',
+      publicKey: 'pk_test_CKBD2k26x8WluUoY'
+
     }
   },
   computed: {
@@ -95,5 +102,10 @@ export default {
       return this.$store.getters.headerSection('MyBooks')
     }
   },
+  created () {
+    window.Culqi.publicKey = this.publicKey
+    window.Culqi.init()
+
+  }
 }
 </script>

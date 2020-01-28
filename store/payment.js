@@ -1,9 +1,10 @@
 /* eslint-disable no-empty-pattern */
 /* eslint-disable no-empty */
-import { SET_IS_LOADING, SET_SHOW_MESSAGE } from '~/store/mutations.types'
+import { SET_IS_LOADING, SET_SHOW_MESSAGE, SET_BOOK_SELECTED } from '~/store/mutations.types'
 export const state = () => ({
   isLoading: false,
   showMessage: false,
+  bookSelected: null
 })
 
 export const actions = {
@@ -28,5 +29,6 @@ export const actions = {
 
 export const mutations = {
   [SET_IS_LOADING]: (state, payload) => (state.isLoading = payload),
-  [SET_SHOW_MESSAGE]: (state, payload) => (state.showMessage = payload)
+  [SET_SHOW_MESSAGE]: (state, payload) => (state.showMessage = payload),
+  [SET_BOOK_SELECTED]: (state, payload) => (state.bookSelected = payload)
 }
